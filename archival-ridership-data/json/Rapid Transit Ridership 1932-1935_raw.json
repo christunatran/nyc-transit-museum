@@ -1,0 +1,243 @@
+[
+  {
+    "type": "table",
+    "page_description": "Fare Passengers table from State of New York Transit Commission report, showing passenger counts for Fiscal Year Ended June 30 across years 1932, 1933, 1934, 1935, and increase/decrease versus 1934",
+    "headers": [
+      "Line/System",
+      "1932",
+      "1933",
+      "1934",
+      "1935",
+      "Increase or (D) Decrease 1935 over 1934 - Number",
+      "Increase or (D) Decrease 1935 over 1934 - Per Cent"
+    ],
+    "rows": [
+      {
+        "Line/System": "Rapid Transit Lines - I. R. T. - Subway Division",
+        "1932": 919459670,
+        "1933": 836505203,
+        "1934": 810296328,
+        "1935": 800749169,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 9547159",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 1.18"
+      },
+      {
+        "Line/System": "Rapid Transit Lines - I. R. T. - Elevated Division",
+        "1932": 293691687,
+        "1933": 247610919,
+        "1934": 220600747,
+        "1935": 214967958,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 5632789",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 2.55"
+      },
+      {
+        "Line/System": "Total, I. R. T. Co.",
+        "1932": 1213151357,
+        "1933": 1084116122,
+        "1934": 1030897075,
+        "1935": 1015717127,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 15179948",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 1.47"
+      },
+      {
+        "Line/System": "New York Rapid Transit (B.M.T.)",
+        "1932": 653824410,
+        "1933": 612995667,
+        "1934": 606434205,
+        "1935": 598231061,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 8203144",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 1.35"
+      },
+      {
+        "Line/System": "Total, I. R. T. and N. Y. R. T.",
+        "1932": 1866975767,
+        "1933": 1697111789,
+        "1934": 1637331280,
+        "1935": 1613948188,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 23383092",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 1.43"
+      },
+      {
+        "Line/System": "City of New York - Independent System (from 9/10/32)",
+        "1932": null,
+        "1933": 59081550,
+        "1934": 161658163,
+        "1935": 202975574,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 41317411,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 25.56
+      },
+      {
+        "Line/System": "Total, Rapid Transit",
+        "1932": 1866975767,
+        "1933": 1756193339,
+        "1934": 1798989443,
+        "1935": 1816923762,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 17934319,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 1.0
+      },
+      {
+        "Line/System": "Street Surface Lines - Manhattan",
+        "1932": 227888500,
+        "1933": 193747343,
+        "1934": 183238890,
+        "1935": 177837185,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 5401705",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 2.95"
+      },
+      {
+        "Line/System": "Street Surface Lines - The Bronx",
+        "1932": 139315124,
+        "1933": 125828290,
+        "1934": 123559563,
+        "1935": 123154368,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 405195",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 0.33"
+      },
+      {
+        "Line/System": "Street Surface Lines - Brooklyn (incl. Williamsburgh Bridge Line)",
+        "1932": 411623974,
+        "1933": 364491594,
+        "1934": 351073830,
+        "1935": 337636740,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 13437090",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 3.83"
+      },
+      {
+        "Line/System": "Street Surface Lines - Queens (excl. B. & Q. T.)",
+        "1932": 47646961,
+        "1933": 42169176,
+        "1934": 33441091,
+        "1935": 28029957,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 5411134",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 16.18"
+      },
+      {
+        "Line/System": "Street Surface Lines - Richmond",
+        "1932": 6624134,
+        "1933": 5639191,
+        "1934": 2732768,
+        "1935": null,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 2732768",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 100.00"
+      },
+      {
+        "Line/System": "Total, Street Surface",
+        "1932": 833098693,
+        "1933": 731875594,
+        "1934": 694046142,
+        "1935": 666658250,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 27387892",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 3.95"
+      },
+      {
+        "Line/System": "Total, Rapid Transit and Street Surface",
+        "1932": 2700074460,
+        "1933": 2488068933,
+        "1934": 2493035585,
+        "1935": 2483582012,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 9453573",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 0.38"
+      },
+      {
+        "Line/System": "Hudson & Manhattan R. R. Co.",
+        "1932": 90320135,
+        "1933": 78051350,
+        "1934": 76311146,
+        "1935": 75860951,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 450195",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 0.59"
+      },
+      {
+        "Line/System": "Bus Lines (Cos. with Franchises at June 30, 1935) - Fifth Avenue Coach Company",
+        "1932": 51042562,
+        "1933": 40035070,
+        "1934": 38788131,
+        "1935": 38575345,
+        "Increase or (D) Decrease 1935 over 1934 - Number": "D 212786",
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "D 0.55"
+      },
+      {
+        "Line/System": "Bus Lines - Madison Avenue Coach Company, Inc. (from 2/1/35)",
+        "1932": null,
+        "1933": null,
+        "1934": null,
+        "1935": null,
+        "Increase or (D) Decrease 1935 over 1934 - Number": null,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": null
+      },
+      {
+        "Line/System": "East Side Omnibus Corporation (from 6/26/33)",
+        "1932": null,
+        "1933": 230114,
+        "1934": 19870846,
+        "1935": 20608348,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 737502,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 3.71
+      },
+      {
+        "Line/System": "Comprehensive Omnibus Corporation (from 2/1/35)",
+        "1932": null,
+        "1933": null,
+        "1934": null,
+        "1935": 4985417,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 4985417,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": null
+      },
+      {
+        "Line/System": "Avenue B & East Broadway Transit Co., Inc.",
+        "1932": null,
+        "1933": 327110,
+        "1934": null,
+        "1935": null,
+        "Increase or (D) Decrease 1935 over 1934 - Number": null,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": null
+      },
+      {
+        "Line/System": "Surface Transportation Corp. of New York",
+        "1932": 42890689,
+        "1933": 39644386,
+        "1934": 37480475,
+        "1935": null,
+        "Increase or (D) Decrease 1935 over 1934 - Number": null,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": "13.03"
+      },
+      {
+        "Line/System": "Brooklyn Bus Corp.",
+        "1932": 50931289,
+        "1933": 59537602,
+        "1934": 61396164,
+        "1935": 61432397,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 35083,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 0.0
+      },
+      {
+        "Line/System": "Nassau Bus Line, Inc.",
+        "1932": 1451338,
+        "1933": 1323503,
+        "1934": 1298909,
+        "1935": 1303172,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 6263,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 0.48
+      },
+      {
+        "Line/System": "Jamaica Buses, Inc. (from 11/12/33)",
+        "1932": null,
+        "1933": null,
+        "1934": 7950961,
+        "1935": 12351615,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 4400654,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 55.35
+      },
+      {
+        "Line/System": "North Shore Bus Co., Inc.",
+        "1932": null,
+        "1933": null,
+        "1934": 13552890,
+        "1935": 14438916,
+        "Increase or (D) Decrease 1935 over 1934 - Number": 886026,
+        "Increase or (D) Decrease 1935 over 1934 - Per Cent": 6.54
+      }
+    ],
+    "page_number": 1
+  }
+]

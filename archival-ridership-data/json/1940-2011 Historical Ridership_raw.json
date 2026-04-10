@@ -1,0 +1,761 @@
+[
+  {
+    "type": "table",
+    "page_description": "MTA New York City Transit Subway and Bus Ridership, showing annual and average weekday ridership for subway and bus from 1940 to 1976, with notes on fare increases and transit strikes",
+    "headers": [
+      "Year",
+      "Annual_Subway",
+      "Annual_Bus",
+      "Annual_Total",
+      "AvgWeekday_Subway",
+      "AvgWeekday_Bus",
+      "AvgWeekday_Total",
+      "Notes"
+    ],
+    "rows": [
+      {
+        "Year": 1940,
+        "Annual_Subway": 1842675000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6149000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1941,
+        "Annual_Subway": 1842506000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6148000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1942,
+        "Annual_Subway": 1908489000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6368000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1943,
+        "Annual_Subway": 1951202000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6511000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1944,
+        "Annual_Subway": 1911809000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6379000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1945,
+        "Annual_Subway": 1952929000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6516000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1946,
+        "Annual_Subway": 2067227000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6898000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1947,
+        "Annual_Subway": 2025914000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6760000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1948,
+        "Annual_Subway": 1912735000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 6382000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": "Fare increase on July 1, 1948 ($0.05 to $0.10)"
+      },
+      {
+        "Year": 1949,
+        "Annual_Subway": 1721554000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 5744000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1950,
+        "Annual_Subway": 1660098000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 5539000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1951,
+        "Annual_Subway": 1601617000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 5344000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1952,
+        "Annual_Subway": 1555254000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 5190000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1953,
+        "Annual_Subway": 1495914000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4992000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": "Fare increase on July 25, 1953 ($0.10 to $0.15)"
+      },
+      {
+        "Year": 1954,
+        "Annual_Subway": 1393799000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4682000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1955,
+        "Annual_Subway": 1362143000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4605000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1956,
+        "Annual_Subway": 1363674000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4640000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1957,
+        "Annual_Subway": 1339380000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4548000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1958,
+        "Annual_Subway": 1322975000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4478000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1959,
+        "Annual_Subway": 1328958000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4501000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1960,
+        "Annual_Subway": 1348921000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4592000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1961,
+        "Annual_Subway": 1359915000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4643000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1962,
+        "Annual_Subway": 1383517000,
+        "Annual_Bus": null,
+        "Annual_Total": null,
+        "AvgWeekday_Subway": 4728000,
+        "AvgWeekday_Bus": null,
+        "AvgWeekday_Total": null,
+        "Notes": null
+      },
+      {
+        "Year": 1963,
+        "Annual_Subway": 1356817000,
+        "Annual_Bus": 1039900000,
+        "Annual_Total": 2396717000,
+        "AvgWeekday_Subway": 4617000,
+        "AvgWeekday_Bus": 3360000,
+        "AvgWeekday_Total": 7977000,
+        "Notes": null
+      },
+      {
+        "Year": 1964,
+        "Annual_Subway": 1383225000,
+        "Annual_Bus": 1054100000,
+        "Annual_Total": 2437325000,
+        "AvgWeekday_Subway": 4692000,
+        "AvgWeekday_Bus": 3410000,
+        "AvgWeekday_Total": 8102000,
+        "Notes": null
+      },
+      {
+        "Year": 1965,
+        "Annual_Subway": 1353193000,
+        "Annual_Bus": 1068000000,
+        "Annual_Total": 2421193000,
+        "AvgWeekday_Subway": 4667000,
+        "AvgWeekday_Bus": 3450000,
+        "AvgWeekday_Total": 8117000,
+        "Notes": null
+      },
+      {
+        "Year": 1966,
+        "Annual_Subway": 1260583000,
+        "Annual_Bus": 982500000,
+        "Annual_Total": 2243083000,
+        "AvgWeekday_Subway": 4352000,
+        "AvgWeekday_Bus": 3180000,
+        "AvgWeekday_Total": 7532000,
+        "Notes": "Transit strike (1/1/66 to 1/13/66); fare increase on July 5, 1966 ($0.15 to $0.20)"
+      },
+      {
+        "Year": 1967,
+        "Annual_Subway": 1302572000,
+        "Annual_Bus": 976400000,
+        "Annual_Total": 2278972000,
+        "AvgWeekday_Subway": 4440000,
+        "AvgWeekday_Bus": 3160000,
+        "AvgWeekday_Total": 7600000,
+        "Notes": null
+      },
+      {
+        "Year": 1968,
+        "Annual_Subway": 1311668000,
+        "Annual_Bus": 1003300000,
+        "Annual_Total": 2314968000,
+        "AvgWeekday_Subway": 4454000,
+        "AvgWeekday_Bus": 3240000,
+        "AvgWeekday_Total": 7694000,
+        "Notes": null
+      },
+      {
+        "Year": 1969,
+        "Annual_Subway": 1343270000,
+        "Annual_Bus": 1005400000,
+        "Annual_Total": 2348670000,
+        "AvgWeekday_Subway": 4554000,
+        "AvgWeekday_Bus": 3250000,
+        "AvgWeekday_Total": 7804000,
+        "Notes": null
+      },
+      {
+        "Year": 1970,
+        "Annual_Subway": 1257569124,
+        "Annual_Bus": 939122764,
+        "Annual_Total": 2196691888,
+        "AvgWeekday_Subway": 4269273,
+        "AvgWeekday_Bus": 3037070,
+        "AvgWeekday_Total": 7306343,
+        "Notes": "Fare increase on January 4, 1970 ($0.20 to $0.30)"
+      },
+      {
+        "Year": 1971,
+        "Annual_Subway": 1196875980,
+        "Annual_Bus": 931799859,
+        "Annual_Total": 2128675839,
+        "AvgWeekday_Subway": 4067926,
+        "AvgWeekday_Bus": 3016306,
+        "AvgWeekday_Total": 7084232,
+        "Notes": null
+      },
+      {
+        "Year": 1972,
+        "Annual_Subway": 1145128739,
+        "Annual_Bus": 877441806,
+        "Annual_Total": 2022570545,
+        "AvgWeekday_Subway": 3919332,
+        "AvgWeekday_Bus": 2843113,
+        "AvgWeekday_Total": 6762445,
+        "Notes": "Fare increase on January 5, 1972 ($0.30 to $0.35)"
+      },
+      {
+        "Year": 1973,
+        "Annual_Subway": 1101597734,
+        "Annual_Bus": 857144218,
+        "Annual_Total": 1958741952,
+        "AvgWeekday_Subway": 3767921,
+        "AvgWeekday_Bus": 2776021,
+        "AvgWeekday_Total": 6543942,
+        "Notes": null
+      },
+      {
+        "Year": 1974,
+        "Annual_Subway": 1099786500,
+        "Annual_Bus": 889753945,
+        "Annual_Total": 1989540445,
+        "AvgWeekday_Subway": 3704526,
+        "AvgWeekday_Bus": 2879038,
+        "AvgWeekday_Total": 6583564,
+        "Notes": null
+      },
+      {
+        "Year": 1975,
+        "Annual_Subway": 1053932743,
+        "Annual_Bus": 844220177,
+        "Annual_Total": 1898152920,
+        "AvgWeekday_Subway": 3555380,
+        "AvgWeekday_Bus": 2735756,
+        "AvgWeekday_Total": 6291136,
+        "Notes": "Fare increase on September 1, 1975 ($0.35 to $0.50)"
+      },
+      {
+        "Year": 1976,
+        "Annual_Subway": 1010496909,
+        "Annual_Bus": 724202144,
+        "Annual_Total": 1734699053,
+        "AvgWeekday_Subway": 3395940,
+        "AvgWeekday_Bus": 2346547,
+        "AvgWeekday_Total": 5742487,
+        "Notes": null
+      }
+    ],
+    "page_number": 1
+  },
+  {
+    "type": "table",
+    "page_description": "NYC Transit annual ridership data from 1977 to 2011, showing subway, bus, and total ridership with daily averages and notes on fare increases and service events.",
+    "headers": [
+      "Year",
+      "Subway",
+      "Bus",
+      "Total",
+      "Avg Weekday",
+      "Avg Weekend",
+      "Avg Daily",
+      "Notes"
+    ],
+    "rows": [
+      {
+        "Year": 1977,
+        "Subway": 997773441,
+        "Bus": 697764755,
+        "Total": 1695538196,
+        "Avg Weekday": 3360223,
+        "Avg Weekend": 2270752,
+        "Avg Daily": 5630975,
+        "Notes": null
+      },
+      {
+        "Year": 1978,
+        "Subway": 1041628298,
+        "Bus": 687511817,
+        "Total": 1729140115,
+        "Avg Weekday": 3488005,
+        "Avg Weekend": 2238144,
+        "Avg Daily": 5726149,
+        "Notes": null
+      },
+      {
+        "Year": 1979,
+        "Subway": 1076540944,
+        "Bus": 664461204,
+        "Total": 1741002148,
+        "Avg Weekday": 3589446,
+        "Avg Weekend": 2159972,
+        "Avg Daily": 5749418,
+        "Notes": null
+      },
+      {
+        "Year": 1980,
+        "Subway": 1009332713,
+        "Bus": 640562587,
+        "Total": 1649895300,
+        "Avg Weekday": 3520392,
+        "Avg Weekend": 2145507,
+        "Avg Daily": 5665899,
+        "Notes": "Transit strike (4/1/80 - 4/11/80); fare increase on June 28, 1980 ($0.50 to $0.60)"
+      },
+      {
+        "Year": 1981,
+        "Subway": 1011345460,
+        "Bus": 598474721,
+        "Total": 1609820181,
+        "Avg Weekday": 3448742,
+        "Avg Weekend": 1951262,
+        "Avg Daily": 5400004,
+        "Notes": "Fare increase on July 3, 1981 ($0.60 to $0.75)"
+      },
+      {
+        "Year": 1982,
+        "Subway": 989091943,
+        "Bus": 584588716,
+        "Total": 1573680659,
+        "Avg Weekday": 3383988,
+        "Avg Weekend": 1903626,
+        "Avg Daily": 5287614,
+        "Notes": null
+      },
+      {
+        "Year": 1983,
+        "Subway": 1005343639,
+        "Bus": 601873704,
+        "Total": 1607217343,
+        "Avg Weekday": 3441371,
+        "Avg Weekend": 1961713,
+        "Avg Daily": 5403084,
+        "Notes": null
+      },
+      {
+        "Year": 1984,
+        "Subway": 997025422,
+        "Bus": 565141765,
+        "Total": 1562167187,
+        "Avg Weekday": 3397966,
+        "Avg Weekend": 1838905,
+        "Avg Daily": 5236871,
+        "Notes": "Fare increase on January 2, 1984 ($0.75 to $0.90)"
+      },
+      {
+        "Year": 1985,
+        "Subway": 1010210607,
+        "Bus": 591964248,
+        "Total": 1602174855,
+        "Avg Weekday": 3443313,
+        "Avg Weekend": 1929262,
+        "Avg Daily": 5372575,
+        "Notes": null
+      },
+      {
+        "Year": 1986,
+        "Subway": 1030385208,
+        "Bus": 576653201,
+        "Total": 1607038409,
+        "Avg Weekday": 3492789,
+        "Avg Weekend": 1879518,
+        "Avg Daily": 5372307,
+        "Notes": "Fare increase on January 1, 1986 ($0.90 to $1.00)"
+      },
+      {
+        "Year": 1987,
+        "Subway": 1058005483,
+        "Bus": 572174551,
+        "Total": 1630180034,
+        "Avg Weekday": 3585849,
+        "Avg Weekend": 1864747,
+        "Avg Daily": 5450596,
+        "Notes": null
+      },
+      {
+        "Year": 1988,
+        "Subway": 1074200253,
+        "Bus": 574985714,
+        "Total": 1649185967,
+        "Avg Weekday": 3631736,
+        "Avg Weekend": 1869638,
+        "Avg Daily": 5501374,
+        "Notes": null
+      },
+      {
+        "Year": 1989,
+        "Subway": 1073179880,
+        "Bus": 567237443,
+        "Total": 1640417323,
+        "Avg Weekday": 3641039,
+        "Avg Weekend": 1848666,
+        "Avg Daily": 5489705,
+        "Notes": null
+      },
+      {
+        "Year": 1990,
+        "Subway": 1028305701,
+        "Bus": 541634494,
+        "Total": 1569940195,
+        "Avg Weekday": 3488147,
+        "Avg Weekend": 1759548,
+        "Avg Daily": 5247695,
+        "Notes": "Fare increase on January 1, 1990 ($1.00 to $1.15)"
+      },
+      {
+        "Year": 1991,
+        "Subway": 995227534,
+        "Bus": 528804550,
+        "Total": 1524032084,
+        "Avg Weekday": 3373521,
+        "Avg Weekend": 1716746,
+        "Avg Daily": 5090267,
+        "Notes": null
+      },
+      {
+        "Year": 1992,
+        "Subway": 996701756,
+        "Bus": 512016594,
+        "Total": 1508718349,
+        "Avg Weekday": 3360500,
+        "Avg Weekend": 1666019,
+        "Avg Daily": 5026519,
+        "Notes": "Fare increase on January 1, 1992 ($1.15 to $1.25)"
+      },
+      {
+        "Year": 1993,
+        "Subway": 1029765350,
+        "Bus": 510101130,
+        "Total": 1539866481,
+        "Avg Weekday": 3464905,
+        "Avg Weekend": 1668281,
+        "Avg Daily": 5133186,
+        "Notes": null
+      },
+      {
+        "Year": 1994,
+        "Subway": 1080757098,
+        "Bus": 515879284,
+        "Total": 1596636383,
+        "Avg Weekday": 3612622,
+        "Avg Weekend": 1675874,
+        "Avg Daily": 5288496,
+        "Notes": null
+      },
+      {
+        "Year": 1995,
+        "Subway": 1093029231,
+        "Bus": 511042737,
+        "Total": 1604071968,
+        "Avg Weekday": 3656180,
+        "Avg Weekend": 1668826,
+        "Avg Daily": 5325006,
+        "Notes": "Fare increase on November 12, 1995 ($1.25 to $1.50)"
+      },
+      {
+        "Year": 1996,
+        "Subway": 1110025587,
+        "Bus": 480048945,
+        "Total": 1590074532,
+        "Avg Weekday": 3684369,
+        "Avg Weekend": 1574067,
+        "Avg Daily": 5258436,
+        "Notes": null
+      },
+      {
+        "Year": 1997,
+        "Subway": 1129514464,
+        "Bus": 529856242,
+        "Total": 1659370705,
+        "Avg Weekday": 3752073,
+        "Avg Weekend": 1729499,
+        "Avg Daily": 5481572,
+        "Notes": "Free intermodal transfers began on July 4, 1997"
+      },
+      {
+        "Year": 1998,
+        "Subway": 1199419350,
+        "Bus": 607592605,
+        "Total": 1807011955,
+        "Avg Weekday": 3962559,
+        "Avg Weekend": 1979715,
+        "Avg Daily": 5942274,
+        "Notes": "Bonus MetroCard began in January 1, 1998; 7-day & 30-day passes began on July 4, 1998"
+      },
+      {
+        "Year": 1999,
+        "Subway": 1283081633,
+        "Bus": 659343560,
+        "Total": 1942425193,
+        "Avg Weekday": 4226611,
+        "Avg Weekend": 2141778,
+        "Avg Daily": 6368389,
+        "Notes": null
+      },
+      {
+        "Year": 2000,
+        "Subway": 1381078913,
+        "Bus": 691821938,
+        "Total": 2072900850,
+        "Avg Weekday": 4522215,
+        "Avg Weekend": 2239282,
+        "Avg Daily": 6761497,
+        "Notes": null
+      },
+      {
+        "Year": 2001,
+        "Subway": 1405300386,
+        "Bus": 732445189,
+        "Total": 2137745576,
+        "Avg Weekday": 4579226,
+        "Avg Weekend": 2355090,
+        "Avg Daily": 6934316,
+        "Notes": "WTC attack on September 11, 2001"
+      },
+      {
+        "Year": 2002,
+        "Subway": 1413177943,
+        "Bus": 754717673,
+        "Total": 2167895616,
+        "Avg Weekday": 4590571,
+        "Avg Weekend": 2423717,
+        "Avg Daily": 7014288,
+        "Notes": null
+      },
+      {
+        "Year": 2003,
+        "Subway": 1384068943,
+        "Bus": 727607228,
+        "Total": 2111676171,
+        "Avg Weekday": 4511849,
+        "Avg Weekend": 2338751,
+        "Avg Daily": 6850600,
+        "Notes": "Fare increase on May 4, 2003 ($1.50 to $2.00)"
+      },
+      {
+        "Year": 2004,
+        "Subway": 1426040136,
+        "Bus": 740586160,
+        "Total": 2166626296,
+        "Avg Weekday": 4612006,
+        "Avg Weekend": 2361299,
+        "Avg Daily": 6973305,
+        "Notes": null
+      },
+      {
+        "Year": 2005,
+        "Subway": 1449109242,
+        "Bus": 736493445,
+        "Total": 2185602687,
+        "Avg Weekday": 4737093,
+        "Avg Weekend": 2374777,
+        "Avg Daily": 7111870,
+        "Notes": "Transit strike (12/20/05 - 12/22/05); Fare increase on February 27, 2005 (express bus fare and passes only; no change in base local fare)"
+      },
+      {
+        "Year": 2006,
+        "Subway": 1498915984,
+        "Bus": 741419747,
+        "Total": 2240335731,
+        "Avg Weekday": 4865769,
+        "Avg Weekend": 2380124,
+        "Avg Daily": 7245893,
+        "Notes": null
+      },
+      {
+        "Year": 2007,
+        "Subway": 1562515065,
+        "Bus": 738039531,
+        "Total": 2300554596,
+        "Avg Weekday": 5042263,
+        "Avg Weekend": 2356301,
+        "Avg Daily": 7398564,
+        "Notes": null
+      },
+      {
+        "Year": 2008,
+        "Subway": 1623881369,
+        "Bus": 746977406,
+        "Total": 2370858775,
+        "Avg Weekday": 5225675,
+        "Avg Weekend": 2377320,
+        "Avg Daily": 7602995,
+        "Notes": "Fare increase on March 2, 2008 (bonus and passes only; no change in base fare)"
+      },
+      {
+        "Year": 2009,
+        "Subway": 1579866600,
+        "Bus": 726471593,
+        "Total": 2306338192,
+        "Avg Weekday": 5086833,
+        "Avg Weekend": 2316691,
+        "Avg Daily": 7403523,
+        "Notes": "Fare increase on June 28, 2009; base fare ($2.00 to $2.25), bonus threshold & passes"
+      },
+      {
+        "Year": 2010,
+        "Subway": 1604198017,
+        "Bus": 696923393,
+        "Total": 2301121410,
+        "Avg Weekday": 5156913,
+        "Avg Weekend": 2229257,
+        "Avg Daily": 7386170,
+        "Notes": null
+      },
+      {
+        "Year": 2011,
+        "Subway": 1640434672,
+        "Bus": 665314040,
+        "Total": 2305748713,
+        "Avg Weekday": 5284295,
+        "Avg Weekend": 2133773,
+        "Avg Daily": 7418068,
+        "Notes": null
+      }
+    ],
+    "page_number": 2
+  },
+  {
+    "type": "no_data",
+    "content": "Blank white page with no visible text, tables, or other content",
+    "page_number": 3
+  }
+]

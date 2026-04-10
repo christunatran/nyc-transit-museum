@@ -1,0 +1,225 @@
+[
+  {
+    "type": "table",
+    "page_description": "Fare Passengers table from the Seventeenth Annual Report 1937, showing ridership by transit line category for fiscal years 1934-1937 with increase/decrease figures",
+    "headers": [
+      "Line/Category",
+      "1934",
+      "1935",
+      "1936",
+      "1937",
+      "Increase or (D) Decrease 1937 over 1936 - Number",
+      "Increase or (D) Decrease 1937 over 1936 - Per Cent"
+    ],
+    "rows": [
+      {
+        "Line/Category": "Rapid Transit Lines - I. R. T. \u2014 Subway Division",
+        "1934": 810296328,
+        "1935": 800719169,
+        "1936": 814217041,
+        "1937": 799647996,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 14569045",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 1.79"
+      },
+      {
+        "Line/Category": "Rapid Transit Lines - I. R. T. \u2014 Elevated Division",
+        "1934": 220600747,
+        "1935": 214967958,
+        "1936": 217403315,
+        "1937": 211325828,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 6077487",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 2.80"
+      },
+      {
+        "Line/Category": "Total, I. R. T. Co.",
+        "1934": 1030897075,
+        "1935": 1015717127,
+        "1936": 1031620356,
+        "1937": 1010973824,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 20646532",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 2.00"
+      },
+      {
+        "Line/Category": "New York Rapid Transit (B.-M. T.)",
+        "1934": 606434205,
+        "1935": 598231061,
+        "1936": 608904130,
+        "1937": 590488471,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 18415659",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 3.02"
+      },
+      {
+        "Line/Category": "Total, I. R. T. and N. Y. R. T.",
+        "1934": 1637331280,
+        "1935": 1613948188,
+        "1936": 1640524486,
+        "1937": 1601462295,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 39062191",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 2.38"
+      },
+      {
+        "Line/Category": "City of New York \u2014 Independent System",
+        "1934": 161658163,
+        "1935": 202975574,
+        "1936": 236065648,
+        "1937": 289051019,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 52985371,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 22.45
+      },
+      {
+        "Line/Category": "Total, Rapid Transit Lines",
+        "1934": 1798989443,
+        "1935": 1816923762,
+        "1936": 1876590134,
+        "1937": 1890513314,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 13923180,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 0.74
+      },
+      {
+        "Line/Category": "Street Surface Lines - Manhattan",
+        "1934": 183238890,
+        "1935": 177837185,
+        "1936": 133197796,
+        "1937": 69348698,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 63849098",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 47.94"
+      },
+      {
+        "Line/Category": "Street Surface Lines - The Bronx",
+        "1934": 123559563,
+        "1935": 123154368,
+        "1936": 126115839,
+        "1937": 126536044,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 420205,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 0.33
+      },
+      {
+        "Line/Category": "Street Surface Lines - Brooklyn",
+        "1934": 351073830,
+        "1935": 337636740,
+        "1936": 339500111,
+        "1937": 312425282,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 2925171",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 0.86"
+      },
+      {
+        "Line/Category": "Street Surface Lines - Queens (excl. B. & Q. T.)",
+        "1934": 33441091,
+        "1935": 28029957,
+        "1936": 29039759,
+        "1937": 25851895,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 3187864",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 10.98"
+      },
+      {
+        "Line/Category": "Street Surface Lines - Richmond",
+        "1934": 2732768,
+        "1935": null,
+        "1936": null,
+        "1937": null,
+        "Increase or (D) Decrease 1937 over 1936 - Number": null,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": null
+      },
+      {
+        "Line/Category": "Total, Street Surface Lines",
+        "1934": 694046142,
+        "1935": 666658250,
+        "1936": 627853505,
+        "1937": 564161919,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 63691586",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 10.14"
+      },
+      {
+        "Line/Category": "Total, Rapid Transit and Street Surface",
+        "1934": 2493035585,
+        "1935": 2483582012,
+        "1936": 2504443639,
+        "1937": 2454675233,
+        "Increase or (D) Decrease 1937 over 1936 - Number": "D 49768406",
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": "D 1.99"
+      },
+      {
+        "Line/Category": "Hudson & Manhattan R. R. Co.",
+        "1934": 76311146,
+        "1935": 75860951,
+        "1936": 76994009,
+        "1937": 78728748,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 1734739,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 2.25
+      },
+      {
+        "Line/Category": "Bus Lines (a) - Manhattan",
+        "1934": 94587458,
+        "1935": 107746489,
+        "1936": 186371267,
+        "1937": 299590055,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 113218788,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 60.75
+      },
+      {
+        "Line/Category": "Bus Lines (a) - Queens (incl. Nassau County)",
+        "1934": 92859973,
+        "1935": 109624033,
+        "1936": 123303079,
+        "1937": 130469225,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 7166146,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 5.81
+      },
+      {
+        "Line/Category": "Bus Lines (a) - Brooklyn (b)",
+        "1934": 63396164,
+        "1935": 63432347,
+        "1936": 68718488,
+        "1937": 73784079,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 5065591,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 7.37
+      },
+      {
+        "Line/Category": "Bus Lines (a) - The Bronx (b)",
+        "1934": 39155000,
+        "1935": 40408731,
+        "1936": 45301605,
+        "1937": 48666778,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 3365173,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 7.43
+      },
+      {
+        "Line/Category": "Bus Lines (a) - Richmond",
+        "1934": 23912981,
+        "1935": 29052887,
+        "1936": 32938394,
+        "1937": 35085370,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 2146986,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 6.52
+      },
+      {
+        "Line/Category": "Total, Bus Lines",
+        "1934": 313911576,
+        "1935": 350264487,
+        "1936": 456632823,
+        "1937": 587595507,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 130962684,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 28.68
+      },
+      {
+        "Line/Category": "Grand Total",
+        "1934": 2883258307,
+        "1935": 2909707450,
+        "1936": 3038070471,
+        "1937": 3120999488,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 82929017,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 2.73
+      },
+      {
+        "Line/Category": "Rides per Capita (excl. Hudson & Manhattan R. R. Co.)",
+        "1934": 377,
+        "1935": 374,
+        "1936": 384,
+        "1937": 388,
+        "Increase or (D) Decrease 1937 over 1936 - Number": 4,
+        "Increase or (D) Decrease 1937 over 1936 - Per Cent": 1.04
+      }
+    ],
+    "page_number": 1
+  }
+]
