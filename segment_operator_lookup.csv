@@ -1,0 +1,53 @@
+segment,operator,confidence,notes
+8 Ave.,IND,high,IND 8th Ave line opened 1932; now A/C/E
+6 Ave./Culver,IND,medium,IND 6th Ave line + Culver through-routing post-1954; Culver portion originally BMT el
+Fulton St.,IND,high,IND Fulton St line; now A/C
+Queens Blvd.,IND,high,IND Queens Blvd line; now E/F/M/R
+Crosstown,IND,high,IND Crosstown line (G train)
+Concourse,IND,high,IND Concourse line in the Bronx (B/D); NOT IRT
+Rockaways Opened 6/28/56,IND,high,Purchased from LIRR 1956; operated as IND/NYCTA
+Archer Ave. Opened 12/11/88,IND,high,IND Archer Ave line (E/J/Z terminal); opened 1988
+Lexington Ave.,IRT,high,IRT Lexington Ave line; now 4/5/6
+Broadway/7 Ave.,IRT,high,IRT Broadway-7th Ave line; now 1/2/3
+Flushing,IRT,high,IRT Flushing line; now 7
+Lenox Ave.,IRT,high,IRT Lenox Ave line (Harlem)
+Jerome Ave.,IRT,high,IRT Jerome Ave line in the Bronx (4)
+White Plains Rd.,IRT,high,IRT White Plains Rd line (2/5)
+Pelham,IRT,high,IRT Pelham line (6)
+Eastern Pkwy.,IRT,high,IRT Eastern Parkway line in Brooklyn (2/3/4/5)
+Nostrand Ave.,IRT,high,IRT Nostrand Ave branch in Brooklyn (2/5)
+Dyre Ave. Opened 5/15/41,IRT,high,Former NY Westchester & Boston RR; acquired 1941; operated by IRT/NYCTA (5)
+Burnside Ave. Closed 8/31/58,IRT,high,IRT Jerome Ave branch (closed el stop)
+2 Av Elevated Closed 6/11/40,IRT,high,IRT 2nd Ave elevated
+3 Av Elevated Manhattan Closed 5/12/55,IRT,high,IRT 3rd Ave elevated (Manhattan)
+3 Av Elevated Bronx segment Closed 4/28/73,IRT,high,IRT 3rd Ave elevated (Bronx)
+9 Av Elevated Closed 6/11/40,IRT,high,IRT 9th Ave elevated
+Lexington Av El Closed 10/13/50,BMT,medium,Likely BMT Lexington Ave elevated in Brooklyn (Jamaica line feeder); verify - not the IRT Lex Ave subway
+Brighton,BMT,high,BMT Brighton line; now B/Q
+Sea Beach,BMT,high,BMT Sea Beach line; now N
+West End,BMT,high,BMT West End line; now D
+4 Ave.,BMT,high,BMT 4th Ave line in Brooklyn; now D/N/R
+Astoria,BMT,high,BMT Astoria line; now N/W
+Jamaica,BMT,high,BMT Jamaica line; now J/M/Z
+Canarsie,BMT,high,BMT Canarsie line; now L
+Franklin Ave.,BMT,high,BMT Franklin Ave shuttle
+Myrtle Ave.,BMT,high,BMT Myrtle Ave line (M)
+5 Av Elevated Closed 5/31/40,BMT,high,BMT 5th Ave elevated in Brooklyn
+Culver Shuttle Closed 5/11/75,BMT,high,Remnant of BMT Culver elevated after through-routing
+Sumner-Vandrbilt Closed 10/3/69,BMT,medium,Likely BMT Fulton St el branch in Brooklyn; verify
+Neptune-Ditmas Part of Culver El until 10/29/54,BMT,medium,Original BMT Culver el; absorbed into IND 6 Ave/Culver after 10/29/54. Lineage=BMT
+Part of Fulton El until 4/27/56,BMT,medium,Original BMT Fulton St el; absorbed into IND Fulton after 4/27/56. Lineage=BMT
+Lefferts Bl-80 St. Part of Fulton El until 4/27/56,BMT,medium,Original BMT Fulton St el; later IND Fulton. Lineage=BMT
+Lefferts Bl-80 St.,IND,medium,Post-1956 IND Fulton extension (A train to Lefferts)
+80St-Lefferts Bl Listed above.,IND,low,Cross-reference row; likely duplicate/artifact of source document
+Fulton St. El W. of Rock. Av Closed 5/31/40,BMT,high,BMT Fulton St elevated (western portion; closed 1940)
+Rock Av-Grant Closed 4/27/56,BMT,medium,BMT Fulton St el between Rockaway Ave and Grant Ave; closed at IND absorption
+Valley,aggregate,high,Not a line; aggregate category from source document
+Midtown,aggregate,high,Not a line; CBD/aggregate category
+Downtown,aggregate,high,Not a line; CBD/aggregate category
+South Bronx CBD,aggregate,high,Not a line; borough CBD aggregate
+Long Is. City CBD,aggregate,high,Not a line; borough CBD aggregate
+Brooklyn CBD,aggregate,high,Not a line; borough CBD aggregate
+Manh. Transfer,aggregate,high,Not a line; transfer-count aggregate
+Queens Transfer,aggregate,high,Not a line; transfer-count aggregate
+Brooklyn Transfer,aggregate,high,Not a line; transfer-count aggregate
