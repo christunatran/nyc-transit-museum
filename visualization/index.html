@@ -241,33 +241,55 @@
                 });
             }
 
-            // Fan out transfer stations: each route through a shared station_id gets
-            // a distinct radial pixel offset so overlapping dots/segments read clearly.
-            const OFFSET_RADIUS = 4;
-            const routesByStationId = new Map();
-            stationData.forEach(d => {
-                if (!routesByStationId.has(d.station_id)) routesByStationId.set(d.station_id, new Set());
-                routesByStationId.get(d.station_id).add(d.route);
+            // Group stations by route
+            const routes = d3.group(stationData, d => d.route);
+
+            // Dominant company per modern route (majority of its stations' companies).
+            const routeCompany = new Map();
+            routes.forEach((stations, route) => {
+                const counts = new Map();
+                stations.forEach(s => {
+                    const op = operatorById.get(s.station_id);
+                    if (!op) return;
+                    counts.set(op, (counts.get(op) || 0) + 1);
+                });
+                let best = null, bestN = 0;
+                counts.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
+                routeCompany.set(route, best);
             });
-            routesByStationId.forEach((set, id) => {
-                routesByStationId.set(id, Array.from(set).sort());
+
+            function stationCompany(station) {
+                return routeCompany.get(station.route) || null;
+            }
+
+            // Fan out transfer stations by company: each distinct company at a shared
+            // station_id gets a distinct radial offset so a station with routes from
+            // multiple companies shows one dot per company, not one dot per route.
+            const OFFSET_RADIUS = 4;
+            const companiesByStationId = new Map();
+            stationData.forEach(d => {
+                const co = stationCompany(d);
+                if (!co) return;
+                if (!companiesByStationId.has(d.station_id)) companiesByStationId.set(d.station_id, new Set());
+                companiesByStationId.get(d.station_id).add(co);
+            });
+            companiesByStationId.forEach((set, id) => {
+                companiesByStationId.set(id, Array.from(set).sort());
             });
 
             function stationXY(station) {
                 const [px, py] = projection([+station.longitude, +station.latitude]);
-                const routes = routesByStationId.get(station.station_id);
-                if (!routes || routes.length <= 1) return [px, py];
-                const i = routes.indexOf(station.route);
+                const companies = companiesByStationId.get(station.station_id);
+                if (!companies || companies.length <= 1) return [px, py];
+                const co = stationCompany(station);
+                const i = companies.indexOf(co);
                 if (i < 0) return [px, py];
-                const theta = (2 * Math.PI * i) / routes.length;
+                const theta = (2 * Math.PI * i) / companies.length;
                 return [
                     px + OFFSET_RADIUS * Math.cos(theta),
                     py + OFFSET_RADIUS * Math.sin(theta)
                 ];
             }
-
-            // Group stations by route
-            const routes = d3.group(stationData, d => d.route);
 
             // Build edges from each station to its after-neighbors
             const routeEdges = new Map();
@@ -418,6 +440,11 @@
                 routeGroups[route] = g;
             });
 
+            // Global modern-station dots layer, rendered above route segments so
+            // dedup (one dot per station_id+company) is a single binding, not
+            // per-route. This collapses multi-route same-company stacks.
+            const modernDotsGroup = svg.append("g").attr("class", "modern-stations");
+
             // Closed-station container (drawn above modern routes).
             const closedGroup = svg.append("g").attr("class", "closed-stations");
             closedGroup.append("g").attr("class", "segments");
@@ -431,12 +458,9 @@
                 sortedRoutes.forEach(route => {
                     const g = routeGroups[route];
                     const allEdges = routeEdges.get(route) || [];
-                    const allStations = routes.get(route) || [];
 
                     const edges = allEdges.filter(e =>
                         activeIds.has(e.source.station_id) && activeIds.has(e.target.station_id));
-                    const stations = allStations.filter(s =>
-                        activeIds.has(s.station_id) && s.latitude && s.longitude);
 
                     const segSel = g.select(".segments").selectAll("line").data(edges);
                     segSel.exit().remove();
@@ -445,48 +469,66 @@
                         .attr("stroke-linecap", "round")
                         .attr("opacity", 0.8)
                         .merge(segSel)
-                        .attr("stroke", d => companyColor(operatorById.get(d.source.station_id)))
+                        .attr("stroke", d => companyColor(stationCompany(d.source)))
                         .attr("x1", d => stationXY(d.source)[0])
                         .attr("y1", d => stationXY(d.source)[1])
                         .attr("x2", d => stationXY(d.target)[0])
                         .attr("y2", d => stationXY(d.target)[1]);
 
-                    const dotSel = g.select(".stations").selectAll("circle")
-                        .data(stations, d => `${d.route}|${d.station_id}`);
-                    dotSel.exit().remove();
-                    dotSel.enter().append("circle")
-                        .attr("r", 2.5)
-                        .attr("stroke", "#1a1a2e")
-                        .attr("stroke-width", 0.5)
-                        .on("mouseover", (event, d) => {
-                            const r = yearMap.get(d.station_id);
-                            const ridership = r && r.ridership
-                                ? (+r.ridership).toLocaleString()
-                                : "—";
-                            const sourceYear = r ? +r.year : year;
-                            const yearLabel = sourceYear === year
-                                ? `${year}`
-                                : `${sourceYear}, carried forward`;
-                            const company = operatorById.get(d.station_id) || "Unknown";
-                            tooltip.style("display", "block")
-                                .html(`
-                                    <div class="name">${d.stop_name || d.station_name}</div>
-                                    <div>Route: ${d.route} | Borough: ${d.borough} | ${company}</div>
-                                    <div>Ridership (${yearLabel}): ${ridership}</div>
-                                    ${r && r.label ? `<div>Archival label: ${r.label}</div>` : ""}
-                                `);
-                        })
-                        .on("mousemove", (event) => {
-                            tooltip
-                                .style("left", (event.pageX + 12) + "px")
-                                .style("top", (event.pageY - 12) + "px");
-                        })
-                        .on("mouseout", () => tooltip.style("display", "none"))
-                        .merge(dotSel)
-                        .attr("fill", d => companyColor(operatorById.get(d.station_id)))
-                        .attr("cx", d => stationXY(d)[0])
-                        .attr("cy", d => stationXY(d)[1]);
+                    // Per-route dot layer is no longer used (dots render globally).
+                    g.select(".stations").selectAll("circle").remove();
                 });
+
+                // Deduplicate modern station dots: one circle per (station_id, company).
+                const seenDotKeys = new Set();
+                const dotData = [];
+                const stationRoutesByKey = new Map();
+                stationData.forEach(s => {
+                    if (!activeIds.has(s.station_id) || !s.latitude || !s.longitude) return;
+                    const co = stationCompany(s);
+                    if (!co) return;
+                    const key = `${s.station_id}|${co}`;
+                    if (!stationRoutesByKey.has(key)) stationRoutesByKey.set(key, []);
+                    stationRoutesByKey.get(key).push(s.route);
+                    if (seenDotKeys.has(key)) return;
+                    seenDotKeys.add(key);
+                    dotData.push({ station: s, key, company: co });
+                });
+
+                const dotSel = modernDotsGroup.selectAll("circle").data(dotData, d => d.key);
+                dotSel.exit().remove();
+                dotSel.enter().append("circle")
+                    .attr("r", 2.5)
+                    .attr("stroke", "#1a1a2e")
+                    .attr("stroke-width", 0.5)
+                    .on("mouseover", (event, d) => {
+                        const r = yearMap.get(d.station.station_id);
+                        const ridership = r && r.ridership
+                            ? (+r.ridership).toLocaleString()
+                            : "—";
+                        const sourceYear = r ? +r.year : year;
+                        const yearLabel = sourceYear === year
+                            ? `${year}`
+                            : `${sourceYear}, carried forward`;
+                        const routeList = (stationRoutesByKey.get(d.key) || []).sort().join(", ");
+                        tooltip.style("display", "block")
+                            .html(`
+                                <div class="name">${d.station.stop_name || d.station.station_name}</div>
+                                <div>${d.company} · ${d.station.borough} · Routes: ${routeList}</div>
+                                <div>Ridership (${yearLabel}): ${ridership}</div>
+                                ${r && r.label ? `<div>Archival label: ${r.label}</div>` : ""}
+                            `);
+                    })
+                    .on("mousemove", (event) => {
+                        tooltip
+                            .style("left", (event.pageX + 12) + "px")
+                            .style("top", (event.pageY - 12) + "px");
+                    })
+                    .on("mouseout", () => tooltip.style("display", "none"))
+                    .merge(dotSel)
+                    .attr("fill", d => companyColor(d.company))
+                    .attr("cx", d => stationXY(d.station)[0])
+                    .attr("cy", d => stationXY(d.station)[1]);
 
                 // Closed stations: render dots regardless of adjacency.
                 const closedYearMap = cumulativeClosed.get(year) || new Map();
@@ -576,20 +618,6 @@
                     .attr("cx", d => projection([d.longitude, d.latitude])[0])
                     .attr("cy", d => projection([d.longitude, d.latitude])[1]);
             }
-
-            // Dominant company per modern route (for the route-toggle swatch).
-            const routeCompany = new Map();
-            sortedRoutes.forEach(route => {
-                const counts = new Map();
-                (routes.get(route) || []).forEach(s => {
-                    const op = operatorById.get(s.station_id);
-                    if (!op) return;
-                    counts.set(op, (counts.get(op) || 0) + 1);
-                });
-                let best = null, bestN = 0;
-                counts.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
-                routeCompany.set(route, best);
-            });
 
             // Controls: year display + company legend + route toggles
             const controls = d3.select("#controls");
