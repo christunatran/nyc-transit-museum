@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Subway Map</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: black;
+        }
+
+        svg {
+            display: block;
+        }
+
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            padding: 12px;
+            border-radius: 8px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        #controls label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            padding: 2px 0;
+            font-size: 13px;
+        }
+
+        #controls .route-swatch {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        #controls h3 {
+            margin: 0 0 8px;
+            font-size: 14px;
+        }
+
+        #year-display {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #year-hint {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 12px;
+            pointer-events: none;
+            display: none;
+            z-index: 20;
+            max-width: 280px;
+        }
+
+        .tooltip .name {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controls"></div>
+    <div id="plot"></div>
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const margin = 20;
+
+        const companyColors = {
+            "IRT": "#d62728",
+            "BMT": "#2ca02c",
+            "IND": "#1f77b4"
+        };
+        const UNKNOWN_COLOR = "#888";
+
+        function companyColor(c) {
+            return companyColors[c] || UNKNOWN_COLOR;
+        }
+
+        const tooltip = d3.select("#tooltip");
+
+        const MIN_YEAR = 1920;
+        const MAX_YEAR = 1945;
+        let currentYear = MIN_YEAR;
+
+        // ---- Fuzzy matching helpers ----
+        function normalizeLabel(s) {
+            if (!s) return "";
+            return s.toLowerCase()
+                .replace(/\(.*?\)/g, " ")
+                .replace(/\belevated\b/g, " ")
+                .replace(/\bel\b/g, " ")
+                .replace(/\bst\b/g, "street")
+                .replace(/\bsts\b/g, "streets")
+                .replace(/\bave?\b/g, "avenue")
+                .replace(/\bsq\b/g, "square")
+                .replace(/\bbklyn\b/g, "brooklyn")
+                .replace(/[^a-z0-9 ]/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function bigramCounts(s) {
+            const m = new Map();
+            for (let i = 0; i < s.length - 1; i++) {
+                const bg = s.substr(i, 2);
+                m.set(bg, (m.get(bg) || 0) + 1);
+            }
+            return m;
+        }
+
+        function diceSim(a, b) {
+            if (!a || !b) return 0;
+            if (a === b) return 1;
+            if (a.length < 2 || b.length < 2) return 0;
+            const A = bigramCounts(a), B = bigramCounts(b);
+            let shared = 0, totalA = 0, totalB = 0;
+            A.forEach(v => totalA += v);
+            B.forEach(v => totalB += v);
+            A.forEach((ca, bg) => { shared += Math.min(ca, B.get(bg) || 0); });
+            return (2 * shared) / (totalA + totalB);
+        }
+
+        function allNumbers(s) {
+            const m = s.match(/\d+/g);
+            return m ? new Set(m) : new Set();
+        }
+
+        // Dice similarity with a street-number constraint: different numbers are a
+        // strong signal of different stations (e.g. "14 St./6 Av." ≠ "14 St./2 Av.").
+        // When both sides contain numbers but they disagree, penalize.
+        function fuzzyScore(a, b) {
+            let score = diceSim(a, b);
+            const na = allNumbers(a), nb = allNumbers(b);
+            if (na.size > 0 && nb.size > 0) {
+                const sameSet = na.size === nb.size && [...na].every(x => nb.has(x));
+                if (!sameSet) {
+                    let shared = 0;
+                    na.forEach(x => { if (nb.has(x)) shared++; });
+                    score *= shared === 0 ? 0.3 : 0.5;
+                }
+            }
+            return score;
+        }
+
+        function bestMatch(query, candidates, threshold) {
+            const qNorm = normalizeLabel(query);
+            if (!qNorm) return null;
+            let best = null, bestScore = threshold;
+            for (const c of candidates) {
+                const s = fuzzyScore(qNorm, c.norm);
+                if (s > bestScore) { bestScore = s; best = c; }
+            }
+            return best;
+        }
+
+        Promise.all([
+            d3.json("./maps/nyc.json"),
+            d3.csv("../modern-subway-data/station-neighbors.csv"),
+            d3.csv("../archival-ridership-data/cleaned_data/master_ridership_linked.csv"),
+            d3.csv("../archival-ridership-data/csv/closed-station-locations.csv"),
+            d3.csv("../operator_tags/master_ridership_with_operator.csv")
+        ]).then(([nyc, stationData, ridershipData, closedData, operatorData]) => {
+            const projection = d3.geoConicConformal()
+                .rotate([96, -39])
+                .fitExtent([[margin, margin], [width - margin, height - margin]], nyc);
+
+            const geoPath = d3.geoPath().projection(projection);
+
+            // Build lookup: route+station_name -> station row
+            const stationLookup = new Map();
+            // Build lookup: station_id -> at least one station row (for id matching)
+            const stationById = new Map();
+            stationData.forEach(d => {
+                stationLookup.set(`${d.route}|${d.station_name}`, d);
+                if (!stationById.has(d.station_id)) stationById.set(d.station_id, d);
+            });
+
+            // Operator lookup: (label|borough) -> dominant company (IRT/BMT/IND).
+            // Prefer concrete operators over "aggregate"/"unknown" when both appear.
+            const operatorByKey = new Map();
+            {
+                const counts = new Map();
+                operatorData.forEach(row => {
+                    const op = (row.original_operator || "").toUpperCase();
+                    if (op !== "IRT" && op !== "BMT" && op !== "IND") return;
+                    const key = `${row.label}|${row.borough}`;
+                    if (!counts.has(key)) counts.set(key, new Map());
+                    const m = counts.get(key);
+                    m.set(op, (m.get(op) || 0) + 1);
+                });
+                counts.forEach((m, key) => {
+                    let best = null, bestN = 0;
+                    m.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
+                    if (best) operatorByKey.set(key, best);
+                });
+            }
+
+            // Station_id -> company, derived by joining the operator file to the
+            // linked ridership file via (label, borough).
+            const operatorById = new Map();
+            {
+                const counts = new Map();
+                ridershipData.forEach(row => {
+                    const op = operatorByKey.get(`${row.label}|${row.borough}`);
+                    if (!op || !row.station_id || row.station_id === "-1") return;
+                    if (!counts.has(row.station_id)) counts.set(row.station_id, new Map());
+                    const m = counts.get(row.station_id);
+                    m.set(op, (m.get(op) || 0) + 1);
+                });
+                counts.forEach((m, sid) => {
+                    let best = null, bestN = 0;
+                    m.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
+                    if (best) operatorById.set(sid, best);
+                });
+            }
+
+            // Fan out transfer stations: each route through a shared station_id gets
+            // a distinct radial pixel offset so overlapping dots/segments read clearly.
+            const OFFSET_RADIUS = 4;
+            const routesByStationId = new Map();
+            stationData.forEach(d => {
+                if (!routesByStationId.has(d.station_id)) routesByStationId.set(d.station_id, new Set());
+                routesByStationId.get(d.station_id).add(d.route);
+            });
+            routesByStationId.forEach((set, id) => {
+                routesByStationId.set(id, Array.from(set).sort());
+            });
+
+            function stationXY(station) {
+                const [px, py] = projection([+station.longitude, +station.latitude]);
+                const routes = routesByStationId.get(station.station_id);
+                if (!routes || routes.length <= 1) return [px, py];
+                const i = routes.indexOf(station.route);
+                if (i < 0) return [px, py];
+                const theta = (2 * Math.PI * i) / routes.length;
+                return [
+                    px + OFFSET_RADIUS * Math.cos(theta),
+                    py + OFFSET_RADIUS * Math.sin(theta)
+                ];
+            }
+
+            // Group stations by route
+            const routes = d3.group(stationData, d => d.route);
+
+            // Build edges from each station to its after-neighbors
+            const routeEdges = new Map();
+            routes.forEach((stations, route) => {
+                const edges = [];
+                const seen = new Set();
+                stations.forEach(station => {
+                    if (!station.latitude || !station.longitude) return;
+                    const afterNames = station.stations_after
+                        ? station.stations_after.split("; ")
+                        : [];
+                    afterNames.forEach(neighborName => {
+                        const neighbor = stationLookup.get(`${route}|${neighborName}`);
+                        if (!neighbor || !neighbor.latitude || !neighbor.longitude) return;
+                        const edgeKey = [station.station_name, neighborName].sort().join("|");
+                        if (seen.has(edgeKey)) return;
+                        seen.add(edgeKey);
+                        edges.push({ source: station, target: neighbor, route });
+                    });
+                });
+                routeEdges.set(route, edges);
+            });
+
+            // ---- Closed stations ----
+            // Filter rows with valid coordinates; deduplicate colocated duplicates by name.
+            const closedStations = [];
+            closedData.forEach((d, i) => {
+                const lat = parseFloat(d.latitude);
+                const lng = parseFloat(d.longitude);
+                if (!isFinite(lat) || !isFinite(lng)) return;
+                if (Math.abs(lat) < 1 || Math.abs(lng) < 1) return;
+                closedStations.push({
+                    closedKey: `C${i}`,
+                    name: d.name,
+                    norm: normalizeLabel(d.name),
+                    latitude: lat,
+                    longitude: lng,
+                    before_station: d.before_station || "",
+                    after_station: d.after_station || "",
+                    company: d.Company || ""
+                });
+            });
+
+            // Candidates for fuzzy-matching before/after references.
+            // Each candidate has {type, key, norm, lat, lng}.
+            const closedCandidates = closedStations.map(c => ({
+                type: "closed", key: c.closedKey, norm: c.norm, lat: c.latitude, lng: c.longitude
+            }));
+            const modernCandidatesSeen = new Set();
+            const modernCandidates = [];
+            stationData.forEach(d => {
+                if (modernCandidatesSeen.has(d.station_id)) return;
+                if (!d.latitude || !d.longitude) return;
+                modernCandidatesSeen.add(d.station_id);
+                modernCandidates.push({
+                    type: "modern",
+                    key: d.station_id,
+                    norm: normalizeLabel(d.station_name),
+                    lat: +d.latitude, lng: +d.longitude
+                });
+            });
+            const adjacencyCandidates = closedCandidates.concat(modernCandidates);
+
+            // Pre-resolve before/after for each closed station via fuzzy match.
+            closedStations.forEach(c => {
+                c.adjacent = [];
+                [c.before_station, c.after_station].forEach(ref => {
+                    if (!ref || ref === "-") return;
+                    const m = bestMatch(ref, adjacencyCandidates, 0.55);
+                    if (m && m.key !== c.closedKey) c.adjacent.push(m);
+                });
+            });
+
+            // Cache for ridership label -> closed station (fuzzy, once per unique label).
+            const closedLabelCache = new Map();
+            function resolveClosedLabel(label) {
+                if (closedLabelCache.has(label)) return closedLabelCache.get(label);
+                const m = bestMatch(label, closedCandidates, 0.55);
+                const result = m ? closedStations.find(c => c.closedKey === m.key) : null;
+                closedLabelCache.set(label, result);
+                return result;
+            }
+
+            // Index ridership: year -> Map<station_id, ridershipRow> for modern stations
+            // and year -> Map<closedKey, ridershipRow> for closed stations.
+            // Rows that don't resolve to either are logged and skipped.
+            const ridershipByYear = new Map();
+            const closedRidershipByYear = new Map();
+            ridershipData.forEach(row => {
+                const year = +row.year;
+                if (stationById.has(row.station_id)) {
+                    if (!ridershipByYear.has(year)) ridershipByYear.set(year, new Map());
+                    ridershipByYear.get(year).set(row.station_id, row);
+                    return;
+                }
+                if (row.station_id === "-1" && row.label && row.label.toLowerCase().includes("closed")) {
+                    const closed = resolveClosedLabel(row.label);
+                    if (!closed) {
+                        console.log("Unmatched closed-station label:", row);
+                        return;
+                    }
+                    if (!closedRidershipByYear.has(year)) closedRidershipByYear.set(year, new Map());
+                    closedRidershipByYear.get(year).set(closed.closedKey, row);
+                    return;
+                }
+                console.log("Unmatched station_id:", row);
+            });
+
+            // Carry-forward snapshots: for each year, include the most recent prior
+            // ridership row for any station that was ever active. If a station has
+            // data for the current year, that wins; otherwise the last known row.
+            const cumulativeRidership = new Map();
+            const cumulativeClosed = new Map();
+            const runningModern = new Map();
+            const runningClosed = new Map();
+            for (let y = MIN_YEAR; y <= MAX_YEAR; y++) {
+                const modernYear = ridershipByYear.get(y);
+                if (modernYear) modernYear.forEach((row, sid) => runningModern.set(sid, row));
+                cumulativeRidership.set(y, new Map(runningModern));
+
+                const closedYear = closedRidershipByYear.get(y);
+                if (closedYear) closedYear.forEach((row, key) => runningClosed.set(key, row));
+                cumulativeClosed.set(y, new Map(runningClosed));
+            }
+
+            const svg = d3.select("#plot").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // Draw NYC neighborhoods
+            svg.append("g")
+                .selectAll("path")
+                .data(nyc.features)
+                .enter().append("path")
+                .attr("d", geoPath)
+                .attr("fill", "gray")
+                .attr("stroke", "#2a2a4a")
+                .attr("stroke-width", 0.5);
+
+            // Per-route containers; segments and stations are re-bound each year.
+            const routeGroups = {};
+            const sortedRoutes = Array.from(routes.keys()).sort();
+
+            sortedRoutes.forEach(route => {
+                const g = svg.append("g").attr("class", `route-${route}`);
+                g.append("g").attr("class", "segments");
+                g.append("g").attr("class", "stations");
+                routeGroups[route] = g;
+            });
+
+            // Closed-station container (drawn above modern routes).
+            const closedGroup = svg.append("g").attr("class", "closed-stations");
+            closedGroup.append("g").attr("class", "segments");
+            closedGroup.append("g").attr("class", "stations");
+
+            function renderYear(year) {
+                d3.select("#year-display").text(year);
+                const yearMap = cumulativeRidership.get(year) || new Map();
+                const activeIds = new Set(yearMap.keys());
+
+                sortedRoutes.forEach(route => {
+                    const g = routeGroups[route];
+                    const allEdges = routeEdges.get(route) || [];
+                    const allStations = routes.get(route) || [];
+
+                    const edges = allEdges.filter(e =>
+                        activeIds.has(e.source.station_id) && activeIds.has(e.target.station_id));
+                    const stations = allStations.filter(s =>
+                        activeIds.has(s.station_id) && s.latitude && s.longitude);
+
+                    const segSel = g.select(".segments").selectAll("line").data(edges);
+                    segSel.exit().remove();
+                    segSel.enter().append("line")
+                        .attr("stroke-width", 2)
+                        .attr("stroke-linecap", "round")
+                        .attr("opacity", 0.8)
+                        .merge(segSel)
+                        .attr("stroke", d => companyColor(operatorById.get(d.source.station_id)))
+                        .attr("x1", d => stationXY(d.source)[0])
+                        .attr("y1", d => stationXY(d.source)[1])
+                        .attr("x2", d => stationXY(d.target)[0])
+                        .attr("y2", d => stationXY(d.target)[1]);
+
+                    const dotSel = g.select(".stations").selectAll("circle")
+                        .data(stations, d => `${d.route}|${d.station_id}`);
+                    dotSel.exit().remove();
+                    dotSel.enter().append("circle")
+                        .attr("r", 2.5)
+                        .attr("stroke", "#1a1a2e")
+                        .attr("stroke-width", 0.5)
+                        .on("mouseover", (event, d) => {
+                            const r = yearMap.get(d.station_id);
+                            const ridership = r && r.ridership
+                                ? (+r.ridership).toLocaleString()
+                                : "—";
+                            const sourceYear = r ? +r.year : year;
+                            const yearLabel = sourceYear === year
+                                ? `${year}`
+                                : `${sourceYear}, carried forward`;
+                            const company = operatorById.get(d.station_id) || "Unknown";
+                            tooltip.style("display", "block")
+                                .html(`
+                                    <div class="name">${d.stop_name || d.station_name}</div>
+                                    <div>Route: ${d.route} | Borough: ${d.borough} | ${company}</div>
+                                    <div>Ridership (${yearLabel}): ${ridership}</div>
+                                    ${r && r.label ? `<div>Archival label: ${r.label}</div>` : ""}
+                                `);
+                        })
+                        .on("mousemove", (event) => {
+                            tooltip
+                                .style("left", (event.pageX + 12) + "px")
+                                .style("top", (event.pageY - 12) + "px");
+                        })
+                        .on("mouseout", () => tooltip.style("display", "none"))
+                        .merge(dotSel)
+                        .attr("fill", d => companyColor(operatorById.get(d.station_id)))
+                        .attr("cx", d => stationXY(d)[0])
+                        .attr("cy", d => stationXY(d)[1]);
+                });
+
+                // Closed stations: render dots regardless of adjacency.
+                const closedYearMap = cumulativeClosed.get(year) || new Map();
+                const activeClosedKeys = new Set(closedYearMap.keys());
+                const activeClosed = closedStations.filter(c => activeClosedKeys.has(c.closedKey));
+                const closedByKey = new Map(closedStations.map(c => [c.closedKey, c]));
+
+                // Fuzzy-derived edges to adjacent stations (closed or modern),
+                // rendered only when both endpoints are active in the selected year.
+                const closedEdgesRaw = [];
+                activeClosed.forEach(c => {
+                    c.adjacent.forEach(adj => {
+                        let active = false;
+                        if (adj.type === "closed") {
+                            active = activeClosedKeys.has(adj.key);
+                        } else if (adj.type === "modern") {
+                            active = activeIds.has(adj.key);
+                        }
+                        if (!active) return;
+                        closedEdgesRaw.push({
+                            sourceKey: c.closedKey,
+                            targetKey: `${adj.type}|${adj.key}`,
+                            sx: c.longitude, sy: c.latitude,
+                            tx: adj.lng, ty: adj.lat
+                        });
+                    });
+                });
+                const seenEdges = new Set();
+                const closedEdges = [];
+                closedEdgesRaw.forEach(e => {
+                    const k = [e.sourceKey, e.targetKey].sort().join("~");
+                    if (seenEdges.has(k)) return;
+                    seenEdges.add(k);
+                    e.edgeKey = k;
+                    closedEdges.push(e);
+                });
+
+                const cSeg = closedGroup.select(".segments").selectAll("line")
+                    .data(closedEdges, d => d.edgeKey);
+                cSeg.exit().remove();
+                cSeg.enter().append("line")
+                    .attr("stroke-width", 1.5)
+                    .attr("stroke-linecap", "round")
+                    .attr("stroke-dasharray", "3,2")
+                    .attr("opacity", 0.75)
+                    .merge(cSeg)
+                    .attr("stroke", d => {
+                        const src = closedByKey.get(d.sourceKey);
+                        return companyColor(src && src.company);
+                    })
+                    .attr("x1", d => projection([d.sx, d.sy])[0])
+                    .attr("y1", d => projection([d.sx, d.sy])[1])
+                    .attr("x2", d => projection([d.tx, d.ty])[0])
+                    .attr("y2", d => projection([d.tx, d.ty])[1]);
+
+                const cDot = closedGroup.select(".stations").selectAll("circle")
+                    .data(activeClosed, d => d.closedKey);
+                cDot.exit().remove();
+                cDot.enter().append("circle")
+                    .attr("r", 2.5)
+                    .attr("stroke", "#1a1a2e")
+                    .attr("stroke-width", 0.6)
+                    .on("mouseover", (event, d) => {
+                        const r = closedYearMap.get(d.closedKey);
+                        const ridership = r && r.ridership
+                            ? (+r.ridership).toLocaleString()
+                            : "—";
+                        const sourceYear = r ? +r.year : year;
+                        const yearLabel = sourceYear === year
+                            ? `${year}`
+                            : `${sourceYear}, carried forward`;
+                        tooltip.style("display", "block")
+                            .html(`
+                                <div class="name">${d.name}</div>
+                                <div>Closed station${d.company ? " · " + d.company : ""}</div>
+                                <div>Ridership (${yearLabel}): ${ridership}</div>
+                            `);
+                    })
+                    .on("mousemove", (event) => {
+                        tooltip
+                            .style("left", (event.pageX + 12) + "px")
+                            .style("top", (event.pageY - 12) + "px");
+                    })
+                    .on("mouseout", () => tooltip.style("display", "none"))
+                    .merge(cDot)
+                    .attr("fill", d => companyColor(d.company))
+                    .attr("cx", d => projection([d.longitude, d.latitude])[0])
+                    .attr("cy", d => projection([d.longitude, d.latitude])[1]);
+            }
+
+            // Dominant company per modern route (for the route-toggle swatch).
+            const routeCompany = new Map();
+            sortedRoutes.forEach(route => {
+                const counts = new Map();
+                (routes.get(route) || []).forEach(s => {
+                    const op = operatorById.get(s.station_id);
+                    if (!op) return;
+                    counts.set(op, (counts.get(op) || 0) + 1);
+                });
+                let best = null, bestN = 0;
+                counts.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
+                routeCompany.set(route, best);
+            });
+
+            // Controls: year display + company legend + route toggles
+            const controls = d3.select("#controls");
+            controls.append("div").attr("id", "year-display");
+            controls.append("div").attr("id", "year-hint").text("← / → to change year");
+
+            controls.append("h3").text("Company");
+            ["IRT", "BMT", "IND"].forEach(co => {
+                const label = controls.append("label");
+                label.append("span").attr("class", "route-swatch")
+                    .style("background-color", companyColors[co]);
+                label.append("span").text(co);
+            });
+
+            controls.append("h3").text("Routes");
+            const allLabel = controls.append("label");
+            allLabel.append("input")
+                .attr("type", "checkbox")
+                .property("checked", true)
+                .on("change", function () {
+                    const checked = this.checked;
+                    controls.selectAll(".route-toggle").property("checked", checked);
+                    sortedRoutes.forEach(r => {
+                        routeGroups[r].style("display", checked ? null : "none");
+                    });
+                });
+            allLabel.append("span").text("All");
+
+            sortedRoutes.forEach(route => {
+                const color = companyColor(routeCompany.get(route));
+                const label = controls.append("label");
+                label.append("input")
+                    .attr("type", "checkbox")
+                    .attr("class", "route-toggle")
+                    .property("checked", true)
+                    .on("change", function () {
+                        routeGroups[route].style("display", this.checked ? null : "none");
+                    });
+                label.append("span").attr("class", "route-swatch").style("background-color", color);
+                label.append("span").text(route);
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowLeft" && currentYear > MIN_YEAR) {
+                    currentYear--;
+                    renderYear(currentYear);
+                } else if (event.key === "ArrowRight" && currentYear < MAX_YEAR) {
+                    currentYear++;
+                    renderYear(currentYear);
+                }
+            });
+
+            renderYear(currentYear);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+,name,latitude,longitude,before_station,after_station,Company
+,City Hall Terminal (Closed 12/31/45),40.7126,-74.0067,Brooklyn bridge city hall,,BMT
+,Cortlandt St./6 Av. El (Closed 6/11/40),40.710833,-74.012403,Barclay St (elevated),Rector St (elevated),IRT
+,Court St./Fulton El (Closed 5/31/40),40.707789,-74.004392,Franklin Sq (elevated),Hanover Sq (elevated),IRT
+,Court/Schermerhorn (Closed 6/1/46),40.6904,-73.99,Hoyt-Schermerhorn,,IND
+,Desbroses St./6Av El (Closed 6/11/40),40.723417,-74.009581,Houston St (elevated),Franklin Sq (elevated),IRT
+,Desbrosses St./6Av El (Closed 6/11/40),40.723417,-74.009581,Houston St (elevated),Franklin Sq (elevated),IRT
+,Duffield St./Fulton El (Closed 5/31/40),40.690242,-73.98433,Boerum Place (elevated),Flatbush Avenue (elevated),BMT
+,Elm Place/Fulton El (Closed 5/31/40),40.690242,-73.98433,Boerum Place (elevated),Flatbush Avenue (elevated),BMT
+,Flatbush Ave./Flin El (Closed 5/31/40),40.688923,-73.98095,Elm Place - Duffield (elevated),Lafayette Ave (elevated),BMT
+,Flatbush Ave./Ftn El (Closed 5/31/40),40.688923,-73.98095,Elm Place - Duffield (elevated),Lafayette Ave (elevated),BMT
+,Franklin Sq./3 Av. El (Closed 12/22/50),40.709444,-74.001389,Chatham Square,Fulton Street,IRT
+,Franklin St./3 Av. El (Closed 12/22/50),40.709444,-74.001389,Chatham Square,Fulton Street,IRT
+,Franklin St./6 Av. El (Closed 6/11/40),40.718933,-74.006539,Grand Street,Chambers st,IRT
+,Fulton St./3 Av. El (Closed 12/22/50),40.707789,-74.004392,Franklin Sq (elevated),Hanover Sq (elevated),IRT
+,Fulton St./5 Av. El (Closed 5/31/40),40.707789,-74.004392,Franklin Sq (elevated),Hanover Sq (elevated),IRT
+,Fulton St./6 Av. El (Closed 6/11/40),40.707789,-74.004392,Franklin Sq (elevated),Hanover Sq (elevated),IRT
+,Grand St./2 Av El (Closed 6/13/42),40.717375,-73.991456,Rivington Street,Canal Street,IRT
+,Grand St./2 Av. El (Closed 6/13/42),40.717375,-73.991456,Rivington Street,Canal Street,IRT
+,Hanover Sq./3 Av. El (Closed 12/22/50),40.704661,-74.009267,Fulton Street,South Ferry,IRT
+,Houston St./6 Av. El (Closed 6/11/40),-,-,-,-,-
+,Lafayette Ave./Flin El (Closed 5/31/40),40.678848,-73.973378,Flatbush Ave./Ftn El (Closed 5/31/40),Cumberland Ave./Fltn El.,BMT
+,Lafayette Ave./Ftn El (Closed 5/31/40),40.678848,-73.973378,Flatbush Ave./Ftn El (Closed 5/31/40),Cumberland Ave./Fltn El.,BMT
+,Myrtle Ave./Fulton El (Closed 5/31/40),40.707789,-74.004392,Franklin Sq (elevated),Hanover Sq (elevated),IRT
+,Park Row/Bklyn Bridge (Closed 3/5/44),40.712222,-74.004444,Terminus,Sands St./Bklyn Bridge (Closed 3/5/44),BMT
+,Park Row/Bklyn Bridge (Closed 3/6/44),40.712222,-74.004444,Terminus,Sands St./Bklyn Bridge (Closed 3/5/44),BMT
+,Rector St./6 Av. El (Closed 6/11/40),40.707742,-74.013,Cortlandt St./6 Av. El (Closed 6/11/40),Battery Place,IRT
+,Rivington St./2 Av. El (Closed 6/13/42),40.720503,-73.989867,First St,Grand St./2 Av El (Closed 6/13/42),IRT
+,Sands St./Bklyn Bridge (Closed 3/5/44),40.699943,-73.988345,Park Row/Bklyn Bridge (Closed 3/6/44),Adams St./Bklyn Bridge (Closed 3/5/44),BMT
+,Warren St./6 Av. El (Closed 6/11/40),40.715583,-74.011214,Desbrosses St./6Av El (Closed 6/11/40),Cortlandt St./6 Av. El (Closed 6/11/40),IRT
+,1 St./2 Av. El (Closed 6/13/42),40.723247,-73.988483,,,IRT
+,129 St. (Closed 12/22/50),40.805833,-73.933056,,,IRT
+,14 St./2 Av. El (Closed 6/13/42),40.731325,73.9826,,,IRT
+,14 St./6 Av. El (Closed 6/11/40),40.7373,-73.9969,,,IRT
+,18 St./Park Ave. S. (Closed 11/8/48),40.737,-73.989,,,IRT
+,19 St./2 Av. El (Closed 6/13/42),40.734397,-73.980325,,,IRT
+,23 St./2 Av. El (Closed 6/13/42),40.7375,-73.98,,,IRT
+,23 St./6 Av. El (Closed 6/11/40),40.742875,-73.992817,,,IRT
+,30 St./6 Av. El (Closed 6/11/40),40.7474764,-73.9896798,,,IRT
+,34 St./2 Av. El (Closed 6/13/42),40.744808,-73.975819,,,IRT
+,34 St./3 Av. El (Closed 6/13/42),40.745667,-73.978056,,,IRT
+,34 St./6 Av. El (Closed 6/11/40),40.7498986,-73.9877701,,,IRT
+,42 St./2 Av. El (Closed 6/13/42),40.749814,-73.972197,,,IRT
+,42 St./3 Av. El (Closed 6/13/42),40.750833,-73.974389,,,IRT
+,42 St./6 Av. El (Closed 6/11/40),40.754847,-73.984122,,,IRT
+,50 St./2 Av. El (Closed 6/13/42),40.754864,-73.968528,,,IRT
+,50 St./6 Av. El (Closed 6/11/40),40.759875,-73.980436,,,IRT
+,57 St./2 Av. El (Closed 6/13/42),40.759311,-73.965297,,,IRT
+,57 St./3 Av. El (Closed 6/13/42),40.7604232,-73.9674819,,,IRT
+,59 St./9 Av. El (Closed 6/11/40),40.769208,-73.984767,,,IRT
+,8 St./2 Av. El (Closed 6/13/42),40.727592,-73.985303,,,IRT
+,Adams St./Bklyn Bridge (Closed 3/5/44),40.693902,-73.988694,,,BMT
+,Atlantic Ave./5 Av. El (Closed 5/31/40),40.683592,-73.97685,,,BMT
+,Barclay St./6 Av. El (Closed 6/11/40),40.713611,-74.011683,,,BMT
+,Battery Pl./6 Av. El (Closed 6/11/40),40.704547,-74.015006,,,IRT
+,Boerum Pl./Fulton El (Closed 5/31/40),40.692136,-73.989034,,,BMT
+,Canal St./2 Av. El (Closed 6/13/42),40.715122,-73.992636,,,IRT
+,Chatham Sq./2 Av. El (Closed 6/13/42),40.713611,-73.998056,,,IRT
+,Christopher St./6 Av El (Closed 6/11/40),40.732864,-74.007539,,,IRT
+,Christopher St/6 Av El (Closed 6/11/40),-,-,,,

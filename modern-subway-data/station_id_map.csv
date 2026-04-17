@@ -1,0 +1,1273 @@
+label,borough,station_id,modern_station_name,match_score
+*123d Street,Manhattan,D22,GRAND STREET,0.7364
+*42d Street,Manhattan,D16,42ND STREET-BRYANT PARK,0.8500
+1 Ave./14 St.,Manhattan,L06,1ST AVENUE-14ST,1.0086
+1 St.,,233,HOYT STREET,0.7368
+1 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+102nd Street,Brooklyn,L28,EAST 105TH STREET,0.8200
+103 St.,Manhattan,706,103RD STREET,1.1500
+103 St.,Queens,706,103RD STREET,1.2500
+103d Street,Manhattan,706,103RD STREET,1.1500
+103rd Street,Manhattan,706,103RD STREET,1.1500
+"103rd Street (from Sept. 10, 1932)",Manhattan,706,103RD STREET,1.1500
+103th Street (Alburtis Avenue),Queens,706,103RD STREET,1.2500
+104 St.,,J14,104TH STREET,1.1500
+104 St.,Brooklyn,J14,104TH STREET,1.1500
+104 St.,Queens,J14,104TH STREET,1.2500
+104-102 Sts.,Queens,J14,104TH STREET,1.0500
+104th St. (Alburtis Ave.),Queens,J14,104TH STREET,1.2500
+104th Street,Manhattan,J14,104TH STREET,1.1500
+105 St.,,L28,EAST 105TH STREET,0.8000
+105 St.,Manhattan,L28,EAST 105TH STREET,0.8000
+105th Street,Queens,H14,BEACH 105TH STREET,0.8692
+106 St.,Manhattan,D22,GRAND STREET,0.7364
+106th Street,Manhattan,D22,GRAND STREET,0.7364
+110 St.,,227,110TH STREET-LENOX,0.9192
+110 St.,Brooklyn,227,110TH STREET-LENOX,0.9192
+110 St.,Manhattan,227,110TH STREET-LENOX,1.0192
+110 St./Central Park N.,Manhattan,A17,110TH STREET-CATHEDRAL PKWY,1.0425
+110th Street,Manhattan,227,110TH STREET-LENOX,1.0192
+"110th Street (from Sept. 10, 1932)",Manhattan,227,110TH STREET-LENOX,1.0192
+111 St.,,J13,111TH STREET-JAMAICA,0.8643
+111 St.,Manhattan,J13,111TH STREET-JAMAICA,0.8643
+111 St.,Queens,J13,111TH STREET-JAMAICA,0.9643
+111th Street,Brooklyn,J13,111TH STREET-JAMAICA,0.8643
+111th Street,Queens,J13,111TH STREET-JAMAICA,0.9643
+111th Street (from 10/13/22),Queens,J13,111TH STREET-JAMAICA,0.9643
+111th Street (from 4/8/23),Queens,J13,111TH STREET-JAMAICA,0.9643
+116 St.,,A16,116TH STREET-8AV,0.9833
+116 St.,Brooklyn,A16,116TH STREET-8AV,0.9833
+116 St.,Manhattan,A16,116TH STREET-8AV,1.0833
+116 St./Columbia Univ.,Manhattan,A16,116TH STREET-8AV,0.8409
+116th Street,Manhattan,A16,116TH STREET-8AV,1.0833
+116th Street,Queens,A16,116TH STREET-8AV,0.9833
+"116th Street (from Sept. 10, 1932)",Manhattan,A16,116TH STREET-8AV,1.0833
+117 St.,,233,HOYT STREET,0.6667
+117 St.,Manhattan,D22,GRAND STREET,0.7364
+117th Street,Queens,H06,BEACH 67TH STREET,0.7400
+11th Street - Courthouse Square,Manhattan,A32,WEST 4TH STREET-WASHINGTON SQUARE (UPPER),0.6517
+120th Street,Manhattan,D22,GRAND STREET,0.7364
+121 St.,,J12,121ST STREET,1.1500
+121 St.,Manhattan,J12,121ST STREET,1.1500
+121 St.,Queens,J12,121ST STREET,1.2500
+121st Street,Brooklyn,J12,121ST STREET,1.1500
+121st Street,Queens,J12,121ST STREET,1.2500
+123d Street,Manhattan,D22,GRAND STREET,0.7364
+125 St.,,A15,125TH STREET-8AV,0.9833
+125 St.,Brooklyn,A15,125TH STREET-8AV,0.9833
+125 St.,Manhattan,A15,125TH STREET-8AV,1.0833
+125th Street,Manhattan,A15,125TH STREET-8AV,1.0833
+125th Street,Queens,A15,125TH STREET-8AV,0.9833
+"125th Street (from Sept. 10, 1932)",Manhattan,A15,125TH STREET-8AV,1.0833
+129 St. (Closed 12/22/50),Manhattan,-1,CLOSED,1.0000
+129th Street,Manhattan,D22,GRAND STREET,0.7364
+13 Ave.,Brooklyn,D37,AVENUE U,0.8059
+130 St.,,213,EAST 180TH STREET,0.7200
+130 St.,Brooklyn,L28,EAST 105TH STREET,0.8200
+130th Street,Manhattan,D22,GRAND STREET,0.7364
+133 St./3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+133 St/3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+133d Street,Bronx,205,EAST 233RD STREET,0.8200
+133th Street—3d Avenue,Bronx,609,ST. LAWRENCE AVENUE,0.7829
+135 St.,,A14,135TH STREET-8AV,0.9833
+135 St.,Brooklyn,A14,135TH STREET-8AV,0.9833
+135 St.,Manhattan,A14,135TH STREET-8AV,1.0833
+135th Street,Manhattan,A14,135TH STREET-8AV,1.0833
+"135th Street (from Sept. 10, 1932)",Manhattan,A14,135TH STREET-8AV,1.0833
+137 St.,Manhattan,115,137TH STREET-BWAY,0.9397
+138 St./3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+138 St./Grand Concourse,Bronx,416,138TH STREET-GRAND CONCOURSE,1.2500
+138 St/3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+138th Street,Bronx,619,138TH STREET-3AV,0.9397
+"138th Street, Grand Concourse",Bronx,416,138TH STREET-GRAND CONCOURSE,1.2500
+138th Street—3d Avenue,Bronx,619,138TH STREET-3AV,1.2500
+138th St—Mott Haven,Bronx,619,138TH STREET-3AV,1.0500
+13th Avenue,Brooklyn,D37,AVENUE U,0.8059
+14 St./1 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+14 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+14 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+14 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+14 St./6-7 Aves. (IND opened 12/15/40),Manhattan,132,14TH STREET-7AV,1.1731
+14 St./8 Ave.,Manhattan,132,14TH STREET-7AV,1.1944
+140 St.,,213,EAST 180TH STREET,0.7200
+140 St.,Brooklyn,L28,EAST 105TH STREET,0.8200
+140th Street,Manhattan,D22,GRAND STREET,0.7364
+143 St./3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+143d Street,Bronx,616,143RD STREET,1.2500
+145 St.,,D13,145TH STREET,1.1500
+145 St.,Brooklyn,D13,145TH STREET,1.1500
+145 St.,Manhattan,D13,145TH STREET,1.2500
+145 St./3 Av. El (Closed 5/11/55),Bronx,-1,CLOSED,1.0000
+145th Street,Manhattan,D13,145TH STREET,1.2500
+145th Street (IRT),Manhattan,D13,145TH STREET,1.2500
+"145th Street (from Sept. 10, 1932)",Manhattan,D13,145TH STREET,1.2500
+148 St. (Opened 5/13/68),Manhattan,301,148TH STREET-LENOX,1.0192
+149 St./Grand Concourse,Bronx,222,149TH STREET-GRAND CONCOURSE (LOWER),1.2500
+149th St. Grand Conc'se (Lower Level),Bronx,222,149TH STREET-GRAND CONCOURSE (LOWER),1.1888
+"149th St., Grand Concourse (Upper Level)",Bronx,222,149TH STREET-GRAND CONCOURSE (LOWER),1.2500
+149th Street,Bronx,221,149TH STREET-3AV,0.9397
+149th Street & Third Avenue,Bronx,221,149TH STREET-3AV,1.1071
+14th Street,Bronx,A31,14TH STREET-8AV,0.9682
+14th Street,Manhattan,A31,14TH STREET-8AV,1.0682
+14th Street,Queens,A31,14TH STREET-8AV,0.9682
+"14th Street (from Sept. 10, 1932)",Manhattan,A31,14TH STREET-8AV,1.0682
+15 St.,Bronx,213,EAST 180TH STREET,0.7667
+15 St.,Brooklyn,L28,EAST 105TH STREET,0.8500
+150th Street,Manhattan,B23,BAY 50TH STREET,0.7826
+151 St.,Brooklyn,L28,EAST 105TH STREET,0.8200
+151st Street,Manhattan,D22,GRAND STREET,0.7364
+155 St.,Bronx,A11,155TH STREET-8AV,0.9833
+155 St.,Manhattan,A11,155TH STREET-8AV,1.0833
+155th Street,Bronx,A11,155TH STREET-8AV,0.9833
+155th Street (from June '25),Manhattan,A11,155TH STREET-8AV,1.0833
+"155th Street (from Sept. 10, 1932)",Manhattan,A11,155TH STREET-8AV,1.0833
+"155th Street-Eighth Avenue (from July 1, 1933)",Bronx,D12,155TH STREET-ST. NICHOLAS AV,0.8868
+156 St.,Bronx,213,EAST 180TH STREET,0.7400
+156th Street,Bronx,213,EAST 180TH STREET,0.7400
+157 St.,Manhattan,113,157TH STREET-BWAY,0.9397
+157th Street,Manhattan,113,157TH STREET-BWAY,0.9397
+"15th Street-Prospect Park (from October 7, 1933)",Brooklyn,F25,15TH STREET-PROSPECT PARK,1.2500
+16 St.,Brooklyn,233,HOYT STREET,0.8000
+160 St. (Closed 9/11/77),Queens,-1,CLOSED,1.0000
+161 St.,Bronx,414,161ST STREET-YANKEE STADIUM,0.8214
+161 St./Yankee Stadium,Bronx,414,161ST STREET-YANKEE STADIUM,1.2500
+161st Street,Bronx,414,161ST STREET-YANKEE STADIUM,0.8214
+"161st Street (from July 1, 1933)",Bronx,414,161ST STREET-YANKEE STADIUM,0.8214
+163 St.,Manhattan,A10,163RD STREET-8AV,1.0833
+"163rd Street (from Sept. 10, 1932)",Manhattan,A10,163RD STREET-8AV,1.0833
+166 St.,Bronx,213,EAST 180TH STREET,0.7400
+166th Street,Bronx,213,EAST 180TH STREET,0.7400
+167 St.,Bronx,413,167TH STREET,1.2500
+167th Street,Bronx,413,167TH STREET,1.2500
+168 St.,Manhattan,A09,168TH STREET-8AV,1.0833
+168 St. (Closed 9/11/77),Queens,-1,CLOSED,1.0000
+168 St./Broadway,Manhattan,112,168TH STREET-BWAY,1.2500
+168 St/Broadway,Manhattan,112,168TH STREET-BWAY,1.2500
+168th Street,Manhattan,A09,168TH STREET-8AV,1.0833
+"168th Street (from Sept. 10, 1932)",Manhattan,A09,168TH STREET-8AV,1.0833
+169 St.,Bronx,F02,169TH STREET,1.1500
+169 St.,Queens,F02,169TH STREET,1.2500
+169th Street,Bronx,F02,169TH STREET,1.1500
+169th Street,Queens,F02,169TH STREET,1.2500
+"169th Street (from April 24, 1937)",Manhattan,F02,169TH STREET,1.1500
+16th Street,Brooklyn,233,HOYT STREET,0.8000
+170 St.,Bronx,412,170TH STREET,1.2500
+170th Street,Bronx,412,170TH STREET,1.2500
+"170th Street (from July 1, 1933)",Bronx,412,170TH STREET,1.2500
+174 St.,Bronx,215,174TH STREET,1.2500
+174 St./Southern Blvd.,Bronx,215,174TH STREET,0.7628
+174-175 Sts.,Bronx,D08,174TH-175TH STREETS,1.2500
+174th Street,Bronx,215,174TH STREET,1.2500
+"174th-175th Streets (from July 1, 1933)",Bronx,D08,174TH-175TH STREETS,1.2500
+175 St.,Manhattan,A07,175TH STREET-8AV,1.0833
+"175th Street (from Sept. 10, 1932)",Manhattan,A07,175TH STREET-8AV,1.0833
+176 St.,Bronx,410,176TH STREET,1.2500
+176th Street,Bronx,410,176TH STREET,1.2500
+177 St.,Bronx,608,177TH STREET-PARKCHESTER,0.8750
+177th Street,Bronx,608,177TH STREET-PARKCHESTER,0.8750
+179 St. (Opened 12/11/50),Queens,F01,179TH STREET-JAMAICA,0.9643
+18 Ave.,Brooklyn,B19,18TH AVENUE,1.2500
+18 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+18 St./7 Ave.,Manhattan,131,18TH STREET-7AV,1.2500
+18 St./Park Ave. S. (Closed 11/8/48),Manhattan,-1,CLOSED,1.0000
+180 St.,Bronx,213,EAST 180TH STREET,0.9000
+180 Street (Closed 8/4/52),Bronx,-1,CLOSED,1.0000
+180th Street,Bronx,213,EAST 180TH STREET,0.9000
+180th Street (Bronx Park),Bronx,213,EAST 180TH STREET,0.9000
+180th Street (Bronx Pk.),Bronx,213,EAST 180TH STREET,0.9000
+180th St—Morris Pk. Ave.,Bronx,609,ST. LAWRENCE AVENUE,0.6882
+181 St.,Manhattan,A06,181ST STREET-8AV,1.0833
+181st Street,Manhattan,A06,181ST STREET-8AV,1.0833
+"181st Street (from Sept. 10, 1932)",Manhattan,A06,181ST STREET-8AV,1.0833
+182-183 Sts.,Bronx,D06,182ND-183RD STREETS,1.2500
+"182nd-183rd Streets (from July 1, 1933)",Bronx,D06,182ND-183RD STREETS,1.2500
+183 St.,Bronx,408,183RD STREET,1.2500
+183d Street,Bronx,408,183RD STREET,1.2500
+"183rd Street (from July 1, 1933)",Bronx,408,183RD STREET,1.2500
+18th Avenue,Brooklyn,B19,18TH AVENUE,1.2500
+18th Avenue (also 17th Avenue),Brooklyn,B19,18TH AVENUE,1.2500
+18th Street,Bronx,213,EAST 180TH STREET,0.8500
+18th Street,Queens,131,18TH STREET-7AV,0.8167
+18th Street (to 12/4/38),Manhattan,131,18TH STREET-7AV,0.9167
+19 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+190 St.,Manhattan,A05,190TH STREET-8AV,1.0833
+191 St.,Manhattan,D22,GRAND STREET,0.7364
+191st Street,Manhattan,D22,GRAND STREET,0.7364
+19th Street,Queens,H13,BEACH 98TH STREET,0.7667
+1st Avenue,Brooklyn,L06,1ST AVENUE-14ST,0.9921
+1st Avenue (Hoebe Avenue),Brooklyn,L06,1ST AVENUE-14ST,0.9921
+1st Avenue (from 6/30/24),Brooklyn,L06,1ST AVENUE-14ST,0.9921
+1st Street,Brooklyn,233,HOYT STREET,0.8368
+1st Street,Queens,H14,BEACH 105TH STREET,0.7667
+2 Ave./Houston St.,Manhattan,F14,2ND AVENUE,0.7661
+20 Ave.,Brooklyn,B20,20TH AVENUE,1.2500
+20 St.,Brooklyn,B23,BAY 50TH STREET,0.8273
+200 St.,Bronx,213,EAST 180TH STREET,0.7400
+200th Street,Bronx,213,EAST 180TH STREET,0.7400
+204 St.,Bronx,201,EAST 241ST STREET,0.8200
+204th Street,Bronx,201,EAST 241ST STREET,0.8200
+205 St.,Bronx,D01,205TH STREET-NORWOOD,0.9643
+207 St.,Manhattan,A02,207TH STREET-8AV,1.0833
+207th Street,Manhattan,A02,207TH STREET-8AV,1.0833
+"207th Street (from Sept. 10, 1932)",Manhattan,A02,207TH STREET-8AV,1.0833
+20th Avenue,Brooklyn,B20,20TH AVENUE,1.2500
+20th Street,Brooklyn,B23,BAY 50TH STREET,0.8273
+21 St (Van Alst) Ave./Court Sq.,Queens,B04,21ST STREET-QUEENSBRIDGE,0.7598
+21 St. (Van Alst),Queens,G24,21ST STREET,1.2500
+21 St./Queensbridge (Opened 10/29/89),Queens,B04,21ST STREET-QUEENSBRIDGE,1.2500
+21 St/Queensbridge (Opened 10/29/89),Queens,B04,21ST STREET-QUEENSBRIDGE,1.2500
+215 St.,Manhattan,107,215TH STREET-10AV,0.9167
+215th Street,Manhattan,107,215TH STREET-10AV,0.9167
+215th Street-Inham Pk.,Manhattan,107,215TH STREET-10AV,0.8354
+219 St.,Bronx,207,219TH STREET-WHITE PLAINS,0.8561
+21st Street,Queens,G24,21ST STREET,1.2500
+225 St.,Bronx,206,EAST 225TH STREET,0.9000
+225 St.,Manhattan,106,225TH STREET-BWAY,0.9397
+225th Street,Manhattan,106,225TH STREET-BWAY,0.9397
+22d Avenue (also Avenue O),Brooklyn,F32,22ND AVENUE-BAY PKWY,0.8500
+22d Street,Manhattan,D22,GRAND STREET,0.7667
+22nd Avenue (Bay P'kway),Brooklyn,F32,22ND AVENUE-BAY PKWY,0.8500
+22nd Street,Manhattan,D22,GRAND STREET,0.7667
+23 St.-Ely Ave./Court Sq.,Queens,130,23RD STREET-7AV,0.8167
+23 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+23 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+23 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+23 St./6 Ave. (Opened 12/15/40),Manhattan,130,23RD STREET-7AV,1.1944
+23 St./7 Ave.,Manhattan,130,23RD STREET-7AV,1.2500
+23 St./8 Ave.,Manhattan,130,23RD STREET-7AV,1.1944
+23 St./Broadway,Manhattan,A30,23RD STREET-8AV,0.9597
+23 St./Park Ave. S.,Manhattan,130,23RD STREET-7AV,1.0793
+231 St.,Manhattan,104,231ST STREET-BWAY,0.8397
+231st Street,Bronx,104,231ST STREET-BWAY,0.9397
+233 St.,Bronx,205,EAST 233RD STREET,0.9000
+233rd Street,Bronx,205,EAST 233RD STREET,0.9000
+238 St.,Bronx,103,238TH STREET-BWAY,0.9397
+238 St.,Manhattan,103,238TH STREET-BWAY,0.8397
+238th Street,Bronx,103,238TH STREET-BWAY,0.9397
+23d Street,Bronx,R19,23RD STREET,1.1500
+23d Street (to 12/4/38),Manhattan,R19,23RD STREET,1.2500
+23rd Street,Brooklyn,R19,23RD STREET,1.1500
+23rd Street,Manhattan,R19,23RD STREET,1.2500
+23rd Street,Queens,R19,23RD STREET,1.1500
+"23rd Street (from Sept. 10, 1932)",Manhattan,R19,23RD STREET,1.2500
+241 St.,Bronx,201,EAST 241ST STREET,0.9000
+242 St.,Bronx,101,242ND STREET-BWAY,0.9397
+242d Street (Van Cortlandt Pk.),Bronx,101,242ND STREET-BWAY,0.9397
+242nd Street (Van Cort. Pk.),Bronx,101,242ND STREET-BWAY,0.9397
+24th Street,Manhattan,D22,GRAND STREET,0.7667
+25 Ave.,Brooklyn,B22,25TH AVENUE,1.2500
+25 St.,Brooklyn,R35,25TH STREET,1.2500
+25th Avenue,Brooklyn,B22,25TH AVENUE,1.2500
+25th Avenue (Astoria Avenue),Brooklyn,B22,25TH AVENUE,1.2500
+25th St. (Jackson Hts.) (from 4/8/23),Queens,R35,25TH STREET,1.1500
+25th Street,Brooklyn,R35,25TH STREET,1.2500
+25th Street (Jackson Heights),Queens,R35,25TH STREET,1.1500
+28 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+28 St./7 Ave.,Manhattan,129,28TH STREET-7AV,1.2500
+28 St./Broadway,Manhattan,R18,28TH STREET,0.9167
+28 St./Park Ave. S.,Manhattan,129,28TH STREET-7AV,1.0793
+28th Street,Bronx,R18,28TH STREET,1.1500
+28th Street,Manhattan,R18,28TH STREET,1.2500
+28th Street,Queens,R18,28TH STREET,1.1500
+28th Street (to 12/4/38),Manhattan,R18,28TH STREET,1.2500
+2d Avenue,Brooklyn,F14,2ND AVENUE,1.1500
+2d Street,Brooklyn,233,HOYT STREET,0.8368
+3 Ave./138 St.,Bronx,L05,3RD AVENUE-14ST,0.8167
+3 Ave./14 St.,Manhattan,L05,3RD AVENUE-14ST,1.0086
+3 Ave./149 St. (El sta. closed 4/28/73),Bronx,-1,CLOSED,1.0000
+3 Ave./149 St. (El sts. closed 4/28/73),Bronx,-1,CLOSED,1.0000
+3 St.,Brooklyn,233,HOYT STREET,0.8368
+30 Ave.,Queens,R04,30TH AVENUE,1.2500
+30 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+30th Avenue (Grand Ave.),Queens,R04,30TH AVENUE,1.2500
+30th Avenue (Grand Avenue),Brooklyn,R04,30TH AVENUE,1.1500
+30th Street,Brooklyn,B23,BAY 50TH STREET,0.8273
+33 St.,Queens,716,33RD STREET-RAWSON ST,0.8125
+33 St./Park Ave.,Manhattan,632,33RD STREET-LEXINGTON,0.8500
+33d St. (Rawson St.),Queens,716,33RD STREET-RAWSON ST,0.8125
+33d Street,Bronx,205,EAST 233RD STREET,0.8500
+33d Street,Brooklyn,233,HOYT STREET,0.8000
+33d Street,Manhattan,632,33RD STREET-LEXINGTON,0.8929
+33d Street (to 12/4/38),Manhattan,632,33RD STREET-LEXINGTON,0.8929
+33rd Street,Bronx,205,EAST 233RD STREET,0.8500
+34 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+34 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+34 St./3 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+34 St./5-6 Aves. (IND opened 12/15/40),Manhattan,128,34TH STREET-PENN STATION,0.8547
+34 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+34 St./6 Ave. (IND opened 12/15/40),Manhattan,D17,34TH STREET-HERALD SQUARE,0.8841
+34 St./7 Ave.,Manhattan,135,CANAL STREET-7AV,0.9205
+34 St./8 Ave.,Manhattan,D17,34TH STREET-HERALD SQUARE,0.8841
+34th Street,Bronx,205,EAST 233RD STREET,0.7667
+34th Street,Manhattan,128,34TH STREET-PENN STATION,0.8306
+34th Street,Queens,H09,BEACH 36TH STREET,0.7667
+"34th Street (from Sept. 10, 1932)",Manhattan,128,34TH STREET-PENN STATION,0.8306
+35th Ave. (Beebe Ave.),Queens,M05,FOREST AVENUE,0.7364
+36 Ave.,Queens,R06,36TH AVENUE,1.2500
+36 St.,Brooklyn,R36,36TH STREET,1.2500
+36 St.,Queens,G20,36TH STREET,1.2500
+36th Avenue (Washington Ave.),Queens,R06,36TH AVENUE,1.2500
+36th Avenue (Washington Avenue),Brooklyn,R06,36TH AVENUE,1.1500
+36th Street,Brooklyn,R36,36TH STREET,1.2500
+"36th Street (from August 19, 1933)",Manhattan,R36,36TH STREET,1.1500
+38th Street,Bronx,204,EAST 238TH STREET,0.8500
+38th Street,Brooklyn,233,HOYT STREET,0.8000
+38th Street,Manhattan,D22,GRAND STREET,0.7667
+39 Ave.,Queens,R08,39TH AVENUE,1.2500
+39th Avenue,Brooklyn,R08,39TH AVENUE,1.1500
+39th Street,Brooklyn,233,HOYT STREET,0.8000
+3d Avenue (from 6/30/24),Brooklyn,L05,3RD AVENUE-14ST,0.9921
+40 St.,Queens,715,40TH STREET-LOWERY ST,0.8125
+40th St. (Lowery St.),Queens,715,40TH STREET-LOWERY ST,0.8125
+40th Street,Brooklyn,B23,BAY 50TH STREET,0.8273
+41th Avenue (8/1/18),Manhattan,D37,AVENUE U,0.7059
+42 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+42 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+42 St./3 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+42 St./5-6 Aves. (IND opened 12/15/40),Manhattan,A27,42ND STREET-PORT AUTHORITY,0.8278
+42 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+42d Street,Bronx,206,EAST 225TH STREET,0.7667
+42d Street,Manhattan,D16,42ND STREET-BRYANT PARK,0.8500
+42d Street,Queens,H10,BEACH 25TH STREET,0.7667
+42d Street (to 12/4/53),Manhattan,D16,42ND STREET-BRYANT PARK,0.8500
+42nd Street,Queens,H10,BEACH 25TH STREET,0.7667
+"42nd Street (from Sept. 10, 1932)",Manhattan,D16,42ND STREET-BRYANT PARK,0.8500
+45 Rd./Court House Sq.,Queens,G22,COURT SQUARE,0.7316
+45 St.,Brooklyn,R39,45TH STREET,1.2500
+"45th Rd., Court House Sq.",Queens,G22,COURT SQUARE,0.7316
+45th Street,Brooklyn,R39,45TH STREET,1.2500
+46 St.,Queens,G18,46TH STREET,1.2500
+46th St. (Bliss St.),Queens,G18,46TH STREET,1.2500
+46th Street (Bliss Street),Queens,G18,46TH STREET,1.2500
+"46th Street (from August 19, 1933)",Manhattan,G18,46TH STREET,1.1500
+47 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+47-50 Sts./6 Ave. (Opened 12/15/40),Manhattan,D15,47-50TH STREETS-ROCKEFELLER CENTER,0.9167
+47th Street,Manhattan,D22,GRAND STREET,0.7667
+49 St./7 Ave.,Manhattan,135,CANAL STREET-7AV,0.9205
+49th Ave. (Hunters Point Ave.),Queens,M05,FOREST AVENUE,0.7364
+49th Street,Manhattan,R15,49TH STREET,1.2500
+4th Street,Manhattan,D22,GRAND STREET,0.8000
+"4th Street (from Sept. 10, 1932)",Manhattan,D22,GRAND STREET,0.8000
+5 Ave./53 St.,Manhattan,R13,5TH AVENUE-59ST,0.9397
+5 Ave./60 St.,Manhattan,R13,5TH AVENUE-59ST,0.8707
+50 St.,Brooklyn,B14,50TH STREET,1.2500
+50 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+50 St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+50 St./8 Ave.,Manhattan,A25,50TH STREET-8AV,1.0887
+50 St./Broadway,Manhattan,126,50TH STREET-BWAY,1.2500
+50th Street,Brooklyn,B14,50TH STREET,1.2500
+50th Street,Manhattan,B14,50TH STREET,1.1500
+50th Street,Queens,B14,50TH STREET,1.1500
+"50th Street (from Sept. 10, 1932)",Manhattan,B14,50TH STREET,1.1500
+50th Street (to 12/4/38),Manhattan,B14,50TH STREET,1.1500
+50th Street (to July '25),Manhattan,B14,50TH STREET,1.1500
+51st Street,Manhattan,630,51ST STREET-LEXINGTON,0.8929
+52 St.,Queens,713,52ND STREET-LINCOLN AV,0.7955
+52d St. (Lincoln Ave.),Queens,713,52ND STREET-LINCOLN AV,0.7955
+52d Street (Lincoln Avenue),Queens,713,52ND STREET-LINCOLN AV,0.7955
+53 St.,Brooklyn,R40,53RD STREET,1.2500
+53 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+53d Street,Brooklyn,R40,53RD STREET,1.2500
+53d Street,Manhattan,R40,53RD STREET,1.1500
+53d Street (Rawson Street),Queens,R40,53RD STREET,1.1500
+53rd Street,Brooklyn,R40,53RD STREET,1.2500
+54th Street,Brooklyn,B23,BAY 50TH STREET,0.8273
+55 St.,Brooklyn,B15,55TH STREET,1.2500
+55th Street,Brooklyn,B15,55TH STREET,1.2500
+57 St. (Opened 7/1/68),Manhattan,B10,57TH STREET-6AV,1.0682
+57 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+57 St./3 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+57 St./6 Ave. (Opened 7/1/68),Manhattan,R14,57TH STREET-7AV,1.1944
+57 St./7 Ave.,Manhattan,R14,57TH STREET-7AV,1.2500
+57th Street,Manhattan,B10,57TH STREET-6AV,1.0682
+57th Street,Queens,B10,57TH STREET-6AV,0.9682
+58th Street,Brooklyn,B23,BAY 50TH STREET,0.8273
+58th Street (to 6/18/24),Manhattan,D22,GRAND STREET,0.7667
+59 St.,Brooklyn,R41,59TH STREET,1.2500
+59 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+59 St./9 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+59 St./Columbus Circle,Manhattan,125,59TH STREET-COLUMBUS CIRCLE,1.2500
+59 St./Lexington Ave.,Manhattan,629,59TH STREET-LEXINGTON,1.0944
+59th Street,Brooklyn,R41,59TH STREET,1.2500
+59th Street,Manhattan,R41,59TH STREET,1.1500
+"59th Street (from Sept. 10, 1932)",Manhattan,R41,59TH STREET,1.1500
+60th Street,Manhattan,D22,GRAND STREET,0.7667
+61 St.,Queens,712,61ST STREET-WOODSIDE,0.9167
+"61st St., Woodside",Queens,712,61ST STREET-WOODSIDE,1.2500
+61st Street (Woodside),Queens,712,61ST STREET-WOODSIDE,0.9167
+61st Street (from 4/8/23),Queens,712,61ST STREET-WOODSIDE,0.9167
+62 St.,Brooklyn,233,HOYT STREET,0.8000
+62nd Street,Brooklyn,233,HOYT STREET,0.8000
+63 Dr.,Queens,G10,63RD DRIVE-REGO PARK,0.6848
+63d Street,Manhattan,D22,GRAND STREET,0.7667
+"63rd Drive (from December 31, 1936)",Manhattan,G10,63RD DRIVE-REGO PARK,0.7654
+65 St.,,G15,65TH STREET,1.1500
+65 St.,Manhattan,G15,65TH STREET,1.1500
+65 St.,Queens,G15,65TH STREET,1.2500
+65th Street,Brooklyn,G15,65TH STREET,1.1500
+65th Street,Queens,G15,65TH STREET,1.2500
+"65th Street (from August 19, 1933)",Manhattan,G15,65TH STREET,1.1500
+66 St.,,124,66TH STREET-BWAY,0.8167
+66 St.,Brooklyn,124,66TH STREET-BWAY,0.8167
+66 St.,Manhattan,124,66TH STREET-BWAY,0.9167
+66th Street,Manhattan,124,66TH STREET-BWAY,0.9167
+67 Ave.,Queens,G09,67TH AVENUE,1.2500
+67 St.,Manhattan,D22,GRAND STREET,0.7667
+"67th Avenue (from December 31, 1936)",Manhattan,G09,67TH AVENUE,1.1500
+67th Street,Manhattan,D22,GRAND STREET,0.7667
+68 St.,Manhattan,628,68TH STREET-LEXINGTON,0.8929
+68th St—Hunter College,Manhattan,628,68TH STREET-LEXINGTON,0.8547
+69 St.,Queens,711,69TH STREET-FISK AV,0.8500
+69th St. (Fisk Ave.),Queens,711,69TH STREET-FISK AV,0.8500
+69th Street (Fisk Avenue),Queens,711,69TH STREET-FISK AV,0.8500
+6th Avenue,Brooklyn,L02,6TH AVENUE-14ST,0.9921
+7 Ave.,Brooklyn,D25,7TH AVENUE,1.2500
+7 Ave./53 St.,Manhattan,D14,7TH AVENUE-53ST,1.0086
+7 Ave./Houston St.,Manhattan,D14,7TH AVENUE-53ST,0.7794
+71 St.,Brooklyn,B17,71ST STREET,1.2500
+71-Continental Aves.,Queens,G08,71ST/CONTINENTAL AVENUE-FOREST HILLS,1.0357
+"71st (Continental) Avenue (from December 31, 1936)",Manhattan,D37,AVENUE U,0.7059
+71st Street,Brooklyn,B17,71ST STREET,1.2500
+72 St.,,A22,72ND STREET-8AV,0.9682
+72 St.,Brooklyn,A22,72ND STREET-8AV,0.9682
+72 St.,Manhattan,A22,72ND STREET-8AV,1.0682
+72d Street,Manhattan,A22,72ND STREET-8AV,1.0682
+72nd Street,Manhattan,A22,72ND STREET-8AV,1.0682
+72nd Street,Queens,A22,72ND STREET-8AV,0.9682
+"72nd Street (from Sept. 10, 1932)",Manhattan,A22,72ND STREET-8AV,1.0682
+73d Street,Manhattan,D22,GRAND STREET,0.7667
+74 St./Roosevelt Ave.,Queens,710,74TH STREET-BROADWAY,0.8409
+74 St/Roosevelt Ave.,Queens,710,74TH STREET-BROADWAY,0.8409
+"74th St., Broadway",Queens,710,74TH STREET-BROADWAY,1.2500
+"74th Street, Broadway",Queens,710,74TH STREET-BROADWAY,1.2500
+75 Ave.,Queens,F07,75TH AVENUE,1.2500
+76 St.,Manhattan,D22,GRAND STREET,0.7667
+76th Street,Brooklyn,233,HOYT STREET,0.8000
+77 St.,Brooklyn,R43,77TH STREET,1.2500
+77 St.,Manhattan,R43,77TH STREET,1.1500
+77th Street,Brooklyn,R43,77TH STREET,1.2500
+77th Street,Manhattan,R43,77TH STREET,1.1500
+77th Street (from 7/10/10),Manhattan,R43,77TH STREET,1.1500
+79 St.,Brooklyn,B18,79TH STREET,1.2500
+79 St.,Manhattan,B18,79TH STREET,1.1500
+79th Street,Manhattan,B18,79TH STREET,1.1500
+79th Street (from 7/10/19),Manhattan,B18,79TH STREET,1.1500
+8 Ave.,Brooklyn,N02,8TH AVENUE,1.2500
+8 St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+8 St./Broadway,Manhattan,R21,8TH STREET-NYU,0.9397
+80 St.,,213,EAST 180TH STREET,0.7500
+80 St.,Brooklyn,B23,BAY 50TH STREET,0.8273
+80 St.,Manhattan,D22,GRAND STREET,0.7667
+80th Street,Queens,A59,80TH STREET-HUDSON ST,0.8125
+81 St.,,233,HOYT STREET,0.7000
+81 St.,Brooklyn,233,HOYT STREET,0.8000
+81 St.,Manhattan,D22,GRAND STREET,0.7667
+81st Street,Manhattan,D22,GRAND STREET,0.7667
+"81st Street (from Sept. 10, 1932)",Manhattan,D22,GRAND STREET,0.7667
+82 St./Jackson Hts.,Queens,709,82ND STREET-JACKSON HEIGHTS,1.2500
+"82d St., Jack. Hts. (25th St.)",Queens,709,82ND STREET-JACKSON HEIGHTS,1.1862
+82nd Street (Jackson Heights),Queens,709,82ND STREET-JACKSON HEIGHTS,0.7794
+84 St.,Manhattan,D22,GRAND STREET,0.7667
+84th Street,Manhattan,D22,GRAND STREET,0.7667
+86 St.,,N10,86TH STREET,1.1500
+86 St.,Brooklyn,N10,86TH STREET,1.2500
+86 St.,Manhattan,N10,86TH STREET,1.1500
+86th Street,Brooklyn,N10,86TH STREET,1.2500
+86th Street,Manhattan,N10,86TH STREET,1.1500
+86th Street,Queens,N10,86TH STREET,1.1500
+"86th Street (from Sept. 10, 1932)",Manhattan,N10,86TH STREET,1.1500
+86th Street—Hunter College,Manhattan,626,86TH STREET-LEXINGTON,0.8547
+88 St.,Brooklyn,233,HOYT STREET,0.8000
+89 St.,Manhattan,D22,GRAND STREET,0.7667
+89th Street,Manhattan,D22,GRAND STREET,0.7667
+8th Street,Manhattan,R21,8TH STREET-NYU,1.0500
+8th Street,Queens,R21,8TH STREET-NYU,0.9500
+8th Street (to 12/4/38),Manhattan,R21,8TH STREET-NYU,1.0500
+9 Ave.,Brooklyn,B12,9TH AVENUE,1.2500
+9 St.,Brooklyn,R33,9TH STREET,1.2500
+9 St./3 Av. (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+9 St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+9 St./4 Ave.,Brooklyn,B12,9TH AVENUE,0.8900
+90 St./Elmhurst Ave.,Queens,708,90TH STREET-ELMHURST,1.0872
+"90th St., Elmhurst Ave.",Queens,708,90TH STREET-ELMHURST,1.0872
+"90th Street, Elmhurst Avenue",Queens,708,90TH STREET-ELMHURST,1.0872
+91 St. (Closed 2/2/59),Manhattan,-1,CLOSED,1.0000
+91 St. (Closed 2/59),Manhattan,-1,CLOSED,1.0000
+91st Street,Manhattan,D22,GRAND STREET,0.7667
+92 St.,,233,HOYT STREET,0.7000
+92 St.,Manhattan,D22,GRAND STREET,0.7667
+92nd Street,Queens,H10,BEACH 25TH STREET,0.7667
+93 St.,,233,HOYT STREET,0.7000
+93 St.,Brooklyn,233,HOYT STREET,0.8000
+93d Street,Manhattan,D22,GRAND STREET,0.7667
+95 St.,Brooklyn,R45,95TH STREET-BAY RIDGE,0.8929
+95th Street,Brooklyn,R45,95TH STREET-BAY RIDGE,0.8929
+95th Street (from 10/31/25),Brooklyn,R45,95TH STREET-BAY RIDGE,0.8929
+96 St.,Manhattan,Q05,96TH STREET-2AV,1.0682
+96th Street,Manhattan,Q05,96TH STREET-2AV,1.0682
+"96th Street (from Sept. 10, 1932)",Manhattan,Q05,96TH STREET-2AV,1.0682
+99 St.,,233,HOYT STREET,0.7000
+99 St.,Brooklyn,233,HOYT STREET,0.8000
+99 St.,Manhattan,D22,GRAND STREET,0.7667
+99th Street,Manhattan,D22,GRAND STREET,0.7667
+99th Street,Queens,H13,BEACH 98TH STREET,0.7667
+9th Avenue,Brooklyn,B12,9TH AVENUE,1.2500
+9th Street,Brooklyn,R33,9TH STREET,1.2500
+9th Street,Queens,R33,9TH STREET,1.1500
+Adams St./Bklyn Bridge (Closed 3/5/44),Brooklyn,-1,CLOSED,1.0000
+Adams Street,Manhattan,D22,GRAND STREET,0.8500
+Adj. with Third Ave. El - Cr.,Queens,H02,AQUEDUCT-NORTH CONDUIT AVENUE,0.6283
+Alabama Ave.,Brooklyn,J24,ALABAMA AVENUE,1.1000
+Alabama Avenue,Brooklyn,J24,ALABAMA AVENUE,1.1000
+Albertus Avenue,Queens,A52,LIBERTY AVENUE,0.8276
+Alburts Avenue (from 4/8/23),Queens,G13,ELMHURST AVENUE,0.8586
+Allerton Ave.,Bronx,210,ALLERTON AVENUE,1.1000
+Allerton Avenue,Bronx,210,ALLERTON AVENUE,1.1000
+Anderson Ave./Jerome Ave.,Bronx,401,WOODLAWN-JEROME AVENUE,0.7275
+Anderson and Jerome Ave.,Bronx,401,WOODLAWN-JEROME AVENUE,0.7667
+Anderson and Jerome Aves.,Bronx,401,WOODLAWN-JEROME AVENUE,0.7531
+Aqueduct Racetrack (Opened 9/14/59),Queens,H01,AQUEDUCT RACETRACK,1.1000
+Aqueduct/North Conduit Ave.,Queens,H02,AQUEDUCT-NORTH CONDUIT AVENUE,1.1000
+Astor Place,Brooklyn,S03,PARK PLACE,0.8619
+Astor Place,Manhattan,228,PARK PLACE,0.8619
+Astoria Blvd.,Queens,R03,ASTORIA BOULEVARD,1.1000
+Atlantic Ave.,Brooklyn,235,ATLANTIC AVENUE,1.1000
+Atlantic Ave./5 Av. El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Atlantic Ave./Pacific St.,Brooklyn,D24,ATLANTIC AVENUE-BARCLAYS CENTER,0.7885
+Atlantic Avenue,Brooklyn,235,ATLANTIC AVENUE,1.1000
+Atlantic Avenue,Manhattan,235,ATLANTIC AVENUE,1.0000
+Atlantic Avenue (from 8/1/20),Manhattan,235,ATLANTIC AVENUE,1.0000
+Ave. H,Brooklyn,D32,AVENUE H,1.1000
+Ave. I,Brooklyn,F31,AVENUE I,1.1000
+Ave. J,Brooklyn,D33,AVENUE J,1.1000
+Ave. M,Brooklyn,D34,AVENUE M,1.1000
+Ave. N,Brooklyn,F33,AVENUE N,1.1000
+Ave. P,Brooklyn,F34,AVENUE P,1.1000
+Ave. U,Brooklyn,D37,AVENUE U,1.1000
+Ave. X,Brooklyn,F38,AVENUE X,1.1000
+Avenue F,Brooklyn,D37,AVENUE U,0.9750
+Avenue H,Brooklyn,D32,AVENUE H,1.1000
+Avenue I,Brooklyn,F31,AVENUE I,1.1000
+Avenue J,Brooklyn,D33,AVENUE J,1.1000
+Avenue L,Brooklyn,D37,AVENUE U,0.9750
+Avenue M,Brooklyn,D34,AVENUE M,1.1000
+Avenue N,Brooklyn,F33,AVENUE N,1.1000
+Avenue P,Brooklyn,F34,AVENUE P,1.1000
+Avenue U,Brooklyn,D37,AVENUE U,1.1000
+Avenue U (also Avenue T),Brooklyn,D37,AVENUE U,1.1000
+Avenue X,Brooklyn,F38,AVENUE X,1.1000
+Barclay St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Barclay Street,Bronx,231,CLARK STREET,0.7692
+Battery Pl./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Battery Place,Bronx,228,PARK PLACE,0.6957
+Bay 50 St.,Brooklyn,B23,BAY 50TH STREET,1.1000
+Bay 50th Street,Brooklyn,B23,BAY 50TH STREET,1.1000
+Bay Parkway,Brooklyn,B21,BAY PARKWAY,1.1000
+Bay Pkwy.,Brooklyn,B21,BAY PARKWAY,1.1000
+Bay Pkwy./22 Ave.,Brooklyn,B21,BAY PARKWAY,0.7875
+Bay Ridge Ave.,Brooklyn,R42,BAY RIDGE AVENUE,1.1000
+Bay Ridge Avenue,Brooklyn,R42,BAY RIDGE AVENUE,1.1000
+Baychester Ave.,Bronx,502,BAYCHESTER AVENUE,1.1000
+Beach 105 St.,Queens,H14,BEACH 105TH STREET,1.1000
+Beach 25 St.,Queens,H10,BEACH 25TH STREET,1.1000
+Beach 36 St.,Queens,H09,BEACH 36TH STREET,1.1000
+Beach 44 St.,Queens,H08,BEACH 44TH STREET,1.1000
+Beach 60 St.,Queens,H07,BEACH 60TH STREET,1.1000
+Beach 67 St.,Queens,H06,BEACH 67TH STREET,1.1000
+Beach 90 St.,Queens,H12,BEACH 90TH STREET,1.1000
+Beach 98 St.,Queens,H13,BEACH 98TH STREET,1.1000
+Bedford Ave.,Brooklyn,L08,BEDFORD AVENUE,1.1000
+Bedford Avenue,Brooklyn,L08,BEDFORD AVENUE,1.1000
+Bedford Avenue (from 6/30/24),Brooklyn,L08,BEDFORD AVENUE,1.1000
+Bedford Park Blvd,Bronx,405,BEDFORD PARK BOULEVARD,1.1000
+Bedford Park Blvd.,Bronx,405,BEDFORD PARK BOULEVARD,1.1000
+Bedford Park Blvd.—200th Street,Bronx,405,BEDFORD PARK BOULEVARD,0.9000
+"Bedford Park Boulevard (from July 1, 1933)",Bronx,405,BEDFORD PARK BOULEVARD,1.1000
+"Bedford-Nostrand Avenues (from July 1, 1937)",Brooklyn,G33,BEDFORD-NOSTRAND AVENUES,1.1000
+Bedford/Nostrand Aves.,Brooklyn,G33,BEDFORD-NOSTRAND AVENUES,1.1000
+Beebe Avenue,Queens,M06,SENECA AVENUE,0.8200
+Beebe Avenue (from 4/8/23),Queens,M06,SENECA AVENUE,0.8200
+Bergen St.,Brooklyn,236,BERGEN STREET,1.1000
+Bergen Street,Brooklyn,236,BERGEN STREET,1.1000
+"Bergen Street (from March 20, 1933)",Brooklyn,236,BERGEN STREET,1.1000
+Beverley Rd.,Brooklyn,D29,BEVERLEY ROAD,1.1000
+Beverly Rd.,Brooklyn,245,BEVERLY ROAD,1.1000
+Beverly Road,Brooklyn,245,BEVERLY ROAD,1.1000
+Beverly Road (from 8/25/80),Brooklyn,245,BEVERLY ROAD,1.1000
+Bleecker St.,Manhattan,637,BLEECKER STREET-LEXINGTON,0.8500
+Bleecker Street,Brooklyn,236,BERGEN STREET,0.8143
+Bleecker Street,Manhattan,637,BLEECKER STREET-LEXINGTON,0.8500
+Bleecker Street (to 12/4/38),Manhattan,637,BLEECKER STREET-LEXINGTON,0.8500
+Bleeker,Manhattan,M19,BOWERY,0.5615
+Bliss Street,Queens,L19,HALSEY STREET,0.8200
+Bliss Street (from 4/8/23),Queens,L19,HALSEY STREET,0.8200
+Boerum Pl./Fulton El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Boerum Place,Brooklyn,S03,PARK PLACE,0.7364
+Borough Hall,Brooklyn,232,BOROUGH HALL,1.1000
+Botanic Garden,Brooklyn,S04,BOTANIC GARDEN,1.1000
+Botanic Garden (Eastern Parkway),Brooklyn,S04,BOTANIC GARDEN,1.1000
+Bowery,Manhattan,M19,BOWERY,1.1000
+Bowling Green,Manhattan,420,BOWLING GREEN,1.1000
+Boyd Ave. (88th Street),Brooklyn,L08,BEDFORD AVENUE,0.9000
+Boyd Street,Brooklyn,233,HOYT STREET,0.9182
+"Briarwood (from April 24, 1937)",Manhattan,F05,VAN WYCK BOULEVARD-BRIARWOOD,0.4865
+Bridge Street,Manhattan,M23,BROAD STREET,0.9000
+Bridge/Jay Sts. (Closed 10/3/69),Brooklyn,-1,CLOSED,1.0000
+Brighton Beach,Brooklyn,D40,BRIGHTON BEACH,1.1000
+Broad Channel,Queens,H04,BROAD CHANNEL,1.1000
+Broad St.,Manhattan,M23,BROAD STREET,1.1000
+Broad St./Broadway,Manhattan,126,50TH STREET-BWAY,0.9205
+Broad Street,Manhattan,M23,BROAD STREET,1.1000
+Broadway,Brooklyn,R05,BROADWAY,1.0000
+Broadway,Queens,R05,BROADWAY,1.1000
+Broadway (from 4/8/23),Queens,R05,BROADWAY,1.1000
+"Broadway (from July 1, 1937)",Brooklyn,R05,BROADWAY,1.0000
+Broadway Avenue (from 4/8/23),Brooklyn,253,ROCKAWAY AVENUE,0.9667
+Broadway Junction,Brooklyn,A51,BROADWAY JUNCTION,1.1000
+"Broadway, Astoria",Queens,R05,BROADWAY,0.7667
+"Broadway-Lafayette Street (from January 1, 1936)",Manhattan,D21,BROADWAY-LAFAYETTE STREET,1.1000
+Bronx Park,Bronx,212,BRONX PARK EAST,0.9000
+Bronx Park East,Bronx,212,BRONX PARK EAST,1.1000
+Bronx Park terminal (Closed 11/15/51),Bronx,-1,CLOSED,1.0000
+Brook Ave.,Bronx,618,BROOK AVENUE,1.1000
+Brook Avenue,Bronx,618,BROOK AVENUE,1.1000
+Brooklyn Bridge,Brooklyn,640,BROOKLYN BRIDGE,1.0000
+Broome Street,Queens,M23,BROAD STREET,0.8000
+Buhre Ave.,Bronx,602,BUHRE AVENUE,1.1000
+Buhre Ave. (from 12/13/80),Bronx,602,BUHRE AVENUE,1.1000
+Buhre Avenue,Bronx,602,BUHRE AVENUE,1.1000
+Burke Ave.,Bronx,209,BURKE AVENUE,1.1000
+Burke Avenue,Bronx,209,BURKE AVENUE,1.1000
+Burnside Ave.,Bronx,409,BURNSIDE AVENUE,1.1000
+Burnside Avenue,Bronx,409,BURNSIDE AVENUE,1.1000
+Bushwick Ave.,Brooklyn,250,UTICA AVENUE,0.8407
+Bushwick Avenue (from 7/11/26),Brooklyn,250,UTICA AVENUE,0.8407
+Bushwick Avenue-Aberdeen Street,Brooklyn,L21,BUSHWICK AVENUE-ABERDEEN ST,1.1000
+Bway-Lafayette St./Bleecker St.,Manhattan,D21,BROADWAY-LAFAYETTE STREET,0.8576
+Canal St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+Canal St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+Canal St./Broadway,Manhattan,126,50TH STREET-BWAY,0.9205
+Canal Street,Bronx,R23,CANAL STREET (TUNNEL),1.0000
+Canal Street,Manhattan,R23,CANAL STREET (TUNNEL),1.1000
+Canal Street,Queens,R23,CANAL STREET (TUNNEL),1.0000
+"Canal Street (from Sept. 10, 1932)",Manhattan,R23,CANAL STREET (TUNNEL),1.1000
+Canal/Church Sts.,Manhattan,R23,CANAL STREET (TUNNEL),0.8500
+Canal/Varick Sts.,Manhattan,R23,CANAL STREET (TUNNEL),0.8500
+Canarsie Terminal,Brooklyn,D27,PARKSIDE AVENUE,0.6000
+Carroll St.,Brooklyn,F21,CARROLL STREET,1.1000
+Castle Hill Ave.,Bronx,607,CASTLE HILL AVENUE,1.1000
+Castle Hill Ave. (from 10/24/80),Bronx,607,CASTLE HILL AVENUE,1.1000
+Castle Hill Avenue,Bronx,607,CASTLE HILL AVENUE,1.1000
+Cath. P'kway (110th Street),Manhattan,D41,OCEAN PARKWAY,0.6957
+Cathedral Parkway (110th St.),Manhattan,A17,110TH STREET-CATHEDRAL PKWY,0.8556
+Cathedral Pkwy.,Manhattan,A17,110TH STREET-CATHEDRAL PKWY,0.8556
+Central (Lexington Avenue),Queens,M10,CENTRAL AVENUE,0.6667
+Central Ave.,Brooklyn,M10,CENTRAL AVENUE,1.1000
+Central Avenue,Brooklyn,M10,CENTRAL AVENUE,1.1000
+Chambers St./W. Broadway,Manhattan,A36,CHAMBERS STREET-8AV,0.8556
+Chambers Street,Bronx,M21,CHAMBERS STREET,1.0000
+Chambers Street,Manhattan,M21,CHAMBERS STREET,1.1000
+"Chambers Street (from Sept. 10, 1932)",Manhattan,M21,CHAMBERS STREET,1.1000
+Chambers Street (to 12/4/38),Manhattan,M21,CHAMBERS STREET,1.1000
+Chambers/Brooklyn Bridge,Manhattan,640,BROOKLYN BRIDGE,0.8692
+Chambers/World Trade Ctr./Park Pl.,Manhattan,E01,WORLD TRADE CENTER,0.7429
+Charlton Street,Bronx,229,FULTON STREET,0.7857
+Chatham Sq./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+Chatham Sq./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+Chatham Square,Queens,G22,COURT SQUARE,0.7923
+Chauncey St.,Brooklyn,J28,CHAUNCEY STREET,1.1000
+Chauncey Street,Manhattan,J28,CHAUNCEY STREET,1.0000
+Chestnut Street,Brooklyn,J20,CRESCENT STREET,0.9000
+Christopher St.,Manhattan,R26,RECTOR STREET,0.8097
+"Christopher St., Sheridan Square",Bronx,133,CHRISTOPHER STREET-SHERIDAN SQUARE,1.0000
+Christopher St./6 Av El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Christopher St/6 Av El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Christopher Street,Bronx,217,SIMPSON STREET,0.7250
+Church Ave.,Brooklyn,244,CHURCH AVENUE,1.1000
+Church Ave. (from 8/25/80),Brooklyn,244,CHURCH AVENUE,1.1000
+Church Avenue,Brooklyn,244,CHURCH AVENUE,1.1000
+"Church Avenue (from October 7, 1933)",Brooklyn,244,CHURCH AVENUE,1.1000
+City College (137th St.),Manhattan,R24,CITY HALL,0.7667
+City College (137th Street),Manhattan,R24,CITY HALL,0.7667
+City Hall,Manhattan,R24,CITY HALL,1.1000
+City Hall,Queens,R24,CITY HALL,1.0000
+City Hall Terminal (Closed 12/31/45),Manhattan,-1,CLOSED,1.0000
+City Hall/3 Av. El (Closed 12/31/53),Manhattan,-1,CLOSED,1.0000
+City Hall/Broadway,Manhattan,R24,CITY HALL,0.7667
+Claremont Parkway,Bronx,504,PELHAM PARKWAY,0.8097
+Claremont Pkwy.,Bronx,504,PELHAM PARKWAY,0.8097
+Clark St - Bklyn Heights,Brooklyn,231,CLARK STREET,0.7316
+Clark St.,Brooklyn,231,CLARK STREET,1.1000
+Clark Street,Bronx,231,CLARK STREET,1.0000
+Clark Street (Brooklyn Heights),Brooklyn,231,CLARK STREET,1.1000
+Classon Ave.,Brooklyn,G34,CLASSON AVENUE,1.1000
+Classon Avenue,Brooklyn,G34,CLASSON AVENUE,1.1000
+"Classon Avenue (from July 1, 1937)",Brooklyn,G34,CLASSON AVENUE,1.1000
+Cleveland St.,Brooklyn,J22,CLEVELAND STREET,1.1000
+Cleveland Street,Brooklyn,J22,CLEVELAND STREET,1.1000
+Clifside Avenue (168th St.),Queens,A55,EUCLID AVENUE,0.7857
+"Clinton-Washington Avenues (from April 9, 1936)",Brooklyn,A44,CLINTON-WASHINGTON AVENUES,1.1000
+"Clinton-Washington Avenues (from July 1, 1937)",Brooklyn,A44,CLINTON-WASHINGTON AVENUES,1.1000
+Clinton/Washington Aves.,Brooklyn,A44,CLINTON-WASHINGTON AVENUES,1.1000
+Col. Univ. (116th St.),Manhattan,R25,CORTLANDT STREET,0.5000
+Col. University (116th Street),Manhattan,R25,CORTLANDT STREET,0.5000
+Columbus Circle,Manhattan,125,59TH STREET-COLUMBUS CIRCLE,0.8500
+Columbus Circle (59th Street),Manhattan,125,59TH STREET-COLUMBUS CIRCLE,0.8500
+"Cond. Coll. (incl. 40, 46, 52, 58, 65 Sts.)",Brooklyn,232,BOROUGH HALL,0.4810
+Conductor Collections-Culver Line,Queens,707,JUNCTION BOULEVARD,0.5314
+Cortelyou Rd.,Brooklyn,D30,CORTELYOU ROAD,1.1000
+Cortelyou Road,Brooklyn,D30,CORTELYOU ROAD,1.1000
+Cortlandt St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Cortlandt St./Greenwich St.,Manhattan,138,CORTLANDT STREET-7AV,0.7897
+Cortlandt St./Trinity Pl.,Manhattan,R25,CORTLANDT STREET,0.7957
+Cortlandt Street,Bronx,R25,CORTLANDT STREET,1.0000
+Cortlandt Street,Manhattan,R25,CORTLANDT STREET,1.1000
+Cortlandt Street (to 12/4/38),Manhattan,R25,CORTLANDT STREET,1.1000
+"Cortlandt-Nassau Street (from February 1, 1933)",Manhattan,R25,CORTLANDT STREET,0.9205
+Court Square,Queens,G22,COURT SQUARE,1.1000
+"Court Square (from August 19, 1933)",Brooklyn,G22,COURT SQUARE,1.0000
+Court St./Borough Hall,Brooklyn,232,BOROUGH HALL,0.7486
+Court St./Fulton El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Court Street,Brooklyn,R28,COURT STREET,1.1000
+Court Street,Manhattan,R28,COURT STREET,1.0000
+Court Street (from 8/1/20),Manhattan,R28,COURT STREET,1.0000
+"Court Street (from February 1, 1933)",Brooklyn,R28,COURT STREET,1.1000
+Court/Schermerhorn (Closed 6/1/46),Brooklyn,-1,CLOSED,1.0000
+Crescent St.,Brooklyn,J20,CRESCENT STREET,1.1000
+Crescent Street,Brooklyn,J20,CRESCENT STREET,1.1000
+Crescent Street (City Line),Brooklyn,J20,CRESCENT STREET,1.1000
+Cumberland Street,Brooklyn,J22,CLEVELAND STREET,0.8879
+Cypress Ave.,Bronx,617,CYPRESS AVENUE,1.1000
+Cypress Avenue,Bronx,617,CYPRESS AVENUE,1.1000
+Cypress Hills,Brooklyn,J19,CYPRESS HILLS,1.1000
+De Kalb Avenue,Brooklyn,R30,DEKALB AVENUE,1.0630
+De Kalb Avenue,Manhattan,R30,DEKALB AVENUE,0.9630
+DeKalb Ave.,Brooklyn,R30,DEKALB AVENUE,1.1000
+Dean St. (Closed 9/9/95),Brooklyn,-1,CLOSED,1.0000
+Dean Street,Brooklyn,L12,GRAND STREET,0.8826
+"Delancey Street (from January 1, 1936)",Manhattan,F15,DELANCEY STREET,1.1000
+Delancey/Essex Sts.,Manhattan,F15,DELANCEY STREET,0.9108
+Desbroses St./6Av El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Desbrosses St./6Av El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Desbrosses Street,Bronx,M18,ESSEX STREET,0.7586
+Ditmars Avenue,Queens,F29,DITMAS AVENUE,0.9630
+Ditmars Avenue (from 4/8/23),Brooklyn,F29,DITMAS AVENUE,1.0630
+Ditmars Blvd-Astoria,Queens,R01,DITMARS BOULEVARD-ASTORIA,1.1000
+Ditmars Blvd.,Queens,R01,DITMARS BOULEVARD-ASTORIA,0.9095
+Ditmars Boulevard,Brooklyn,R01,DITMARS BOULEVARD-ASTORIA,0.8095
+Ditmas Ave.,Brooklyn,F29,DITMAS AVENUE,1.1000
+Ditmas Avenue,Brooklyn,F29,DITMAS AVENUE,1.1000
+Duffald Street,Brooklyn,L12,GRAND STREET,0.7923
+Duffield St./Fulton El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Duffield Street,Brooklyn,R32,UNION STREET,0.7667
+Dyckman St.,Manhattan,A03,DYCKMAN STREET-8AV,0.9750
+Dyckman St./200 St.,Manhattan,A03,DYCKMAN STREET-8AV,0.7977
+Dyckman Street,Manhattan,A03,DYCKMAN STREET-8AV,0.9750
+"Dyckman Street (from Sept. 10, 1932)",Manhattan,A03,DYCKMAN STREET-8AV,0.9750
+Dyre Ave.,Bronx,501,DYRE AVENUE,1.1000
+E. 105 St.,Brooklyn,L28,EAST 105TH STREET,0.9889
+E. 143 St.,Bronx,616,143RD STREET,1.0091
+E. 149 St.,Bronx,615,EAST 149TH STREET,0.9889
+E. 177 St./Parkchester,Bronx,608,177TH STREET-PARKCHESTER,1.0565
+E. 180 St.,Bronx,213,EAST 180TH STREET,0.9889
+E. 219th Street,Bronx,201,EAST 241ST STREET,0.9148
+E. 225th Street,Bronx,206,EAST 225TH STREET,0.9889
+E. 233d Street,Bronx,205,EAST 233RD STREET,0.9889
+E. 238th Street,Bronx,204,EAST 238TH STREET,0.9889
+E. 241st Street (from 12/13/80),Bronx,201,EAST 241ST STREET,0.9889
+E. Tremont Ave.,Bronx,D07,TREMONT AVENUE,1.0333
+East 105th Street,Brooklyn,L28,EAST 105TH STREET,1.1000
+East 143d Street,Bronx,615,EAST 149TH STREET,1.0333
+East 149th Street,Bronx,615,EAST 149TH STREET,1.1000
+East 177th St. (from 6/30/20),Bronx,213,EAST 180TH STREET,0.9667
+East 177th Street,Bronx,213,EAST 180TH STREET,0.9667
+East 180th Street,Bronx,213,EAST 180TH STREET,1.1000
+East 219th Street,Bronx,201,EAST 241ST STREET,1.0333
+East 228th Street,Bronx,206,EAST 225TH STREET,1.0333
+East 241st Street,Bronx,201,EAST 241ST STREET,1.1000
+East Broadway,Manhattan,F16,EAST BROADWAY,1.1000
+"East Broadway (from January 1, 1936)",Manhattan,F16,EAST BROADWAY,1.1000
+East NY/E. Pkwy (IND Opened 12/46),Brooklyn,238,EASTERN PARKWAY,0.9125
+East NY/E. Pkwy. (IND Opened 12/46),Brooklyn,238,EASTERN PARKWAY,0.9125
+Eastern Parkway,Brooklyn,238,EASTERN PARKWAY,1.1000
+Eastern Parkway (Brooklyn Museum),Brooklyn,238,EASTERN PARKWAY,1.1000
+Eastern Parkway (from 10/3/80),Brooklyn,238,EASTERN PARKWAY,1.1000
+Eastern Pkwy.,Brooklyn,238,EASTERN PARKWAY,1.1000
+Elder Ave.,Bronx,611,ELDER AVENUE,1.1000
+Elder Ave. (from 6/30/20),Bronx,611,ELDER AVENUE,1.1000
+Elder Avenue,Bronx,611,ELDER AVENUE,1.1000
+Elderts Lane,Brooklyn,611,ELDER AVENUE,0.7500
+Elderts Lane,Queens,J17,75TH STREET-ELDERTS LANE,0.8059
+Elm Place,Brooklyn,S03,PARK PLACE,0.7316
+Elm Place/Fulton El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Elmhurst Ave.,Queens,G13,ELMHURST AVENUE,1.1000
+Elmhurst Avenue,Queens,G13,ELMHURST AVENUE,1.1000
+"Elmhurst Avenue (from December 31, 1936)",Manhattan,G13,ELMHURST AVENUE,1.0000
+Essex Street,Manhattan,M18,ESSEX STREET,1.1000
+Euclid Ave. (Opened 11/28/48),Brooklyn,A55,EUCLID AVENUE,1.1000
+Far Rockaway (Opened 1/16/58),Queens,H11,MOTT AVENUE-FAR ROCKAWAY,0.7667
+Fifth Avenue,Manhattan,F12,FIFTH AVENUE-53ST,0.9889
+Fifth Avenue,Queens,F12,FIFTH AVENUE-53ST,0.8889
+Fifth Avenue (from 8/22/86),Queens,F12,FIFTH AVENUE-53ST,0.8889
+"Fifth Avenue (from August 19, 1933)",Queens,F12,FIFTH AVENUE-53ST,0.8889
+Fisk Avenue,Queens,M05,FOREST AVENUE,0.8500
+Flatbush Ave.,Brooklyn,247,FLATBUSH AVENUE,1.1000
+Flatbush Ave. (from 8/25/80),Brooklyn,247,FLATBUSH AVENUE,1.1000
+Flatbush Ave./Flin El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Flatbush Ave./Ftn El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Flatbush Avenue,Brooklyn,247,FLATBUSH AVENUE,1.1000
+Flatlands,Brooklyn,247,FLATBUSH AVENUE,0.6000
+Flushing Ave.,Brooklyn,G31,FLUSHING AVENUE,1.1000
+Flushing Avenue,Brooklyn,G31,FLUSHING AVENUE,1.1000
+"Flushing Avenue (from July 1, 1937)",Brooklyn,G31,FLUSHING AVENUE,1.1000
+Fordham Rd.,Bronx,407,FORDHAM ROAD,1.1000
+Fordham Rd. (Fordham Univ.),Bronx,407,FORDHAM ROAD,1.1000
+Fordham Road,Bronx,407,FORDHAM ROAD,1.1000
+Forest Ave.,Brooklyn,M05,FOREST AVENUE,1.0000
+Forest Avenue,Brooklyn,M05,FOREST AVENUE,1.0000
+Forest Avenue (Madison Bl.),Brooklyn,M05,FOREST AVENUE,1.0000
+Forest Parkway,Brooklyn,238,EASTERN PARKWAY,0.8586
+Forest Pkwy.,Queens,J16,85TH ST-FOREST PKWY,0.8368
+Fort Hamilton Parkway,Brooklyn,N03,FORT HAMILTON PARKWAY,1.1000
+"Fort Hamilton Parkway (from October 7, 1933)",Brooklyn,N03,FORT HAMILTON PARKWAY,1.1000
+Fort Hamilton Pkwy.,Brooklyn,N03,FORT HAMILTON PARKWAY,1.1000
+"Fourth Avenue (from October 7, 1933)",Brooklyn,244,CHURCH AVENUE,0.8692
+Franklin Ave.,Brooklyn,239,FRANKLIN  AVENUE,1.1000
+Franklin Ave. (from 8/13/80),Brooklyn,239,FRANKLIN  AVENUE,1.1000
+Franklin Avenue,Brooklyn,239,FRANKLIN  AVENUE,1.1000
+"Franklin Avenue (from April 9, 1936)",Brooklyn,239,FRANKLIN  AVENUE,1.1000
+Franklin Pkwy.,Brooklyn,N03,FORT HAMILTON PARKWAY,0.8027
+Franklin Sq./3 Av. El (Closed 12/22/50),Manhattan,-1,CLOSED,1.0000
+Franklin Square,Queens,239,FRANKLIN  AVENUE,0.7333
+Franklin St.,Manhattan,136,FRANKLIN STREET-7AV,0.8692
+Franklin St./3 Av. El (Closed 12/22/50),Manhattan,-1,CLOSED,1.0000
+Franklin St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Franklin Street,Bronx,216,FREEMAN STREET,0.8586
+Franklin Street (to 12/4/38),Manhattan,136,FRANKLIN STREET-7AV,0.8692
+Freedom Avenue (111 St.),Brooklyn,L08,BEDFORD AVENUE,0.8143
+Freeman St.,Bronx,216,FREEMAN STREET,1.1000
+Freeman Street,Bronx,216,FREEMAN STREET,1.1000
+Fresh Pond,Brooklyn,M04,FRESH POND ROAD,0.8000
+Fresh Pond Rd.,Brooklyn,M04,FRESH POND ROAD,1.0000
+Fresh Pond Road,Brooklyn,M04,FRESH POND ROAD,1.0000
+Ft. Hamilton Avenue (also 15th Avenue),Brooklyn,N03,FORT HAMILTON PARKWAY,0.8317
+Ft. Hamilton P'kway,Brooklyn,N03,FORT HAMILTON PARKWAY,1.0500
+Ft. Hamilton Pkwy.,Brooklyn,N03,FORT HAMILTON PARKWAY,1.1000
+Fulton & William Streets,Bronx,229,FULTON STREET,0.7429
+Fulton St.,Brooklyn,G36,FULTON STREET,1.1000
+Fulton St./3 Av. El (Closed 12/22/50),Manhattan,-1,CLOSED,1.0000
+Fulton St./5 Av. El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Fulton St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Fulton St./Broadway-Nassau,Manhattan,126,50TH STREET-BWAY,0.7809
+Fulton Street,Bronx,229,FULTON STREET,1.0000
+Fulton Street,Manhattan,229,FULTON STREET,1.1000
+Fulton Street,Queens,229,FULTON STREET,1.0000
+Fulton Street & Broadway,Manhattan,126,50TH STREET-BWAY,0.9000
+Gates Ave.,Brooklyn,J30,GATES AVENUE,1.1000
+Gates Avenue,Manhattan,J30,GATES AVENUE,1.0000
+Graham Ave.,Brooklyn,L11,GRAHAM AVENUE,1.1000
+Graham Avenue,Brooklyn,L11,GRAHAM AVENUE,1.1000
+Grand Army Plaza,Brooklyn,237,GRAND ARMY PLAZA,1.1000
+Grand Army Plaza (Prosp. Park Plaza),Brooklyn,237,GRAND ARMY PLAZA,1.1000
+Grand Ave.,Queens,A57,GRANT AVENUE,0.9167
+Grand Avenue,Brooklyn,A57,GRANT AVENUE,1.0167
+Grand Avenue,Queens,A57,GRANT AVENUE,0.9167
+Grand Avenue (Closed 1/21/53),Brooklyn,-1,CLOSED,1.0000
+Grand Avenue (from 4/8/23),Brooklyn,A57,GRANT AVENUE,1.0167
+"Grand Avenue (from December 31, 1936)",Manhattan,A57,GRANT AVENUE,0.9167
+Grand Central,Manhattan,901,GRAND CENTRAL-SHUTTLE,0.8647
+Grand Central (Lex. Ave.),Manhattan,901,GRAND CENTRAL-SHUTTLE,0.8647
+Grand Central (to 12/2/23),Manhattan,901,GRAND CENTRAL-SHUTTLE,0.8647
+Grand St.,Brooklyn,L12,GRAND STREET,1.1000
+Grand St. (Opened 11/26/67),Manhattan,D22,GRAND STREET,1.1000
+Grand St./2 Av El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+Grand St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+Grand St./3 Av El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+Grand Street,Brooklyn,L12,GRAND STREET,1.1000
+Grand Street,Manhattan,D22,GRAND STREET,1.1000
+Grand Street,Queens,D22,GRAND STREET,1.0000
+Grand Street (from 6/30/24),Brooklyn,L12,GRAND STREET,1.1000
+Grand Street (to 12/4/38),Manhattan,D22,GRAND STREET,1.1000
+Grant Ave. (Opened 4/29/56),Brooklyn,A57,GRANT AVENUE,1.1000
+Grant Avenue (City Line),Brooklyn,A57,GRANT AVENUE,1.1000
+Grant Avenue (elevated station),Brooklyn,A57,GRANT AVENUE,1.1000
+Greene Ave.,Brooklyn,A57,GRANT AVENUE,0.9000
+Greene Avenue,Manhattan,A57,GRANT AVENUE,0.8000
+Greenpoint Ave.,Brooklyn,G26,GREENPOINT AVENUE,1.1000
+"Greenpoint Avenue (from August 19, 1933)",Brooklyn,G26,GREENPOINT AVENUE,1.1000
+Greenwood Avenue,Brooklyn,J21,NORWOOD AVENUE,0.9000
+Greenwood Avenue (111th St.),Brooklyn,J21,NORWOOD AVENUE,0.9000
+Greenwood Avenue (111th Street),Brooklyn,J21,NORWOOD AVENUE,0.9000
+Gun Hill Rd.,Bronx,503,GUN HILL ROAD,1.1000
+Gun Hill Road,Bronx,503,GUN HILL ROAD,1.1000
+Halsey St.,Brooklyn,J29,HALSEY STREET,1.1000
+Halsey Street,Brooklyn,J29,HALSEY STREET,1.1000
+Halsey Street,Manhattan,J29,HALSEY STREET,1.0000
+Halsey Street (from 7/14/25),Brooklyn,J29,HALSEY STREET,1.1000
+Hanover Sq./3 Av. El (Closed 12/22/50),Manhattan,-1,CLOSED,1.0000
+Hanover Square,Queens,G22,COURT SQUARE,0.7923
+Hewes St.,Brooklyn,M14,HEWES STREET,1.1000
+Hewes Street,Brooklyn,M14,HEWES STREET,1.1000
+High St.,Brooklyn,R33,9TH STREET,0.8368
+High Street,Manhattan,R19,23RD STREET,0.8000
+"High Street (from February 24, 1933)",Brooklyn,R33,9TH STREET,0.8368
+Hinsdale Street,Brooklyn,J29,HALSEY STREET,0.8857
+Hooper Place,Brooklyn,S03,PARK PLACE,0.8273
+Houston St.,Manhattan,229,FULTON STREET,0.9148
+Houston St./2 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+Houston St./3 Av. El (Closed 5/11/55),Manhattan,-1,CLOSED,1.0000
+Houston St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Houston Street,Bronx,229,FULTON STREET,0.8148
+Houston Street,Queens,229,FULTON STREET,0.8148
+Howard Beach,Queens,H03,HOWARD BEACH-JFK AIRPORT,0.7667
+Hoyt Avenue,Queens,M05,FOREST AVENUE,0.8500
+Hoyt Avenue (from 4/8/23),Brooklyn,D25,7TH AVENUE,0.8368
+Hoyt St.-Fulton Mall,Brooklyn,233,HOYT STREET,0.7471
+Hoyt Street,Brooklyn,233,HOYT STREET,1.1000
+Hoyt-Duffield,Brooklyn,233,HOYT STREET,0.6000
+"Hoyt-Schermerhorn Streets (from April 9, 1936)",Brooklyn,A42,HOYT-SCHERMERHORN,0.9095
+Hoyt/Schermerhorn Sta.,Brooklyn,A42,HOYT-SCHERMERHORN,0.9947
+Hoyt/Schermerhorn Sts.,Brooklyn,A42,HOYT-SCHERMERHORN,0.9095
+Hudson Street,Brooklyn,R32,UNION STREET,0.9000
+Hudson Street (80th Street),Brooklyn,R32,UNION STREET,0.9000
+Hunter's Point Avenue,Manhattan,720,HUNTERS POINT AVENUE,1.0000
+Hunters Pt. Ave.,Queens,720,HUNTERS POINT AVENUE,1.0189
+Hunts Point Avenue,Bronx,613,HUNTS POINT AVENUE,1.1000
+Hunts Point Road,Bronx,613,HUNTS POINT AVENUE,0.8647
+Hunts Pt. Ave.,Bronx,613,HUNTS POINT AVENUE,1.0091
+Intervale Ave.,Bronx,218,INTERVALE AVENUE,1.1000
+Intervale Avenue,Bronx,218,INTERVALE AVENUE,1.1000
+Its Kalb Avenue,Brooklyn,R30,DEKALB AVENUE,0.8857
+Jackson Ave.,Bronx,220,JACKSON AVENUE,1.1000
+Jackson Avenue,Bronx,220,JACKSON AVENUE,1.1000
+Jackson Avenue,Manhattan,220,JACKSON AVENUE,1.0000
+Jamaica 1,Brooklyn,G07,VAN WYCK-JAMAICA,0.5600
+Jamaica Center,Queens,G05,PARSONS/ARCHER-JAMAICA CENTER,0.7512
+Jamaica/Van Wyck,Queens,G07,VAN WYCK-JAMAICA,0.6000
+Jay St.,Brooklyn,B23,BAY 50TH STREET,0.8826
+"Jay Street-Borough Hall (from February 1, 1933)",Brooklyn,232,BOROUGH HALL,0.7857
+Jefferson St.,Brooklyn,L15,JEFFERSON STREET,1.1000
+Jefferson Street,Brooklyn,L15,JEFFERSON STREET,1.1000
+Jefferson Street (from 7/14/25),Brooklyn,L15,JEFFERSON STREET,1.1000
+Junction Avenue,Queens,720,HUNTERS POINT AVENUE,0.7857
+Junction Avenue (from 4/8/23),Queens,720,HUNTERS POINT AVENUE,0.7857
+Junction Blvd.,Queens,707,JUNCTION BOULEVARD,1.1000
+Junction Boulevard,Queens,707,JUNCTION BOULEVARD,1.1000
+Junius St.,Brooklyn,254,JUNIUS STREET,1.1000
+Junius Street,Brooklyn,254,JUNIUS STREET,1.1000
+Junius Street (from 12/23/80),Brooklyn,254,JUNIUS STREET,1.1000
+Jurens Plaza (from 8/1/20),Queens,G21,QUEENS PLAZA,0.9333
+Kings Highway,Brooklyn,D35,KINGS HIGHWAY,1.1000
+Kings Highway (also Avenue R),Brooklyn,D35,KINGS HIGHWAY,1.1000
+Kingsbridge Rd.,Bronx,406,KINGSBRIDGE ROAD,1.1000
+Kingsbridge Road,Bronx,406,KINGSBRIDGE ROAD,1.1000
+"Kingsbridge Road (from July 1, 1933)",Bronx,406,KINGSBRIDGE ROAD,1.1000
+Kingston Ave.,Brooklyn,249,KINGSTON AVENUE,1.1000
+Kingston Ave. (from 8/23/80),Brooklyn,249,KINGSTON AVENUE,1.1000
+Kingston Avenue,Brooklyn,249,KINGSTON AVENUE,1.1000
+"Kingston-Throop Avenues (from April 9, 1936)",Brooklyn,A47,KINGSTON-THROOP AVENUES,1.1000
+Kingston/Throop Aves.,Brooklyn,A47,KINGSTON-THROOP AVENUES,1.1000
+Knickerbocker Ave.,Brooklyn,M09,KNICKERBOCKER AVENUE,1.1000
+Knickerbocker Avenue,Brooklyn,M09,KNICKERBOCKER AVENUE,1.1000
+Kosciusko St.,Brooklyn,J31,KOSCIUSZKO STREET,1.0697
+Kosciusko Street,Brooklyn,J31,KOSCIUSZKO STREET,1.0697
+Lafayette Ave.,Brooklyn,A43,LAFAYETTE AVENUE,1.1000
+Lafayette Ave./Flin El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Lafayette Ave./Ftn El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Lafayette Avenue,Brooklyn,A43,LAFAYETTE AVENUE,1.1000
+"Lafayette Avenue (from April 9, 1936)",Brooklyn,A43,LAFAYETTE AVENUE,1.1000
+Lasex Street,Manhattan,M18,ESSEX STREET,0.9333
+Lawrence Avenue Conn,Brooklyn,235,ATLANTIC AVENUE,0.7286
+Lawrence St.,Brooklyn,231,CLARK STREET,0.8407
+Lawrence Street,Manhattan,F15,DELANCEY STREET,0.9000
+Lefferts Avenue,Brooklyn,A52,LIBERTY AVENUE,0.8586
+Lefferts Avenue (119th Street),Brooklyn,A52,LIBERTY AVENUE,0.8586
+Lefferts Blvd,Queens,A65,LEFFERTS BOULEVARD-OZONE PARK,0.8660
+Lexington Av./63 St. (Opened 10/29/89),Manhattan,B08,LEXINGTON AVENUE-63ST,0.9444
+Lexington Avenue,Manhattan,B08,LEXINGTON AVENUE-63ST,1.0143
+Lexington-3 Aves./51 St.,Manhattan,F11,LEXINGTON AVENUE-53ST,0.8500
+Liberty Ave.,Brooklyn,A52,LIBERTY AVENUE,1.1000
+Liberty Ave. (Opened 11/28/48),Brooklyn,A52,LIBERTY AVENUE,1.1000
+Lincoln Avenue,Queens,713,52ND STREET-LINCOLN AV,0.8368
+Linwood Street,Brooklyn,R32,UNION STREET,0.7923
+Livonia Ave.,Brooklyn,L26,LIVONIA AVENUE,1.1000
+Livonia Avenue,Brooklyn,L26,LIVONIA AVENUE,1.1000
+Longwood Ave.,Bronx,614,LONGWOOD AVENUE,1.1000
+Longwood Avenue,Bronx,614,LONGWOOD AVENUE,1.1000
+Lorimer St.,Brooklyn,M13,LORIMER STREET,1.1000
+Lorimer Street,Brooklyn,M13,LORIMER STREET,1.1000
+Lorimer Street (from 6/30/24),Brooklyn,M13,LORIMER STREET,1.1000
+Lowery Street,Queens,L19,HALSEY STREET,0.8692
+Lowery Street (from 4/8/23),Queens,L19,HALSEY STREET,0.8692
+Main Line,Brooklyn,L14,MORGAN AVENUE,0.6455
+Main St.,Queens,701,FLUSHING-MAIN STREET,0.8097
+"Main St., Flushing",Queens,705,111TH STREET-FLUSHING,0.9205
+Main St.-Flushing (from 1/21/28),Queens,705,111TH STREET-FLUSHING,0.9205
+Main Street - Flushing (from 1/21/28),Queens,705,111TH STREET-FLUSHING,0.9205
+"Main Street, Flushing",Queens,705,111TH STREET-FLUSHING,0.9205
+Manhattan Avenue,Manhattan,135,CANAL STREET-7AV,0.7486
+Marcy Ave.,Brooklyn,M16,MARCY AVENUE,1.1000
+Marcy Avenue,Brooklyn,M16,MARCY AVENUE,1.1000
+McDonald Avenue,Brooklyn,M10,CENTRAL AVENUE,0.8586
+Metropolitan Ave.,Brooklyn,G29,METROPOLITAN AVENUE-GRAND ST,0.8451
+Metropolitan Ave. (Closed 4/15/85),Queens,-1,CLOSED,1.0000
+Metropolitan Ave./Lorimer St.,Brooklyn,G29,METROPOLITAN AVENUE-GRAND ST,0.9485
+Metropolitan Avenue,Brooklyn,G29,METROPOLITAN AVENUE-GRAND ST,0.8451
+"Metropolitan Avenue (from July 1, 1937)",Brooklyn,G29,METROPOLITAN AVENUE-GRAND ST,0.8451
+Middletown Rd.,Bronx,603,MIDDLETOWN ROAD,1.1000
+Middletown Rd. (from 12/13/80),Bronx,603,MIDDLETOWN ROAD,1.1000
+Middletown Road,Bronx,603,MIDDLETOWN ROAD,1.1000
+Montauk Avenue,Brooklyn,L13,MONTROSE AVENUE,0.8586
+Montrose Ave.,Brooklyn,L13,MONTROSE AVENUE,1.1000
+Montrose Ave. (from 7/14/25),Brooklyn,L13,MONTROSE AVENUE,1.1000
+Montrose Avenue,Brooklyn,L13,MONTROSE AVENUE,1.1000
+Morgan Ave.,Brooklyn,L14,MORGAN AVENUE,1.1000
+Morgan Avenue,Brooklyn,L14,MORGAN AVENUE,1.1000
+Morris Park,Bronx,505,MORRIS PARK,1.1000
+Morrison/Soundview Aves.,Bronx,610,SOUNDVIEW AVENUE,0.8619
+Mosholu Parkway,Bronx,402,MOSHOLU PARKWAY,1.1000
+Mosholu Pkwy.,Bronx,402,MOSHOLU PARKWAY,1.1000
+Mott Avenue,Bronx,D07,TREMONT AVENUE,0.9000
+Mt. Eden Ave.,Bronx,411,MT. EDEN AVENUE,1.1000
+Mt. Eden Avenue,Bronx,411,MT. EDEN AVENUE,1.1000
+Mushroom Avenue,Brooklyn,J21,NORWOOD AVENUE,0.7897
+Myrtle Ave./Broadway,Brooklyn,M11,MYRTLE AVENUE-BROADWAY,1.1000
+Myrtle Ave./Fulton El (Closed 5/31/40),Brooklyn,-1,CLOSED,1.0000
+Myrtle Avenue,Brooklyn,M11,MYRTLE AVENUE-BROADWAY,0.8429
+Myrtle Avenue (Gold Street),Brooklyn,M11,MYRTLE AVENUE-BROADWAY,0.8429
+Myrtle Avenue (from 7/14/25),Brooklyn,M11,MYRTLE AVENUE-BROADWAY,0.8429
+Myrtle and Grand Avenues,Manhattan,138,CORTLANDT STREET-7AV,0.7122
+"Myrtle-Willoughby Avenues (from July 1, 1937)",Brooklyn,G32,MYRTLE-WILLOUGHBY AVENUES,1.1000
+Myrtle/Flatbush Aves. (Closed 7/15/56),Brooklyn,-1,CLOSED,1.0000
+Myrtle/Willoughby Aves.,Brooklyn,G32,MYRTLE-WILLOUGHBY AVENUES,1.1000
+Myrtle/Wyckoff Aves.,Brooklyn,L17,MYRTLE-WYCKOFF AVENUES,1.1000
+"N.Y. Rapid Transit Corp's Tickets, Cr.",Queens,714,46TH STREET-BLISS ST,0.4636
+NET ISLAND TERMINALS - Stillwell Avenue (West End),Brooklyn,256,VAN SICLEN AVENUE,0.6185
+Nassau Ave.,Brooklyn,G28,NASSAU AVENUE,1.1000
+"Nassau Avenue (from August 19, 1933)",Brooklyn,G28,NASSAU AVENUE,1.1000
+Navy St./Myrtle El (Closed 10/3/69),Brooklyn,-1,CLOSED,1.0000
+Navy Street,Manhattan,R23,CANAL STREET (TUNNEL),0.8826
+Neck Rd.,Brooklyn,D38,NECK ROAD,1.1000
+Neck Road,Brooklyn,D38,NECK ROAD,1.1000
+Neptune Ave./Van Sicklen,Brooklyn,F39,NEPTUNE AVENUE,0.8000
+Nevins St.,Brooklyn,234,NEVINS STREET,1.1000
+Nevins Street,Brooklyn,234,NEVINS STREET,1.1000
+Nevins Street (from 8/1/20),Manhattan,234,NEVINS STREET,1.0000
+New Lots Ave.,Brooklyn,257,NEW LOTS AVENUE,1.1000
+New Lots Avenue,Brooklyn,257,NEW LOTS AVENUE,1.1000
+New Lots Road,Brooklyn,257,NEW LOTS AVENUE,0.8143
+New Utrecht Ave. (also 16th Ave.),Brooklyn,N04,NEW UTRECHT AVENUE,1.1000
+New Utrecht Ave./62 St.,Brooklyn,N04,NEW UTRECHT AVENUE,0.8826
+New York University,Bronx,212,BRONX PARK EAST,0.5706
+New York University—Burnside Ave.,Bronx,409,BURNSIDE AVENUE,0.7000
+Newark Avenue (160th St.),Queens,246,NEWKIRK AVENUE,0.8889
+Newkirk Ave.,Brooklyn,246,NEWKIRK AVENUE,1.1000
+Newkirk Ave. (from 8/25/80),Brooklyn,246,NEWKIRK AVENUE,1.1000
+Newkirk Avenue,Brooklyn,246,NEWKIRK AVENUE,1.1000
+Northern Blvd.,Queens,G16,NORTHERN BOULEVARD,1.1000
+Norton's Point,Brooklyn,702,WILLETS POINT,0.6154
+Norwood Ave.,Brooklyn,J21,NORWOOD AVENUE,1.1000
+Norwood Avenue,Brooklyn,J21,NORWOOD AVENUE,1.1000
+Nostrand Ave.,Brooklyn,248,NOSTRAND AVENUE,1.1000
+Nostrand Ave. (from 8/23/80),Brooklyn,248,NOSTRAND AVENUE,1.1000
+Nostrand Avenue,Brooklyn,248,NOSTRAND AVENUE,1.1000
+Nostrand Avenue,Manhattan,248,NOSTRAND AVENUE,1.0000
+"Nostrand Avenue (from April 9, 1936)",Brooklyn,248,NOSTRAND AVENUE,1.1000
+Ocean Parkway,Brooklyn,D41,OCEAN PARKWAY,1.1000
+Ocean Pkwy.,Brooklyn,D41,OCEAN PARKWAY,1.1000
+"Overlook Terrace (from Sept. 10, 1932)",Manhattan,228,PARK PLACE,0.5615
+Oxford Avenue,Brooklyn,L08,BEDFORD AVENUE,0.9148
+Oxford Avenue (104th Street),Brooklyn,L08,BEDFORD AVENUE,0.9148
+Pacific Street,Brooklyn,R33,9TH STREET,0.7364
+Park Avenue,Brooklyn,D27,PARKSIDE AVENUE,0.9462
+Park Place,Bronx,228,PARK PLACE,1.0000
+Park Place,Brooklyn,S03,PARK PLACE,1.1000
+Park Place (to 12/4/38),Manhattan,228,PARK PLACE,1.1000
+Park Row,Brooklyn,S03,PARK PLACE,0.6556
+Park Row,Queens,228,PARK PLACE,0.5556
+Park Row/Bklyn Bridge (Closed 3/5/44),Manhattan,-1,CLOSED,1.0000
+Park Row/Bklyn Bridge (Closed 3/6/44),Manhattan,-1,CLOSED,1.0000
+Parkside Ave.,Brooklyn,D27,PARKSIDE AVENUE,1.1000
+Parkside Avenue,Brooklyn,D27,PARKSIDE AVENUE,1.1000
+Parsons Blvd.,Queens,F03,PARSONS BOULEVARD,1.1000
+"Parsons Boulevard (from April 24, 1937)",Manhattan,F03,PARSONS BOULEVARD,1.0000
+Pelham Bay Park,Bronx,601,PELHAM BAY PARK,1.1000
+Pelham Bay Pk. (from 12/13/80),Bronx,601,PELHAM BAY PARK,1.1000
+Pelham Parkway,Bronx,504,PELHAM PARKWAY,1.1000
+Pelham Pkwy.,Bronx,504,PELHAM PARKWAY,1.1000
+Pennsylvania Ave.,Brooklyn,255,PENNSYLVANIA AVENUE,1.1000
+Pennsylvania Ave. (from 12/23/80),Brooklyn,255,PENNSYLVANIA AVENUE,1.1000
+Pennsylvania Avenue,Brooklyn,255,PENNSYLVANIA AVENUE,1.1000
+Pennsylvania Station,Bronx,255,PENNSYLVANIA AVENUE,0.7692
+President St.,Brooklyn,241,PRESIDENT STREET,1.1000
+President St. (from 8/25/80),Brooklyn,241,PRESIDENT STREET,1.1000
+President Street,Brooklyn,241,PRESIDENT STREET,1.1000
+Prince St.,Manhattan,R22,PRINCE STREET,1.1000
+Prince Street,Manhattan,R22,PRINCE STREET,1.1000
+Prospect Ave.,Bronx,219,PROSPECT AVENUE,1.1000
+Prospect Ave.,Brooklyn,R34,PROSPECT AVENUE,1.1000
+Prospect Avenue,Bronx,219,PROSPECT AVENUE,1.1000
+Prospect Avenue,Brooklyn,R34,PROSPECT AVENUE,1.1000
+Prospect Park,Brooklyn,D26,PROSPECT PARK,1.1000
+Prospect Pk. Plaza (from 10/3/20),Brooklyn,D26,PROSPECT PARK,0.9125
+Queens Blvd. (Closed 4/15/85),Queens,-1,CLOSED,1.0000
+Queens Boulevard,Queens,F04,SUTPHIN BOULEVARD,0.8273
+Queens Plaza,Queens,G21,QUEENS PLAZA,1.1000
+"Queens Plaza (from August 19, 1933)",Manhattan,G21,QUEENS PLAZA,1.0000
+Queensboro Plaza,Queens,718,QUEENSBORO PLAZA,1.1000
+Ralph Ave.,Brooklyn,A49,RALPH AVENUE,1.1000
+Ralph Avenue,Brooklyn,A49,RALPH AVENUE,1.1000
+"Ralph Avenue (from April 9, 1936)",Brooklyn,A49,RALPH AVENUE,1.1000
+Rawson Street,Queens,716,33RD STREET-RAWSON ST,0.8222
+Rector St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Rector St./Greenwich St.,Manhattan,139,RECTOR STREET-7AV,0.7538
+Rector St./Trinity Pl.,Manhattan,139,RECTOR STREET-7AV,0.7531
+Rector Street,Bronx,R26,RECTOR STREET,1.0000
+Rector Street,Manhattan,R26,RECTOR STREET,1.1000
+Reid Ave.,Brooklyn,A55,EUCLID AVENUE,0.9333
+Reid Avenue,Brooklyn,A55,EUCLID AVENUE,0.9333
+Reid Avenue,Manhattan,F14,2ND AVENUE,0.8368
+Reid Avenue (Utica Ave.),Brooklyn,A55,EUCLID AVENUE,0.9333
+Rivington St./2 Av. El (Closed 6/13/42),Manhattan,-1,CLOSED,1.0000
+Rivington Street,Queens,R32,UNION STREET,0.7143
+Rockaway Ave.,Brooklyn,253,ROCKAWAY AVENUE,1.1000
+Rockaway Ave. (from 11/22/80),Brooklyn,253,ROCKAWAY AVENUE,1.1000
+Rockaway Avenue,Brooklyn,253,ROCKAWAY AVENUE,1.1000
+"Rockaway Avenue (from April 9, 1936)",Brooklyn,253,ROCKAWAY AVENUE,1.1000
+Rockaway Blvd.,Brooklyn,A61,ROCKAWAY BOULEVARD,1.0000
+Rockaway Blvd. (96th Street),Brooklyn,A61,ROCKAWAY BOULEVARD,1.0000
+Rockaway Boulevard,Brooklyn,A61,ROCKAWAY BOULEVARD,1.0000
+Rockaway Park/Beach 116 St.,Queens,H09,BEACH 36TH STREET,0.7222
+Rockaway Parkway,Brooklyn,L29,ROCKAWAY PARKWAY-CANARSIE,0.8805
+Rockaway Pkwy.,Brooklyn,L29,ROCKAWAY PARKWAY-CANARSIE,0.8805
+"Roosevelt Avenue (from August 19, 1933)",Manhattan,B06,ROOSEVELT ISLAND,0.8500
+Roosevelt Island (Opened 10/29/89),Queens,B06,ROOSEVELT ISLAND,1.0000
+S't./Broadway,Manhattan,126,50TH STREET-BWAY,1.0091
+Sands St./Bklyn Bridge (Closed 3/5/44),Brooklyn,-1,CLOSED,1.0000
+Sands Street,Brooklyn,L12,GRAND STREET,0.9333
+Saratoga Ave.,Brooklyn,252,SARATOGA AVENUE,1.1000
+Saratoga Ave. (from 11/22/80),Brooklyn,252,SARATOGA AVENUE,1.1000
+Saratoga Avenue,Brooklyn,252,SARATOGA AVENUE,1.1000
+"Second Avenue (from January 1, 1936)",Manhattan,A55,EUCLID AVENUE,0.7692
+Sedgwick Ave.,Bronx,612,WHITLOCK AVENUE,0.8333
+Sedgwick Avenue,Manhattan,246,NEWKIRK AVENUE,0.7586
+Seneca Ave.,Brooklyn,M06,SENECA AVENUE,1.0000
+Seneca Avenue,Brooklyn,M06,SENECA AVENUE,1.0000
+Seventh Avenue,Manhattan,132,14TH STREET-7AV,0.7875
+"Seventh Avenue (from October 7, 1933)",Brooklyn,M10,CENTRAL AVENUE,0.8143
+Sheepshead Bay,Brooklyn,D39,SHEEPSHEAD BAY,1.1000
+Shephard Ave. (Opened 11/28/48),Brooklyn,A54,SHEPHERD AVENUE,1.0333
+Shepherd Ave. (Opened 11/28/48),Brooklyn,A54,SHEPHERD AVENUE,1.1000
+Simpson St.,Bronx,217,SIMPSON STREET,1.1000
+Simpson Street,Bronx,217,SIMPSON STREET,1.1000
+"Smith-9th Streets (from October 7, 1933)",Brooklyn,F22,SMITH-9TH STREETS,1.1000
+Smith/9 Sts.,Brooklyn,F22,SMITH-9TH STREETS,1.1000
+Sound View Ave. (from 6/30/20),Bronx,610,SOUNDVIEW AVENUE,1.0697
+Sound View Avenue,Bronx,610,SOUNDVIEW AVENUE,1.0697
+Spring St./6 Ave.,Manhattan,A33,SPRING STREET-8AV,0.9205
+Spring St./Lafayette St.,Manhattan,D21,BROADWAY-LAFAYETTE STREET,0.7545
+Spring Street,Brooklyn,242,STERLING STREET,0.9571
+"Spring Street (from Sept. 10, 1932)",Manhattan,A33,SPRING STREET-8AV,0.9667
+Spruce Street (121st St.),Brooklyn,R22,PRINCE STREET,0.8462
+St. Lawrence Ave.,Bronx,609,ST. LAWRENCE AVENUE,1.1000
+St. Lawrence Ave. (from 6/30/20),Bronx,609,ST. LAWRENCE AVENUE,1.1000
+St. Lawrence Avenue,Bronx,609,ST. LAWRENCE AVENUE,1.1000
+St. Marks Ave.,Brooklyn,F29,DITMAS AVENUE,0.7875
+St. Marks Avenue,Brooklyn,F29,DITMAS AVENUE,0.7875
+Steinway St.,Queens,G19,STEINWAY STREET,1.1000
+Sterling St.,Brooklyn,242,STERLING STREET,1.1000
+Sterling Street,Brooklyn,242,STERLING STREET,1.1000
+Sterling Street (from 8/25/80),Brooklyn,242,STERLING STREET,1.1000
+Stillwell Ave. (including Norton's Point),Brooklyn,D43,STILLWELL AVENUE-CONEY ISLAND,0.8111
+Sumner Ave.,Brooklyn,251,SUTTER AVENUE,0.9462
+Sumner Avenue,Brooklyn,251,SUTTER AVENUE,0.9462
+Sutphin Blvd.,Queens,F04,SUTPHIN BOULEVARD,1.1000
+Sutphin Blvd. (L.I.R.R. depot),Queens,F04,SUTPHIN BOULEVARD,1.1000
+Sutphin Blvd.-LIRR (Closed 9/11/77),Queens,-1,CLOSED,1.0000
+Sutphin Road (L.I.R.R. Depot),Queens,F04,SUTPHIN BOULEVARD,0.7897
+Sutter Ave.,Brooklyn,251,SUTTER AVENUE,1.1000
+Sutter Avenue,Brooklyn,251,SUTTER AVENUE,1.1000
+Sutter Avenue (from 11/22/80),Brooklyn,251,SUTTER AVENUE,1.1000
+Third Avenue,Bronx,602,BUHRE AVENUE,0.8500
+Times Square,Manhattan,R16,TIMES SQUARE-42ST,0.9889
+Times Square/42 St./8 Ave.,Manhattan,137,CHAMBERS STREET-7AV,0.7545
+Tompkins Ave.,Brooklyn,249,KINGSTON AVENUE,0.8333
+Tompkins Avenue,Brooklyn,249,KINGSTON AVENUE,0.8333
+Tremont Ave.,Bronx,D07,TREMONT AVENUE,1.1000
+"Tremont Avenue (from July 1, 1933)",Bronx,D07,TREMONT AVENUE,1.1000
+Troy Avenue,Brooklyn,M16,MARCY AVENUE,0.8826
+Troy Avenue (Sumner Ave.),Brooklyn,M16,MARCY AVENUE,0.8826
+Union Square,Manhattan,R20,14TH STREET-UNION SQUARE,0.8059
+Union St.,Brooklyn,R32,UNION STREET,1.1000
+Union Street,Brooklyn,R32,UNION STREET,1.1000
+Union Turnpike,Queens,F06,UNION TURNPIKE-KEW GARDENS,0.8000
+"Union Turnpike (from December 31, 1936)",Manhattan,F06,UNION TURNPIKE-KEW GARDENS,0.7000
+Utica Ave.,Brooklyn,250,UTICA AVENUE,1.1000
+Utica Ave. (from 8/23/80),Brooklyn,250,UTICA AVENUE,1.1000
+Utica Avenue,Brooklyn,250,UTICA AVENUE,1.1000
+"Utica Avenue (from April 9, 1936)",Brooklyn,250,UTICA AVENUE,1.1000
+"Van Alst Avenue-21st Street (from August 19, 1933)",Brooklyn,L28,EAST 105TH STREET,0.7000
+Van Sicklen Ave.,Brooklyn,256,VAN SICLEN AVENUE,1.0714
+Van Sicklen Avenue,Brooklyn,256,VAN SICLEN AVENUE,1.0714
+Van Sicklen Avenue (from 8/1/20),Brooklyn,256,VAN SICLEN AVENUE,1.0714
+Van Siclen Ave.,Brooklyn,256,VAN SICLEN AVENUE,1.1000
+Van Siclen Ave. (Opened 11/28/48),Brooklyn,256,VAN SICLEN AVENUE,1.1000
+Van Siclen Avenue,Brooklyn,256,VAN SICLEN AVENUE,1.1000
+Van Wyck Blvd.,Queens,F05,VAN WYCK BOULEVARD-BRIARWOOD,0.8826
+"Van Wyck Boulevard (from April 24, 1937)",Manhattan,F05,VAN WYCK BOULEVARD-BRIARWOOD,0.7826
+Vanderbilt Ave.,Brooklyn,A57,GRANT AVENUE,0.7897
+Vanderbilt Avenue,Brooklyn,A57,GRANT AVENUE,0.7897
+Vanderbilt Avenue,Manhattan,611,ELDER AVENUE,0.6897
+Vernon/Jackson Aves.,Queens,721,VERNON BOULEVARD-JACKSON AV,0.8925
+W. 4 St.,Manhattan,R15,49TH STREET,0.9421
+W. 8 St.,Brooklyn,N10,86TH STREET,0.9421
+"WORLD'S FAIR STATION (from April 30, 1939)",Manhattan,128,34TH STREET-PENN STATION,0.5878
+Wall & William Streets,Bronx,217,SIMPSON STREET,0.6294
+Wall St./Broadway,Manhattan,126,50TH STREET-BWAY,0.9421
+Wall St./William St.,Manhattan,230,WALL STREET-WILLIAM,0.9444
+Wall Street,Bronx,F21,CARROLL STREET,0.8000
+Wall Street & Broadway,Manhattan,126,50TH STREET-BWAY,0.9421
+Warren St./6 Av. El (Closed 6/11/40),Manhattan,-1,CLOSED,1.0000
+Washington Ave.,Brooklyn,249,KINGSTON AVENUE,0.9125
+Washington Avenue,Manhattan,B08,LEXINGTON AVENUE-63ST,0.8222
+Washington Avenue,Queens,249,KINGSTON AVENUE,0.8125
+Washington Avenue (from 4/8/23),Brooklyn,249,KINGSTON AVENUE,0.9125
+West 8th Street (Culver),Brooklyn,M14,HEWES STREET,0.9000
+Westchester Avenue,Bronx,502,BAYCHESTER AVENUE,0.9000
+Westchester Sq. (from 10/24/80),Bronx,604,WESTCHESTER SQUARE STATION,0.9182
+Westchester Square,Bronx,604,WESTCHESTER SQUARE STATION,0.9182
+Whitehall St.,Manhattan,R27,WHITEHALL STREET-SOUTH FERRY,0.8273
+Whitehall Street,Manhattan,R27,WHITEHALL STREET-SOUTH FERRY,0.8273
+Whitlock Ave.,Bronx,612,WHITLOCK AVENUE,1.1000
+Whitlock Ave. (from 6/30/20),Bronx,612,WHITLOCK AVENUE,1.1000
+Whitlock Avenue,Bronx,612,WHITLOCK AVENUE,1.1000
+Willets Point Blvd.,Queens,702,WILLETS POINT,0.8222
+Willets Point Blvd. (from 6/7/27),Queens,702,WILLETS POINT,0.8222
+Willets Pt. Blvd. (from 1/21/28),Queens,J15,WOODHAVEN BOULEVARD,0.7154
+Willets Pt/Shea Stadium,Queens,702,WILLETS POINT,0.6556
+Williambridge-210th Street,Bronx,213,EAST 180TH STREET,0.6641
+Williamsbridge-210 St.,Bronx,213,EAST 180TH STREET,0.7000
+Williamsbridge-210th Street,Bronx,213,EAST 180TH STREET,0.7000
+Willis Avenue (to 4/15/24),Manhattan,L20,WILSON AVENUE,0.8462
+Wilson Ave.,Brooklyn,L20,WILSON AVENUE,1.1000
+Wilson Avenue,Brooklyn,L20,WILSON AVENUE,1.1000
+Winthrop St.,Brooklyn,243,WINTHROP STREET,1.1000
+Winthrop Street,Brooklyn,243,WINTHROP STREET,1.1000
+Winthrop Street (from 8/25/80),Brooklyn,243,WINTHROP STREET,1.1000
+Woodhaven Blvd.,Queens,J15,WOODHAVEN BOULEVARD,1.1000
+Woodhaven Boulevard,Brooklyn,J15,WOODHAVEN BOULEVARD,1.0000
+"Woodhaven Boulevard (from December 31, 1936)",Manhattan,J15,WOODHAVEN BOULEVARD,1.0000
+Woodlawn,Bronx,401,WOODLAWN-JEROME AVENUE,0.6333
+Woodside,Queens,712,61ST STREET-WOODSIDE,0.7154
+Woodside (from 4/8/23),Queens,712,61ST STREET-WOODSIDE,0.7154
+World's Fair (Open 5/11-10/27/40),Queens,H03,HOWARD BEACH-JFK AIRPORT,0.5571
+Worth St./Lex Av. line (Closed 9/1/62),Manhattan,-1,CLOSED,1.0000
+Worth St./Lex. line (Closed 9/1/62),Manhattan,-1,CLOSED,1.0000
+Worth Street,Brooklyn,R28,COURT STREET,0.9333
+Wyckoff Avenue,Brooklyn,L17,MYRTLE-WYCKOFF AVENUES,0.8778
+York St.,Brooklyn,F18,YORK STREET,1.1000
+"York Street (from April 9, 1936)",Brooklyn,F18,YORK STREET,1.1000
+Zerega Ave.,Bronx,606,ZEREGA AVENUE,1.1000
+Zerega Ave. (from 10/24/80),Bronx,606,ZEREGA AVENUE,1.1000
+Zerega Avenue,Bronx,606,ZEREGA AVENUE,1.1000
+exington Avenue (from 8/1/18),Manhattan,B08,LEXINGTON AVENUE-63ST,0.9824
