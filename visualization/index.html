@@ -108,6 +108,54 @@
         const MIN_YEAR = 1920;
         const MAX_YEAR = 1945;
         let currentYear = MIN_YEAR;
+        let routeThickness = 6;
+
+        // Build a filled polygon (ribbon) along a polyline by offsetting each
+        // vertex perpendicular to the direction of travel. Miter joins are
+        // capped to avoid spikes on sharp turns.
+        function ribbonPoints(points, halfWidth) {
+            if (!points || points.length < 2) return "";
+            const n = points.length;
+            const left = new Array(n), right = new Array(n);
+            const MITER_LIMIT = 4;
+            for (let i = 0; i < n; i++) {
+                const [px, py] = points[i];
+                let nx, ny;
+                if (i === 0) {
+                    const [qx, qy] = points[1];
+                    const dx = qx - px, dy = qy - py;
+                    const len = Math.hypot(dx, dy) || 1;
+                    nx = -dy / len; ny = dx / len;
+                } else if (i === n - 1) {
+                    const [qx, qy] = points[n - 2];
+                    const dx = px - qx, dy = py - qy;
+                    const len = Math.hypot(dx, dy) || 1;
+                    nx = -dy / len; ny = dx / len;
+                } else {
+                    const [ax, ay] = points[i - 1];
+                    const [bx, by] = points[i + 1];
+                    const l1 = Math.hypot(px - ax, py - ay) || 1;
+                    const n1x = -(py - ay) / l1, n1y = (px - ax) / l1;
+                    const l2 = Math.hypot(bx - px, by - py) || 1;
+                    const n2x = -(by - py) / l2, n2y = (bx - px) / l2;
+                    const mx = n1x + n2x, my = n1y + n2y;
+                    const mlen = Math.hypot(mx, my);
+                    if (mlen < 1e-6) {
+                        nx = n1x; ny = n1y;
+                    } else {
+                        const cosHalf = (mx * n1x + my * n1y) / mlen;
+                        let scale = cosHalf > 1e-3 ? 1 / cosHalf : MITER_LIMIT;
+                        if (scale > MITER_LIMIT) scale = MITER_LIMIT;
+                        nx = (mx / mlen) * scale;
+                        ny = (my / mlen) * scale;
+                    }
+                }
+                left[i] = [px + nx * halfWidth, py + ny * halfWidth];
+                right[i] = [px - nx * halfWidth, py - ny * halfWidth];
+            }
+            const poly = left.concat(right.reverse());
+            return poly.map(p => `${p[0].toFixed(2)},${p[1].toFixed(2)}`).join(" ");
+        }
 
         // ---- Fuzzy matching helpers ----
         function normalizeLabel(s) {
@@ -182,244 +230,325 @@
 
         Promise.all([
             d3.json("./maps/nyc.json"),
-            d3.csv("../modern-subway-data/station-neighbors.csv"),
+            d3.json("./data/historical-lines.json"),
             d3.csv("../archival-ridership-data/cleaned_data/master_ridership_linked.csv"),
-            d3.csv("../archival-ridership-data/csv/closed-station-locations.csv"),
-            d3.csv("../operator_tags/master_ridership_with_operator.csv")
-        ]).then(([nyc, stationData, ridershipData, closedData, operatorData]) => {
+            d3.csv("../modern-subway-data/station-neighbors.csv")
+        ]).then(([nyc, historicalLines, ridershipData, modernStationData]) => {
             const projection = d3.geoConicConformal()
                 .rotate([96, -39])
                 .fitExtent([[margin, margin], [width - margin, height - margin]], nyc);
 
             const geoPath = d3.geoPath().projection(projection);
 
-            // Build lookup: route+station_name -> station row
-            const stationLookup = new Map();
-            // Build lookup: station_id -> at least one station row (for id matching)
-            const stationById = new Map();
-            stationData.forEach(d => {
-                stationLookup.set(`${d.route}|${d.station_name}`, d);
-                if (!stationById.has(d.station_id)) stationById.set(d.station_id, d);
-            });
-
-            // Operator lookup: (label|borough) -> dominant company (IRT/BMT/IND).
-            // Prefer concrete operators over "aggregate"/"unknown" when both appear.
-            const operatorByKey = new Map();
-            {
-                const counts = new Map();
-                operatorData.forEach(row => {
-                    const op = (row.original_operator || "").toUpperCase();
-                    if (op !== "IRT" && op !== "BMT" && op !== "IND") return;
-                    const key = `${row.label}|${row.borough}`;
-                    if (!counts.has(key)) counts.set(key, new Map());
-                    const m = counts.get(key);
-                    m.set(op, (m.get(op) || 0) + 1);
-                });
-                counts.forEach((m, key) => {
-                    let best = null, bestN = 0;
-                    m.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
-                    if (best) operatorByKey.set(key, best);
-                });
-            }
-
-            // Station_id -> company, derived by joining the operator file to the
-            // linked ridership file via (label, borough).
-            const operatorById = new Map();
-            {
-                const counts = new Map();
-                ridershipData.forEach(row => {
-                    const op = operatorByKey.get(`${row.label}|${row.borough}`);
-                    if (!op || !row.station_id || row.station_id === "-1") return;
-                    if (!counts.has(row.station_id)) counts.set(row.station_id, new Map());
-                    const m = counts.get(row.station_id);
-                    m.set(op, (m.get(op) || 0) + 1);
-                });
-                counts.forEach((m, sid) => {
-                    let best = null, bestN = 0;
-                    m.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
-                    if (best) operatorById.set(sid, best);
-                });
-            }
-
-            // Group stations by route
-            const routes = d3.group(stationData, d => d.route);
-
-            // Dominant company per modern route (majority of its stations' companies).
-            const routeCompany = new Map();
-            routes.forEach((stations, route) => {
-                const counts = new Map();
-                stations.forEach(s => {
-                    const op = operatorById.get(s.station_id);
-                    if (!op) return;
-                    counts.set(op, (counts.get(op) || 0) + 1);
-                });
-                let best = null, bestN = 0;
-                counts.forEach((n, op) => { if (n > bestN) { bestN = n; best = op; } });
-                routeCompany.set(route, best);
-            });
-
-            function stationCompany(station) {
-                return routeCompany.get(station.route) || null;
-            }
-
-            // Fan out transfer stations by company: each distinct company at a shared
-            // station_id gets a distinct radial offset so a station with routes from
-            // multiple companies shows one dot per company, not one dot per route.
-            const OFFSET_RADIUS = 4;
-            const companiesByStationId = new Map();
-            stationData.forEach(d => {
-                const co = stationCompany(d);
-                if (!co) return;
-                if (!companiesByStationId.has(d.station_id)) companiesByStationId.set(d.station_id, new Set());
-                companiesByStationId.get(d.station_id).add(co);
-            });
-            companiesByStationId.forEach((set, id) => {
-                companiesByStationId.set(id, Array.from(set).sort());
-            });
-
-            function stationXY(station) {
-                const [px, py] = projection([+station.longitude, +station.latitude]);
-                const companies = companiesByStationId.get(station.station_id);
-                if (!companies || companies.length <= 1) return [px, py];
-                const co = stationCompany(station);
-                const i = companies.indexOf(co);
-                if (i < 0) return [px, py];
-                const theta = (2 * Math.PI * i) / companies.length;
-                return [
-                    px + OFFSET_RADIUS * Math.cos(theta),
-                    py + OFFSET_RADIUS * Math.sin(theta)
-                ];
-            }
-
-            // Build edges from each station to its after-neighbors
-            const routeEdges = new Map();
-            routes.forEach((stations, route) => {
-                const edges = [];
-                const seen = new Set();
-                stations.forEach(station => {
-                    if (!station.latitude || !station.longitude) return;
-                    const afterNames = station.stations_after
-                        ? station.stations_after.split("; ")
-                        : [];
-                    afterNames.forEach(neighborName => {
-                        const neighbor = stationLookup.get(`${route}|${neighborName}`);
-                        if (!neighbor || !neighbor.latitude || !neighbor.longitude) return;
-                        const edgeKey = [station.station_name, neighborName].sort().join("|");
-                        if (seen.has(edgeKey)) return;
-                        seen.add(edgeKey);
-                        edges.push({ source: station, target: neighbor, route });
-                    });
-                });
-                routeEdges.set(route, edges);
-            });
-
-            // ---- Closed stations ----
-            // Filter rows with valid coordinates; deduplicate colocated duplicates by name.
-            const closedStations = [];
-            closedData.forEach((d, i) => {
-                const lat = parseFloat(d.latitude);
-                const lng = parseFloat(d.longitude);
-                if (!isFinite(lat) || !isFinite(lng)) return;
-                if (Math.abs(lat) < 1 || Math.abs(lng) < 1) return;
-                closedStations.push({
-                    closedKey: `C${i}`,
-                    name: d.name,
-                    norm: normalizeLabel(d.name),
-                    latitude: lat,
-                    longitude: lng,
-                    before_station: d.before_station || "",
-                    after_station: d.after_station || "",
-                    company: d.Company || ""
-                });
-            });
-
-            // Candidates for fuzzy-matching before/after references.
-            // Each candidate has {type, key, norm, lat, lng}.
-            const closedCandidates = closedStations.map(c => ({
-                type: "closed", key: c.closedKey, norm: c.norm, lat: c.latitude, lng: c.longitude
-            }));
-            const modernCandidatesSeen = new Set();
-            const modernCandidates = [];
-            stationData.forEach(d => {
-                if (modernCandidatesSeen.has(d.station_id)) return;
-                if (!d.latitude || !d.longitude) return;
-                modernCandidatesSeen.add(d.station_id);
-                modernCandidates.push({
-                    type: "modern",
-                    key: d.station_id,
-                    norm: normalizeLabel(d.station_name),
-                    lat: +d.latitude, lng: +d.longitude
-                });
-            });
-            const adjacencyCandidates = closedCandidates.concat(modernCandidates);
-
-            // Pre-resolve before/after for each closed station via fuzzy match.
-            closedStations.forEach(c => {
-                c.adjacent = [];
-                [c.before_station, c.after_station].forEach(ref => {
-                    if (!ref || ref === "-") return;
-                    const m = bestMatch(ref, adjacencyCandidates, 0.55);
-                    if (m && m.key !== c.closedKey) c.adjacent.push(m);
-                });
-            });
-
-            // Cache for ridership label -> closed station (fuzzy, once per unique label).
-            const closedLabelCache = new Map();
-            function resolveClosedLabel(label) {
-                if (closedLabelCache.has(label)) return closedLabelCache.get(label);
-                const m = bestMatch(label, closedCandidates, 0.55);
-                const result = m ? closedStations.find(c => c.closedKey === m.key) : null;
-                closedLabelCache.set(label, result);
-                return result;
-            }
-
-            // Index ridership: year -> Map<station_id, ridershipRow> for modern stations
-            // and year -> Map<closedKey, ridershipRow> for closed stations.
-            // Rows that don't resolve to either are logged and skipped.
-            const ridershipByYear = new Map();
-            const closedRidershipByYear = new Map();
+            // ---- Ridership index (drives circle radius only) ----
+            // Sum ridership across boroughs/segments that share a label in the same
+            // year, then carry forward so a station with no data in the selected
+            // year still renders at its last-known size.
+            const ridershipByYearMap = new Map();
             ridershipData.forEach(row => {
                 const year = +row.year;
-                if (stationById.has(row.station_id)) {
-                    if (!ridershipByYear.has(year)) ridershipByYear.set(year, new Map());
-                    ridershipByYear.get(year).set(row.station_id, row);
-                    return;
-                }
-                if (row.station_id === "-1" && row.label && row.label.toLowerCase().includes("closed")) {
-                    const closed = resolveClosedLabel(row.label);
-                    if (!closed) {
-                        console.log("Unmatched closed-station label:", row);
-                        return;
-                    }
-                    if (!closedRidershipByYear.has(year)) closedRidershipByYear.set(year, new Map());
-                    closedRidershipByYear.get(year).set(closed.closedKey, row);
-                    return;
-                }
-                console.log("Unmatched station_id:", row);
+                const norm = normalizeLabel(row.label);
+                if (!norm || !Number.isFinite(year)) return;
+                const val = +row.ridership || 0;
+                if (!ridershipByYearMap.has(year)) ridershipByYearMap.set(year, new Map());
+                const m = ridershipByYearMap.get(year);
+                const prev = m.get(norm);
+                m.set(norm, {
+                    label: row.label,
+                    norm,
+                    ridership: (prev ? prev.ridership : 0) + val,
+                    year
+                });
             });
 
-            // Carry-forward snapshots: for each year, include the most recent prior
-            // ridership row for any station that was ever active. If a station has
-            // data for the current year, that wins; otherwise the last known row.
             const cumulativeRidership = new Map();
-            const cumulativeClosed = new Map();
-            const runningModern = new Map();
-            const runningClosed = new Map();
-            for (let y = MIN_YEAR; y <= MAX_YEAR; y++) {
-                const modernYear = ridershipByYear.get(y);
-                if (modernYear) modernYear.forEach((row, sid) => runningModern.set(sid, row));
-                cumulativeRidership.set(y, new Map(runningModern));
+            {
+                const running = new Map();
+                for (let y = MIN_YEAR; y <= MAX_YEAR; y++) {
+                    const m = ridershipByYearMap.get(y);
+                    if (m) m.forEach((v, k) => running.set(k, v));
+                    cumulativeRidership.set(y, new Map(running));
+                }
+            }
 
-                const closedYear = closedRidershipByYear.get(y);
-                if (closedYear) closedYear.forEach((row, key) => runningClosed.set(key, row));
-                cumulativeClosed.set(y, new Map(runningClosed));
+            let maxRidership = 0;
+            cumulativeRidership.forEach(m => m.forEach(v => {
+                if (v.ridership > maxRidership) maxRidership = v.ridership;
+            }));
+            const radiusScale = d3.scaleSqrt()
+                .domain([0, Math.max(1, maxRidership)])
+                .range([1.8, 9]);
+            const DEFAULT_RADIUS = 2;
+
+            // Fuzzy-match a historical station name to the ridership label index
+            // available through the selected year. Cache per (year, name).
+            const ridershipCache = new Map();
+            function ridershipFor(year, stationName) {
+                const cacheKey = `${year}|${stationName}`;
+                if (ridershipCache.has(cacheKey)) return ridershipCache.get(cacheKey);
+                const map = cumulativeRidership.get(year);
+                let best = null, bestScore = 0.6;
+                if (map) {
+                    const q = normalizeLabel(stationName);
+                    if (q) {
+                        map.forEach(r => {
+                            const s = fuzzyScore(q, r.norm);
+                            if (s > bestScore) { bestScore = s; best = r; }
+                        });
+                    }
+                }
+                ridershipCache.set(cacheKey, best);
+                return best;
+            }
+
+            // ---- Historical lines: decorate ----
+            historicalLines.forEach(line => {
+                line.lineId = line.line.replace(/[^A-Za-z0-9]/g, "_");
+                line.displayName = line.line.replace(/_/g, " ");
+                line.stations.forEach((s, i) => {
+                    s.id = `${line.lineId}|${i}|${s.station}`;
+                    s.hasCoords = Number.isFinite(s.latitude) && Number.isFinite(s.longitude);
+                    s.company = (s.company || line.company || "").toUpperCase();
+                });
+            });
+
+            // ---- Wrong-borough detection via polygon containment ----
+            // Station names like "168th Street" recur across boroughs, so a
+            // spreadsheet coord may point at a namesake in the wrong borough.
+            // Strategy:
+            //   1. Tag each located station with a borough by testing its coords
+            //      against nyc.json neighborhood polygons.
+            //   2. For each line, the "valid" boroughs are those that hold at
+            //      least BOROUGH_SHARE of the line's located stations.
+            //   3. For any station whose borough falls outside that set (or is
+            //      null = outside NYC), look up modern same-name stations and
+            //      snap to the one in a valid borough closest to the line
+            //      centroid. Skip if no such namesake exists within MATCH_KM.
+            function haversineKm(lat1, lng1, lat2, lng2) {
+                const R = 6371;
+                const toRad = x => x * Math.PI / 180;
+                const dLat = toRad(lat2 - lat1);
+                const dLng = toRad(lng2 - lng1);
+                const a = Math.sin(dLat / 2) ** 2
+                    + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+                return 2 * R * Math.asin(Math.sqrt(a));
+            }
+
+            // Modern CSV uses abbreviations; nyc.json uses full names.
+            const MODERN_BOROUGH = {
+                "M": "Manhattan",
+                "Bx": "Bronx",
+                "Bk": "Brooklyn",
+                "Q": "Queens",
+                "SI": "Staten Island"
+            };
+
+            function findBorough(lat, lng) {
+                if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+                const pt = [lng, lat];
+                for (const f of nyc.features) {
+                    if (d3.geoContains(f, pt)) return f.properties.borough || null;
+                }
+                return null;
+            }
+
+            historicalLines.forEach(line => {
+                line.stations.forEach(s => {
+                    if (s.hasCoords) s.borough = findBorough(s.latitude, s.longitude);
+                });
+            });
+
+            const modernByNorm = new Map();
+            {
+                const seenIds = new Set();
+                modernStationData.forEach(d => {
+                    if (!d.latitude || !d.longitude) return;
+                    if (seenIds.has(d.station_id)) return;
+                    seenIds.add(d.station_id);
+                    // stop_name is the short, colloquial form (e.g. "103 St")
+                    // whereas station_name is suffixed ("103RD STREET-LEXINGTON"),
+                    // which hurts fuzzy match scores. Fall back to station_name
+                    // if stop_name is missing.
+                    const rawName = d.stop_name || d.station_name;
+                    const norm = normalizeLabel(rawName);
+                    if (!norm) return;
+                    if (!modernByNorm.has(norm)) modernByNorm.set(norm, []);
+                    modernByNorm.get(norm).push({
+                        name: d.station_name,
+                        stopName: d.stop_name,
+                        borough: MODERN_BOROUGH[d.borough] || d.borough,
+                        lat: +d.latitude,
+                        lng: +d.longitude
+                    });
+                });
+            }
+            const modernEntries = Array.from(modernByNorm, ([norm, candidates]) => ({ norm, candidates }));
+
+            const FUZZY_THRESHOLD = 0.8;
+            const MATCH_KM = 10;
+            const MIN_BOROUGH_COUNT = 2;
+            const NEIGHBOR_KM = 5;
+            const corrected = [];
+            const skipped = [];
+            const trustedNoMatch = [];
+
+            historicalLines.forEach(line => {
+                const located = line.stations.filter(s => s.hasCoords);
+                if (!located.length) return;
+
+                const medianLat = d3.median(located, s => s.latitude);
+                const medianLng = d3.median(located, s => s.longitude);
+
+                // A borough is "valid" for this line if it contains at least
+                // MIN_BOROUGH_COUNT stations. Single-station outliers stay
+                // suspect; legitimate multi-station branches (e.g. Myrtle El
+                // in Queens) are trusted.
+                const boroughCounts = new Map();
+                located.forEach(s => {
+                    if (!s.borough) return;
+                    boroughCounts.set(s.borough, (boroughCounts.get(s.borough) || 0) + 1);
+                });
+                const validBoroughs = new Set();
+                boroughCounts.forEach((n, b) => { if (n >= MIN_BOROUGH_COUNT) validBoroughs.add(b); });
+
+                located.forEach(s => {
+                    if (s.borough && validBoroughs.has(s.borough)) return;
+
+                    // Single-station cross-borough termini (e.g. York St on
+                    // the IND Sixth Ave Line, just across the East River from
+                    // East Broadway) sit close to their list-neighbors. If
+                    // the coord is within NEIGHBOR_KM of an adjacent station,
+                    // trust it — a spreadsheet typo would not land near a
+                    // legitimate neighbor.
+                    const idx = line.stations.indexOf(s);
+                    let neighborDist = Infinity;
+                    for (const j of [idx - 1, idx + 1]) {
+                        const nb = line.stations[j];
+                        if (!nb || !nb.hasCoords) continue;
+                        const d = haversineKm(s.latitude, s.longitude, nb.latitude, nb.longitude);
+                        if (d < neighborDist) neighborDist = d;
+                    }
+                    if (neighborDist <= NEIGHBOR_KM) {
+                        trustedNoMatch.push({
+                            line: line.displayName,
+                            station: s.station,
+                            coords: [s.latitude, s.longitude],
+                            borough: s.borough || "outside NYC",
+                            validBoroughs: Array.from(validBoroughs).join(", "),
+                            reason: `adjacent to neighbor ${neighborDist.toFixed(1)}km away`
+                        });
+                        return;
+                    }
+
+                    const qNorm = normalizeLabel(s.station);
+                    const matches = [];
+                    if (qNorm) {
+                        modernEntries.forEach(entry => {
+                            if (fuzzyScore(qNorm, entry.norm) < FUZZY_THRESHOLD) return;
+                            entry.candidates.forEach(c => matches.push(c));
+                        });
+                    }
+
+                    // No modern same-name station exists anywhere — we have no
+                    // evidence to override the spreadsheet, so keep the coord.
+                    // Covers single-borough terminals like Park Row.
+                    if (!matches.length) {
+                        trustedNoMatch.push({
+                            line: line.displayName,
+                            station: s.station,
+                            coords: [s.latitude, s.longitude],
+                            borough: s.borough || "outside NYC",
+                            validBoroughs: Array.from(validBoroughs).join(", "),
+                            reason: "no same-name modern station"
+                        });
+                        return;
+                    }
+
+                    // Prefer namesakes in the line's valid-borough set.
+                    const pool = matches.filter(m => validBoroughs.has(m.borough));
+
+                    if (!pool.length) {
+                        skipped.push({
+                            line: line.displayName,
+                            station: s.station,
+                            coords: [s.latitude, s.longitude],
+                            borough: s.borough || "outside NYC",
+                            validBoroughs: Array.from(validBoroughs).join(", "),
+                            reason: "no modern namesake in a valid borough"
+                        });
+                        s.hasCoords = false;
+                        return;
+                    }
+
+                    let best = null, bestDist = Infinity;
+                    pool.forEach(m => {
+                        const d = haversineKm(medianLat, medianLng, m.lat, m.lng);
+                        if (d < bestDist) { bestDist = d; best = m; }
+                    });
+
+                    if (bestDist <= MATCH_KM) {
+                        corrected.push({
+                            line: line.displayName,
+                            station: s.station,
+                            from: [s.latitude, s.longitude],
+                            fromBorough: s.borough || "outside NYC",
+                            to: [best.lat, best.lng],
+                            toBorough: best.borough,
+                            modernName: best.name,
+                            distFromCentroidKm: +bestDist.toFixed(2)
+                        });
+                        s.latitude = best.lat;
+                        s.longitude = best.lng;
+                        s.borough = best.borough;
+                    } else {
+                        skipped.push({
+                            line: line.displayName,
+                            station: s.station,
+                            coords: [s.latitude, s.longitude],
+                            borough: s.borough || "outside NYC",
+                            validBoroughs: Array.from(validBoroughs).join(", "),
+                            reason: `closest valid-borough namesake ${bestDist.toFixed(1)}km from line centroid (> ${MATCH_KM}km)`
+                        });
+                        s.hasCoords = false;
+                    }
+                });
+            });
+
+            if (corrected.length) {
+                console.log(`Corrected ${corrected.length} wrong-borough stations via polygon + modern lookup:`);
+                console.table(corrected);
+            }
+            if (skipped.length) {
+                console.log(`Skipped ${skipped.length} stations (wrong borough, no usable modern match):`);
+                console.table(skipped);
+            }
+            if (trustedNoMatch.length) {
+                console.log(`Trusted ${trustedNoMatch.length} coords in non-valid boroughs with no modern namesake:`);
+                console.table(trustedNoMatch);
+            }
+
+            // ---- Edges between consecutive coord-bearing stations (post-correction) ----
+            historicalLines.forEach(line => {
+                const edges = [];
+                let prev = null;
+                line.stations.forEach(s => {
+                    if (!s.hasCoords) return;
+                    if (prev) edges.push({ source: prev, target: s, edgeKey: `${prev.id}~${s.id}` });
+                    prev = s;
+                });
+                line.edges = edges;
+            });
+
+            function stationActive(s, year) {
+                if (s.opened_year && s.opened_year > year) return false;
+                if (s.closed_year && s.closed_year <= year) return false;
+                return true;
             }
 
             const svg = d3.select("#plot").append("svg")
                 .attr("width", width)
                 .attr("height", height);
 
-            // Draw NYC neighborhoods
             svg.append("g")
                 .selectAll("path")
                 .data(nyc.features)
@@ -429,12 +558,7 @@
                 .attr("stroke", "#2a2a4a")
                 .attr("stroke-width", 0.5);
 
-            // Per-route containers; segments and stations are re-bound each year.
-            // Routes are nested under a parent <g class="company-{IRT|BMT|IND}">
-            // so the SVG groups its routes by historical operating company.
-            const routeGroups = {};
-            const sortedRoutes = Array.from(routes.keys()).sort();
-
+            // Each historical line is a <g> inside a parent <g class="company-XXX">.
             const companyOrder = ["IRT", "BMT", "IND"];
             const companyGroups = {};
             companyOrder.forEach(co => {
@@ -442,200 +566,117 @@
             });
             const unknownCompanyGroup = svg.append("g").attr("class", "company-unknown");
 
-            sortedRoutes.forEach(route => {
-                const co = routeCompany.get(route);
-                const parent = (co && companyGroups[co]) || unknownCompanyGroup;
-                const g = parent.append("g").attr("class", `route-${route}`);
+            const lineGroups = {};
+            historicalLines.forEach(line => {
+                const parent = companyGroups[line.company] || unknownCompanyGroup;
+                const g = parent.append("g").attr("class", `line-${line.lineId}`);
                 g.append("g").attr("class", "segments");
                 g.append("g").attr("class", "stations");
-                routeGroups[route] = g;
+                lineGroups[line.lineId] = g;
             });
-
-            // Global modern-station dots layer, rendered above route segments so
-            // dedup (one dot per station_id+company) is a single binding, not
-            // per-route. This collapses multi-route same-company stacks.
-            const modernDotsGroup = svg.append("g").attr("class", "modern-stations");
-
-            // Closed-station container (drawn above modern routes).
-            const closedGroup = svg.append("g").attr("class", "closed-stations");
-            closedGroup.append("g").attr("class", "segments");
-            closedGroup.append("g").attr("class", "stations");
 
             function renderYear(year) {
                 d3.select("#year-display").text(year);
-                const yearMap = cumulativeRidership.get(year) || new Map();
-                const activeIds = new Set(yearMap.keys());
 
-                sortedRoutes.forEach(route => {
-                    const g = routeGroups[route];
-                    const allEdges = routeEdges.get(route) || [];
+                historicalLines.forEach(line => {
+                    const g = lineGroups[line.lineId];
+                    const color = companyColor(line.company);
 
-                    const edges = allEdges.filter(e =>
-                        activeIds.has(e.source.station_id) && activeIds.has(e.target.station_id));
-
-                    const segSel = g.select(".segments").selectAll("line").data(edges);
-                    segSel.exit().remove();
-                    segSel.enter().append("line")
-                        .attr("stroke-width", 2)
-                        .attr("stroke-linecap", "round")
-                        .attr("opacity", 0.8)
-                        .merge(segSel)
-                        .attr("stroke", d => companyColor(stationCompany(d.source)))
-                        .attr("x1", d => stationXY(d.source)[0])
-                        .attr("y1", d => stationXY(d.source)[1])
-                        .attr("x2", d => stationXY(d.target)[0])
-                        .attr("y2", d => stationXY(d.target)[1]);
-
-                    // Per-route dot layer is no longer used (dots render globally).
-                    g.select(".stations").selectAll("circle").remove();
-                });
-
-                // Deduplicate modern station dots: one circle per (station_id, company).
-                const seenDotKeys = new Set();
-                const dotData = [];
-                const stationRoutesByKey = new Map();
-                stationData.forEach(s => {
-                    if (!activeIds.has(s.station_id) || !s.latitude || !s.longitude) return;
-                    const co = stationCompany(s);
-                    if (!co) return;
-                    const key = `${s.station_id}|${co}`;
-                    if (!stationRoutesByKey.has(key)) stationRoutesByKey.set(key, []);
-                    stationRoutesByKey.get(key).push(s.route);
-                    if (seenDotKeys.has(key)) return;
-                    seenDotKeys.add(key);
-                    dotData.push({ station: s, key, company: co });
-                });
-
-                const dotSel = modernDotsGroup.selectAll("circle").data(dotData, d => d.key);
-                dotSel.exit().remove();
-                /*
-                dotSel.enter().append("circle")
-                    .attr("r", 2.5)
-                    .attr("stroke", "#1a1a2e")
-                    .attr("stroke-width", 0.5)
-                    .on("mouseover", (event, d) => {
-                        const r = yearMap.get(d.station.station_id);
-                        const ridership = r && r.ridership
-                            ? (+r.ridership).toLocaleString()
-                            : "—";
-                        const sourceYear = r ? +r.year : year;
-                        const yearLabel = sourceYear === year
-                            ? `${year}`
-                            : `${sourceYear}, carried forward`;
-                        const routeList = (stationRoutesByKey.get(d.key) || []).sort().join(", ");
-                        tooltip.style("display", "block")
-                            .html(`
-                                <div class="name">${d.station.stop_name || d.station.station_name}</div>
-                                <div>${d.company} · ${d.station.borough} · Routes: ${routeList}</div>
-                                <div>Ridership (${yearLabel}): ${ridership}</div>
-                                ${r && r.label ? `<div>Archival label: ${r.label}</div>` : ""}
-                            `);
-                    })
-                    .on("mousemove", (event) => {
-                        tooltip
-                            .style("left", (event.pageX + 12) + "px")
-                            .style("top", (event.pageY - 12) + "px");
-                    })
-                    .on("mouseout", () => tooltip.style("display", "none"))
-                    .merge(dotSel)
-                    .attr("fill", d => companyColor(d.company))
-                    .attr("cx", d => stationXY(d.station)[0])
-                    .attr("cy", d => stationXY(d.station)[1]);
-*/
-                // Closed stations: render dots regardless of adjacency.
-                const closedYearMap = cumulativeClosed.get(year) || new Map();
-                const activeClosedKeys = new Set(closedYearMap.keys());
-                const activeClosed = closedStations.filter(c => activeClosedKeys.has(c.closedKey));
-                const closedByKey = new Map(closedStations.map(c => [c.closedKey, c]));
-
-                // Fuzzy-derived edges to adjacent stations (closed or modern),
-                // rendered only when both endpoints are active in the selected year.
-                const closedEdgesRaw = [];
-                activeClosed.forEach(c => {
-                    c.adjacent.forEach(adj => {
-                        let active = false;
-                        if (adj.type === "closed") {
-                            active = activeClosedKeys.has(adj.key);
-                        } else if (adj.type === "modern") {
-                            active = activeIds.has(adj.key);
+                    // Chain consecutive active edges into polylines, breaking
+                    // at any gap (closed/unopened station) so each contiguous
+                    // run renders as one filled ribbon polygon.
+                    const polylines = [];
+                    let current = null;
+                    line.edges.forEach(e => {
+                        const active = stationActive(e.source, year) && stationActive(e.target, year);
+                        if (!active) { current = null; return; }
+                        if (!current) {
+                            current = {
+                                key: e.source.id,
+                                points: [projection([e.source.longitude, e.source.latitude])]
+                            };
+                            polylines.push(current);
                         }
-                        if (!active) return;
-                        closedEdgesRaw.push({
-                            sourceKey: c.closedKey,
-                            targetKey: `${adj.type}|${adj.key}`,
-                            sx: c.longitude, sy: c.latitude,
-                            tx: adj.lng, ty: adj.lat
-                        });
+                        current.points.push(projection([e.target.longitude, e.target.latitude]));
+                        current.key += "~" + e.target.id;
                     });
-                });
-                const seenEdges = new Set();
-                const closedEdges = [];
-                closedEdgesRaw.forEach(e => {
-                    const k = [e.sourceKey, e.targetKey].sort().join("~");
-                    if (seenEdges.has(k)) return;
-                    seenEdges.add(k);
-                    e.edgeKey = k;
-                    closedEdges.push(e);
-                });
 
-                const cSeg = closedGroup.select(".segments").selectAll("line")
-                    .data(closedEdges, d => d.edgeKey);
-                cSeg.exit().remove();
-                cSeg.enter().append("line")
-                    .attr("stroke-width", 1.5)
-                    .attr("stroke-linecap", "round")
-                    .attr("stroke-dasharray", "3,2")
-                    .attr("opacity", 0.75)
-                    .merge(cSeg)
-                    .attr("stroke", d => {
-                        const src = closedByKey.get(d.sourceKey);
-                        return companyColor(src && src.company);
-                    })
-                    .attr("x1", d => projection([d.sx, d.sy])[0])
-                    .attr("y1", d => projection([d.sx, d.sy])[1])
-                    .attr("x2", d => projection([d.tx, d.ty])[0])
-                    .attr("y2", d => projection([d.tx, d.ty])[1]);
+                    const polySel = g.select(".segments").selectAll("polygon")
+                        .data(polylines, d => d.key);
+                    polySel.exit().remove();
+                    polySel.enter().append("polygon")
+                        .attr("opacity", 0.85)
+                        .merge(polySel)
+                        .attr("fill", color)
+                        .attr("stroke", color)
+                        .attr("stroke-width",.001)
+                        .attr("points", d => ribbonPoints(d.points, routeThickness / 2));
 
-                const cDot = closedGroup.select(".stations").selectAll("circle")
-                    .data(activeClosed, d => d.closedKey);
-                cDot.exit().remove();
-                cDot.enter().append("circle")
-                    .attr("r", 2.5)
-                    .attr("stroke", "#1a1a2e")
-                    .attr("stroke-width", 0.6)
-                    .on("mouseover", (event, d) => {
-                        const r = closedYearMap.get(d.closedKey);
-                        const ridership = r && r.ridership
-                            ? (+r.ridership).toLocaleString()
-                            : "—";
-                        const sourceYear = r ? +r.year : year;
-                        const yearLabel = sourceYear === year
-                            ? `${year}`
-                            : `${sourceYear}, carried forward`;
-                        tooltip.style("display", "block")
-                            .html(`
-                                <div class="name">${d.name}</div>
-                                <div>Closed station${d.company ? " · " + d.company : ""}</div>
-                                <div>Ridership (${yearLabel}): ${ridership}</div>
-                            `);
-                    })
-                    .on("mousemove", (event) => {
-                        tooltip
-                            .style("left", (event.pageX + 12) + "px")
-                            .style("top", (event.pageY - 12) + "px");
-                    })
-                    .on("mouseout", () => tooltip.style("display", "none"))
-                    .merge(cDot)
-                    .attr("fill", d => companyColor(d.company))
-                    .attr("cx", d => projection([d.longitude, d.latitude])[0])
-                    .attr("cy", d => projection([d.longitude, d.latitude])[1]);
+                    const activeStations = line.stations.filter(s =>
+                        s.hasCoords && stationActive(s, year));
+                    /*
+                    const dotSel = g.select(".stations").selectAll("circle")
+                        .data(activeStations, d => d.id);
+                    dotSel.exit().remove();
+                    dotSel.enter().append("circle")
+                        .attr("stroke", "#1a1a2e")
+                        .attr("stroke-width", 0.6)
+                        .on("mouseover", (event, d) => {
+                            const r = ridershipFor(year, d.station);
+                            const ridership = r ? r.ridership.toLocaleString() : "—";
+                            const yearLabel = r && r.year !== year
+                                ? `${r.year}, carried forward`
+                                : `${year}`;
+                            tooltip.style("display", "block")
+                                .html(`
+                                    <div class="name">${d.station}</div>
+                                    <div>${line.company} · ${line.displayName}</div>
+                                    <div>Ridership (${yearLabel}): ${ridership}</div>
+                                    ${r ? `<div>Archival label: ${r.label}</div>` : ""}
+                                    ${d.opened_raw ? `<div>Opened: ${d.opened_raw}</div>` : ""}
+                                    ${d.closed_raw ? `<div>Closed: ${d.closed_raw}</div>` : ""}
+                                `);
+                        })
+                        .on("mousemove", (event) => {
+                            tooltip.style("left", (event.pageX + 12) + "px")
+                                .style("top", (event.pageY - 12) + "px");
+                        })
+                        .on("mouseout", () => tooltip.style("display", "none"))
+                        .merge(dotSel)
+                        .attr("fill", color)
+                        .attr("cx", d => projection([d.longitude, d.latitude])[0])
+                        .attr("cy", d => projection([d.longitude, d.latitude])[1])
+                        .attr("r", d => {
+                            const r = ridershipFor(year, d.station);
+                            return r ? radiusScale(r.ridership) : DEFAULT_RADIUS;
+                        });
+                    */
+                });
             }
 
-            // Controls: year display + company legend + route toggles
+            // Controls: year display + company legend + per-line toggles
             const controls = d3.select("#controls");
             controls.append("div").attr("id", "year-display");
             controls.append("div").attr("id", "year-hint")
                 .text("← / → to change year · Shift+S to save SVG");
+
+            controls.append("h3").text("Route thickness");
+            const thicknessRow = controls.append("label").style("display", "flex");
+            const thicknessReadout = thicknessRow.append("span")
+                .style("min-width", "32px")
+                .text(`${routeThickness}px`);
+            thicknessRow.append("input")
+                .attr("type", "range")
+                .attr("min", 1)
+                .attr("max", 30)
+                .attr("step", 1)
+                .attr("value", routeThickness)
+                .style("flex", "1")
+                .on("input", function () {
+                    routeThickness = +this.value;
+                    thicknessReadout.text(`${routeThickness}px`);
+                    renderYear(currentYear);
+                });
 
             controls.append("h3").text("Company");
             ["IRT", "BMT", "IND"].forEach(co => {
@@ -645,32 +686,32 @@
                 label.append("span").text(co);
             });
 
-            controls.append("h3").text("Routes");
+            controls.append("h3").text("Lines");
             const allLabel = controls.append("label");
             allLabel.append("input")
                 .attr("type", "checkbox")
                 .property("checked", true)
                 .on("change", function () {
                     const checked = this.checked;
-                    controls.selectAll(".route-toggle").property("checked", checked);
-                    sortedRoutes.forEach(r => {
-                        routeGroups[r].style("display", checked ? null : "none");
+                    controls.selectAll(".line-toggle").property("checked", checked);
+                    historicalLines.forEach(line => {
+                        lineGroups[line.lineId].style("display", checked ? null : "none");
                     });
                 });
             allLabel.append("span").text("All");
 
-            sortedRoutes.forEach(route => {
-                const color = companyColor(routeCompany.get(route));
+            historicalLines.forEach(line => {
                 const label = controls.append("label");
                 label.append("input")
                     .attr("type", "checkbox")
-                    .attr("class", "route-toggle")
+                    .attr("class", "line-toggle")
                     .property("checked", true)
                     .on("change", function () {
-                        routeGroups[route].style("display", this.checked ? null : "none");
+                        lineGroups[line.lineId].style("display", this.checked ? null : "none");
                     });
-                label.append("span").attr("class", "route-swatch").style("background-color", color);
-                label.append("span").text(route);
+                label.append("span").attr("class", "route-swatch")
+                    .style("background-color", companyColor(line.company));
+                label.append("span").text(line.displayName);
             });
 
             function saveCurrentSvg() {
